@@ -17,7 +17,7 @@ A community-run conference, like KubeHuddle, provides better opportunities for c
 
 **KubeHuddle will take place in Edinburgh, Scotland’s capital, on October 3rd and 4th.**
 
-We anticipate 200-300 attendees, though more accurate projections will be supplied after the first six weeks of sales. Interest is already high. Within the first four hours of announcing the event, 20 tickets were sold, further selling an additional 30 within our first 48 hours of being listed.
+We anticipate 200 attendees, though more accurate projections will be supplied after the first six weeks of sales. Interest is already high. Within the first four hours of announcing the event, 20 tickets were sold, further selling an additional 30 within our first 48 hours of being listed.
 
 ## Standard Packages
 
