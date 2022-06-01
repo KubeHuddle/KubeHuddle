@@ -3,9 +3,6 @@ title: Sponsorship
 description: Learn more about sponsoring KubeHuddle 2022 (Edinburgh)
 layout: ../../layouts/MainLayout.astro
 ---
-
-# Sponsor Information Pack
-
 ## Contact the Organisers
 
 Want to discuss any of the options below?
