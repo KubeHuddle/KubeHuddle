@@ -35,15 +35,17 @@ We anticipate 200-300 attendees, though more accurate projections will be suppli
 
 - **Note 1**
 
-Our Malt sponsorship entitles you to name one of our two rooms, from which the sessions will be presented each day. If your organisation is called "XYZ”, we'll refer to the room as "XYZ Room”. The choice which room is reserved for the first organisation to sponsor at this level. **Optional:** If you’d like someone from your organisation to MC/host the room, please let us know. We think this could be fun and interesting to explore.
+Our Malt sponsorship entitles you to name one of our two rooms, from which the sessions will be presented each day. If your organization is called "XYZ”, we'll refer to the room as "XYZ Room”. The choice which room is reserved for the first organization to sponsor at this level.
+
+**Optional:** If you’d like someone from your organization to MC/host the room, please let us know. We think this could be fun and interesting to explore.
 
 - **Note 2**
 
-You’ll get one speaker slot for someone from your organisation to present. This talk must be technical and not a marketing or sales pitch. We can work with you on the abstract.
+You’ll get one speaker slot for someone from your organization to present. This talk must be technical and not a marketing or sales pitch. We can work with you on the abstract.
 
 - **Note 3**
 
-You'll get a 5-15 (your choice) minute session at the beginning of a day and the end of the other to talk.
+You'll get a 10 minute session at the beginning, or end, of one day to talk to our attendees.
 
 - **Note 4**
 
