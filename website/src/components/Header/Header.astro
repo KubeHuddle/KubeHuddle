@@ -15,8 +15,8 @@ const { currentPage } = Astro.props;
     </div>
     <div class="logo flex">
       <a href="/">
-        <Logo size={48} />
-        <h1>{CONFIG.SITE.title ?? "Documentation"}</h1>
+        <Logo size={64} />
+        <h1>{CONFIG.SITE.title || "KubeHuddle"}</h1>
       </a>
     </div>
     <div style="flex-grow: 1;"></div>

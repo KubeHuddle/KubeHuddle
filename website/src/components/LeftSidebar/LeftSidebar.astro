@@ -19,6 +19,51 @@ const sidebarSections = SIDEBAR.reduce((col, item, i) => {
   }
   return col;
 }, []);
+
+interface Sponsor {
+  name: string;
+  level: "Malt" | "Grain" | "Blend"
+  height: number;
+  logo: string;
+  href: string;
+}
+
+const sponsors: Sponsor[] = [
+  {
+    name: "Control Plane",
+    level: "Grain",
+    height: 140,
+    logo: "control-plane.png",
+    href: "https://controlplane.io"
+  },
+  {
+    name: "Giant Swarm",
+    level: "Blend",
+    height: 70,
+    logo: "giant-swarm.png",
+    href: "https://giantswarm.io"
+  },
+  {
+    name: "Civo",
+    level: "Blend",
+    height: 50,
+    logo: "civo.png",
+    href: "https://civo.com"
+  },
+  {
+    name: "Pulumi",
+    level: "Blend",
+    height: 80,
+    logo: "pulumi.png",
+    href: "https://pulumi.com"
+  },
+  {
+    name: "You?",
+    level: "Blend",
+    height: 80,
+    href: "/2022/sponsorship"
+  }
+]
 ---
 
 <nav aria-labelledby="grid-left">
@@ -40,6 +85,24 @@ const sidebarSections = SIDEBAR.reduce((col, item, i) => {
       </div>
     </li>
     ))}
+    <li>
+      <div class="nav-group">
+        <h2 class="nav-group-title">Sponsors</h2>
+        <ul>
+          {sponsors.map((sponsor) => (
+          <li class="nav-link flex" style="align-content: center; flex-direction: column;">
+            <a href={sponsor.href} target="_blank">
+              {sponsor.logo ? <img style="text-align: center;" height={sponsor.height}
+                src={`/sponsors/2022/${sponsor.logo}`} style="color: black;" /> : ""}
+
+              <p style="margin-top: 4px; text-align: center;">{sponsor.name}</p>
+            </a>
+            <hr />
+          </li>
+          ))}
+        </ul>
+      </div>
+    </li>
   </ul>
 </nav>
 
@@ -85,6 +148,7 @@ const sidebarSections = SIDEBAR.reduce((col, item, i) => {
     padding: 0.1rem 1rem;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   .nav-link a {
