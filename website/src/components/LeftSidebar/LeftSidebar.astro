@@ -30,7 +30,7 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    name: "Control Plane",
+    name: "ControlPlane",
     level: "Grain",
     height: 140,
     logo: "control-plane.png",
@@ -39,7 +39,7 @@ const sponsors: Sponsor[] = [
   {
     name: "Giant Swarm",
     level: "Blend",
-    height: 70,
+    height: 50,
     logo: "giant-swarm.png",
     href: "https://giantswarm.io"
   },
@@ -88,16 +88,15 @@ const sponsors: Sponsor[] = [
     <li>
       <div class="nav-group">
         <h2 class="nav-group-title">Sponsors</h2>
-        <ul>
+        <ul style="text-align: center;">
           {sponsors.map((sponsor) => (
-          <li class="nav-link flex" style="align-content: center; flex-direction: column;">
+          <li class="nav-link flex" style="align-content: center; flex-direction: column; display: block; margin-bottom: 20px;">
             <a href={sponsor.href} target="_blank">
               {sponsor.logo ? <img style="text-align: center;" height={sponsor.height}
-                src={`/sponsors/2022/${sponsor.logo}`} style="color: black;" /> : ""}
+                src={`/sponsors/2022/${sponsor.logo}`} /> : ""}
 
               <p style="margin-top: 4px; text-align: center;">{sponsor.name}</p>
             </a>
-            <hr />
           </li>
           ))}
         </ul>
