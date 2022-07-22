@@ -1,16 +1,91 @@
 ---
-import AvatarList from './AvatarList.astro';
 const { path } = Astro.props;
 ---
 
-<footer>
-	<AvatarList {path} />
+<footer class="footer">
+	<div>
+		<nav>
+			<h4>
+				Contact
+			</h4>
+			<div class="links">
+				<a href="https://rawkode.chat/">Join our Discord community</a>
+				<span>Twitter: <a href="https://twitter.com/KubeHuddle">@KubeHuddle</a></span>
+				<span>Email: <a href="mailto:organizers@kubehuddle.com">organizers@kubehuddle.com</a></span>
+			</div>
+		</nav>
+		<nav>
+			<h4>
+				Useful Links
+			</h4>
+			<div class="links">
+				<a href="https://github.com/KubeHuddle/KubeHuddle">GitHub</a>
+			</div>
+		</nav>
+	</div>
 </footer>
 
 <style>
 	footer {
-		margin-top: auto;
-		padding: 2rem 0;
-		border-top: 3px solid var(--theme-divider);
+		max-width: 1200px;
+		margin: 0 auto;
+		margin-top: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 1em;
+		padding-bottom: 3em;
+		position: relative;
+	}
+
+	footer > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 100%;
+		max-width: 1200px;
+	}
+
+	@media (min-width: 50em) {
+		footer > div {
+			flex-direction: row;
+		}
+	}
+
+	footer .links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer .links a {
+		color: #0065bf;
+		display: inline-block;
+		padding-bottom: 4px;
+	}
+
+
+	footer::before {
+		content: "";
+		position: absolute;
+		top: 10px;
+		width: 100%;
+		height: 4px;
+		background: #0065bf;
+		color: #0065bf;
+		font-size: 2em;
+		text-align: center;
+	}
+	footer::after {
+		position: absolute;
+		top: -20px;
+		width: 60px;
+		height: 60px;
+		background: #fff;
+		color: #0065bf;
+		content: "⎈";
+		font-size: 3em;
+		text-align: center;
+		z-index: 9;
+		border-radius: 30px;
 	}
 </style>
