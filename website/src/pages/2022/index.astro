@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import Speaker from '../../components/Speaker/Speaker.astro'
 
 const content = {
   title: "2022",
@@ -26,6 +27,13 @@ const content = {
     { name: "Adrian Mouat", image: "adrianmouat.jpg", href: "https://twitter.com/rawkadrianmouatode" }
   ],
   speakers: [
+    // Example schema:
+    // {
+    //   name: "", image: "", href: "", bio: "",
+    //   talks: [
+    //     { title: "", format: "", level: "", abstract: "" },
+    //   ]
+    // },
   ],
   programme: {},
 };
@@ -75,12 +83,9 @@ const content = {
         Our call for papers is now closed. We will announce our speakers shortly.
       </p>
 
-      <div class="fig-holder">
-        {content.speakers.map((item) => (
-          <figure>
-            <img src={"/speakers/2022/" + item.image} />
-            <figcaption>{item.name}</figcaption>
-          </figure>
+      <div class="fig-holder center">
+        {content.speakers.map((speaker) => (
+          <Speaker {speaker} />
         ))}
       </div>
     </div>

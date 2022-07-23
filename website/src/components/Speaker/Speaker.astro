@@ -1,0 +1,140 @@
+---
+const { speaker } = Astro.props;
+---
+
+<script>
+  [...document.querySelectorAll('.fig-wrapper figure')].forEach(fig => {
+    fig.addEventListener('click', function() {
+      let el = fig.parentElement;
+      [...document.querySelectorAll('.fig-wrapper')].forEach(other => {
+        if (other.id != el.id) {
+          other.classList.remove('selected');
+        }
+      });
+      if (el.classList.contains('selected')) {
+        history.replaceState(null, null, document.location.pathname);
+        el.classList.remove('selected');
+      } else {
+        window.location.hash = el.id;
+      }
+    });
+  });
+
+  function showSpeaker() {
+    if (window.location.hash.startsWith('#speaker-')) {
+      document.getElementById(window.location.hash.substring(1)).classList.add('selected');
+      window.scrollBy(0, -20)
+    }
+  }
+
+  window.addEventListener('hashchange', showSpeaker);
+  document.addEventListener('DOMContentLoaded', showSpeaker);
+
+</script>
+
+<div class="fig-wrapper" id={"speaker-" + speaker.name.toLowerCase().replace(" ", "-")}>
+  <figure class="speaker">
+    <a href="#speakers" class="close-button">🅧 Close</a>
+    <img src={"/speakers/2022/" + speaker.image} />
+    <figcaption>
+      {speaker.name}
+      <div>
+        <a href={speaker.href} target="_blank" onclick="event.stopPropagation();">🌐</a>
+      </div>
+    </figcaption>
+  </figure>
+  <div class="speaker-details">
+    <h3>Speaker Bio</h3>
+
+    <p>
+      {speaker.bio}
+    </p>
+
+    <h3>Talks</h3>
+
+    <div class="speaker-talks">
+      {speaker.talks.map((talk) => (
+        <strong class="talk-title">{talk.title}</strong>
+        <div>
+          <strong>Format:</strong> {talk.format}
+        </div>
+        <div>
+          <strong>Level:</strong> {talk.level}
+        </div>
+        <div>
+          <strong>Abstract:</strong>
+          <blockquote set:html={talk.abstract}></blockquote>
+        </div>
+        <br />
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .fig-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+	@media (min-width: 50em) {
+		.fig-wrapper  {
+			flex-direction: row;
+		}
+	}
+
+  h3 {
+    margin-bottom: 6px;
+  }
+
+  blockquote {
+    border-left: 8px solid;
+    margin-left: 1em;
+    padding-left: 1em;
+  }
+
+  figure {
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  figcaption {
+    font-weight: bold;
+  }
+
+  .close-button {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .selected .close-button {
+    display: block;
+  }
+
+  .speaker-details {
+    display: none;
+    padding: 6px;
+  }
+
+  .selected.fig-wrapper {
+    width: 100%;
+    border: 1px solid #0065bf;
+    border-radius: 5px;
+  }
+
+  .selected .speaker-details {
+    display: block;
+  }
+
+  .speaker-talks > div {
+    margin-top: 4px;
+  }
+
+  .talk-title {
+    text-decoration: underline;
+    font-size: 1.1em;
+  }
+</style>
