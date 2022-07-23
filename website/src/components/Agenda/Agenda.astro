@@ -1,0 +1,25 @@
+---
+import Timeline from './Timeline.astro'
+
+const { agenda } = Astro.props;
+---
+
+<h3>{agenda.date}</h3>
+<div class="programme-day">
+  <Timeline title="Track 1" timeline={agenda.track1} />
+  <Timeline title="Track 2" timeline={agenda.track2} />
+</div>
+
+<style>
+.programme-day {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (min-width: 50em) {
+	.programme-day {
+		flex-direction: row;
+	}
+}
+</style>
