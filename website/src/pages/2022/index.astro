@@ -138,17 +138,19 @@ const content = {
 
       <div class="fig-holder">
         <div id="sponsors-malt">
+          <h3 set:text={ content.sponsors.malt.length > 0 && `Malt Level` }></h3>
           {content.sponsors.malt.map((item) => (
             <a href={item.href} target="_blank">
               <figure>
                 <img src={"/sponsors/2022/" + item.logo} />
                 <figcaption>{item.name}</figcaption>
-              </figure>
-            </a>
-          ))}
+                </figure>
+                </a>
+                ))}
         </div>
 
         <div id="sponsors-grain">
+          <h3 set:text={ content.sponsors.grain.length > 0 && `Grain Level` }></h3>
           {content.sponsors.grain.map((item) => (
             <a href={item.href} target="_blank">
               <figure>
@@ -160,6 +162,7 @@ const content = {
         </div>
 
         <div id="sponsors-blend">
+          <h3 set:text={ content.sponsors.blend.length > 0 && `Blend Level` }></h3>
           {content.sponsors.blend.map((item) => (
             <a href={item.href} target="_blank">
               <figure>
