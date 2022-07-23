@@ -123,6 +123,27 @@ section:nth-of-type(even) {
 	color: #0065bf;
 }
 
+
+section::after {
+	content: "⎈";
+	position: relative;
+	display: block;
+	bottom: -45px;
+	margin: 0 auto;
+	width: 60px;
+	height: 60px;
+	background: #fff;
+	color: #0065bf;
+	font-size: 3em;
+	text-align: center;
+	z-index: 9;
+	border-radius: 30px;
+}
+
+section:last-of-type::after {
+	display: none;
+}
+
 .fig-holder a {
 	display: inline-block;
 	border: none;
