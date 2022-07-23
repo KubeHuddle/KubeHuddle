@@ -1,0 +1,81 @@
+---
+const { title, timeline } = Astro.props;
+---
+
+<div class="programme-track">
+  <h4>{title}</h4>
+  <ul class="agenda">
+  {timeline.map(item => (
+    <li>
+      <time>{item.start}</time>
+      <div>
+        <div class="agenda-title">
+          <p>{item.title} <span>{item.speaker ? "- "+ item.speaker : ""}</span></p>
+        </div>
+        <div>
+          <p>{item.description}</p>
+        </div>
+      </div>
+    </li>
+  ))}
+  </ul>
+</div>
+
+<style>
+.programme-track {
+	width: 100%;
+}
+
+.programme-track h4 {
+	text-decoration: underline;
+}
+
+@media (min-width: 50em) {
+	.programme-track {
+		width: 50%;
+	}
+}
+
+.agenda {
+	list-style: none;
+	padding: 0
+}
+
+.agenda time {
+	font-weight: bold
+}
+
+.agenda p {
+	margin-top: .5em;
+	margin-bottom: .5em
+}
+
+.agenda li::before {
+	content: attr(data-time)
+}
+
+.agenda li>div {
+	border-left: 1px dashed #ccc;
+	margin: 2px 20px 0;
+	padding: 5px 20px 20px
+}
+
+.agenda li>div::before {
+	content: attr(data-time);
+	position: relative;
+	top: 50%
+}
+
+.agenda .agenda-title {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 5px 0
+}
+
+.agenda::after {
+	content: '👋';
+	position: relative;
+	left: 0.5em
+}
+
+</style>

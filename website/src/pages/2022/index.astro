@@ -1,6 +1,7 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import Speaker from '../../components/Speaker/Speaker.astro'
+import Agenda from '../../components/Agenda/Agenda.astro'
 
 const content = {
   title: "2022",
@@ -35,7 +36,30 @@ const content = {
     //   ]
     // },
   ],
-  programme: {},
+  programme: {
+    day1: {
+      date: "October 3rd, 2022",
+      track1: [
+        // Example schema:
+        // { start: "9:00am", title: "Doors Open", speaker: "", description: "Regristration & pastries" },
+      ],
+      track2: [
+        // Example schema:
+        // { start: "9:00am", title: "", speaker: "", description: "(see track 1)" },
+      ],
+    },
+    day2: {
+      date: "October 4th, 2022",
+      track1: [
+        // Example schema:
+        // { start: "9:00am", title: "Doors Open", speaker: "", description: "Regristration & pastries" },
+      ],
+      track2: [
+        // Example schema:
+        // { start: "9:00am", title: "", speaker: "", description: "(see track 1)" },
+      ],
+    }
+  },
 };
 
 ---
@@ -98,30 +122,34 @@ const content = {
       </h2>
 
       <p>
-        We’ll have two main tracks, as well as a collaboration space that will feature some interactive sessions also.
+        We'll have two main tracks, as well as a collaboration space that will feature some interactive sessions also.
       </p>
 
-      <h3>
-        Track 1 - Introductions &amp; Intermediate Presentations
-      </h3>
+      <div>
+        <strong>Track 1 - Introductions & Intermediate Presentations</strong><br/>
+        <p>
+          This track will feature beginner friendly and intermediate content to cater for a wide variety of experiences, including beginers to Kubernetes.
+        </p>
 
-      <p>
-        This track will feature beginner friendly and intermediate content to cater for a wide variety of experiences, including beginers to Kubernetes
-      </p>
+        <strong>Track 2 - Advanced Presentations</strong>
+        <p>
+          This track will feature advanced Kubernetes topics revolving around scale, multi-tenancy, and operations - you know, all that “fun” stuff.
+        </p>
+      </div>
 
-      <h3>Track 2 - Advanced Presentations</h3>
-      <p>
-        This track will feature advanced Kubernetes topics revolving around scale, multi-tenancy, and operations - you know, all that “fun” stuff.
-      </p>
+      { content.programme.day1.track1.length > 0 && <Agenda agenda={content.programme.day1} /> }
+      { content.programme.day2.track1.length > 0 && <Agenda agenda={content.programme.day2} /> }
 
       <h3>Collaboration Space</h3>
       <p>
-        There will be tables provided for people that want to sit with their laptops and collaborate with others, perhaps hacking on a cool new operator? A small selection of workshops and tutorials will also be available throughout the two days, at no extra cost.
+        There will be tables provided for people that want to sit with their laptops and collaborate with others, perhaps hacking on a cool new operator? <br/>
+        A small selection of workshops and tutorials will also be available throughout the two days, at no extra cost.
       </p>
 
       <h3>Socials</h3>
       <p>
-        There will be a small social on Sunday, October 2nd, and the main social on Monday October 3rd.
+        There will be a small social on <strong>Sunday, October 2nd</strong>, and the main social on <strong>Monday October 3rd</strong>.<br/>
+        More details coming soon...
       </p>
     </div>
   </section>
