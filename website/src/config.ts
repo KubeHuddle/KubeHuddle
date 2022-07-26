@@ -6,23 +6,8 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: "https://github.com/withastro/astro/blob/main/assets/social/banner.jpg?raw=true",
-    alt:
-      "astro logo on a starry expanse of space," +
-      " with a purple saturn-like planet floating in the right foreground",
+    src: "https://kubehuddle.com/favicon.png",
+    alt: "KubeHuddle Conference",
   },
   twitter: "KubeHuddle",
 };
-
-// export const GITHUB_EDIT_URL = `https://github.com/KubeHuddle/KubeHuddle/blob/main/website/`;
-
-export const COMMUNITY_INVITE_URL = `https://rawkode.chat`;
-
-export const SIDEBAR = [
-  { text: "Conference", header: true },
-  { text: "2022", link: "2022" },
-
-  { text: "About Us", header: true },
-  { text: "Values", link: "values" },
-  { text: "Organizers", link: "organizers" },
-];

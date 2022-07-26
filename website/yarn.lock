@@ -742,15 +742,6 @@
   dependencies:
     "tslib" "^2.0.1"
 
-"astro-icon@^0.7.1":
-  "integrity" "sha512-EdWXi3j0fkFgzdhyxqGbaDPdpLb5y593E6e5zvxW8PL/6DjW/x2OhtaTuTMV5xRUCUsfzwOhXiW6EYa+EBTwJw=="
-  "resolved" "https://registry.npmjs.org/astro-icon/-/astro-icon-0.7.1.tgz"
-  "version" "0.7.1"
-  dependencies:
-    "node-fetch" "^3.1.0"
-    "resolve-pkg" "^2.0.0"
-    "svgo" "^2.8.0"
-
 "astro@^1.0.0-beta.38":
   "integrity" "sha512-Xbmt42mnFNCxnnrvZgQFdMkjhdAlKlMNz9a/d4KlYjPlLzJCTK+bzTEllmfu2v+2k3Y/jGvrW7gWiRe38n4ORw=="
   "resolved" "https://registry.npmjs.org/astro/-/astro-1.0.0-beta.38.tgz"
