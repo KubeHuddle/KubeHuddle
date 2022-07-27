@@ -32,10 +32,10 @@ const { speaker } = Astro.props;
 
 </script>
 
-<div class="fig-wrapper" id={"speaker-" + speaker.name.toLowerCase().replace(" ", "-")}>
+<div class="fig-wrapper" id={"speaker-" + speaker.name.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}>
   <figure class="speaker">
     <a href="#speakers" class="close-button">🅧 Close</a>
-    <img src={"/speakers/2022/" + speaker.image} />
+    <img src={speaker.image} />
     <figcaption>
       {speaker.name}
       <div>
@@ -101,6 +101,11 @@ const { speaker } = Astro.props;
 
   figcaption {
     font-weight: bold;
+  }
+
+  img {
+    max-width: 300px;
+    margin-top: 20px;
   }
 
   .close-button {
