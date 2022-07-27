@@ -489,24 +489,6 @@ const content = {
     </div>
   </section>
 
-  <section id="speakers">
-    <div class="container">
-      <h2>
-        Speakers
-      </h2>
-
-      <p>
-        Our call for papers is now closed. We will announce our speakers shortly.
-      </p>
-
-      <div class="fig-holder center">
-        {content.speakers.map((speaker) => (
-          <Speaker {speaker} />
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section id="programme">
     <div class="container">
       <h2 class="pull-right">
@@ -543,6 +525,24 @@ const content = {
         There will be a small social on <strong>Sunday, October 2nd</strong>, and the main social on <strong>Monday October 3rd</strong>.<br/>
         More details coming soon...
       </p>
+    </div>
+  </section>
+
+  <section id="speakers">
+    <div class="container">
+      <h2>
+        Speakers
+      </h2>
+
+      <p>
+        Our call for papers is now closed. We will announce our speakers shortly.
+      </p>
+
+      <div class="fig-holder center">
+        {content.speakers.map((speaker) => (
+          <Speaker {speaker} />
+        ))}
+      </div>
     </div>
   </section>
 
