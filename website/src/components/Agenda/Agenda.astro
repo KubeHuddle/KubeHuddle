@@ -4,21 +4,42 @@ import Timeline from './Timeline.astro'
 const { agenda } = Astro.props;
 ---
 
-<h3>{agenda.date}</h3>
-<div class="programme-day">
-  <Timeline title="Track 1" timeline={agenda.track1} />
-  <Timeline title="Track 2" timeline={agenda.track2} />
+<div id={"agenda-" + agenda.isoDate}>
+	<h3>{agenda.date}</h3>
+	<details>
+		<summary>Programme</summary>
+		<div class="programme-day">
+			<Timeline title="Track 1" timeline={agenda.track1} />
+			<Timeline title="Track 2" timeline={agenda.track2} />
+		</div>
+		<h4>Hands-on Sessions</h4>
+		<ul>
+			{agenda.workshops.map(item => (
+				<li>
+					<time>{item.start}</time> - <strong>{item.title}</strong> with {item.speaker}
+				</li>
+			))}
+		</ul>
+	</details>
 </div>
-<h4>Hands-on Sessions</h4>
-<ul>
-	{agenda.workshops.map(item => (
-		<li>
-			<time>{item.start}</time> - <strong>{item.title}</strong> with {item.speaker}
-		</li>
-	))}
-</ul>
+
 
 <style>
+summary {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+summary::before {
+	content: '►  Show';
+	margin-right: 5px;
+}
+
+details[open] summary::before {
+	content: '▼  Hide';
+}
+
 .programme-day {
 	display: flex;
 	flex-direction: column;
