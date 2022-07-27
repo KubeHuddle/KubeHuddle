@@ -5,8 +5,10 @@ import Speaker from '../../components/Speaker/Speaker.astro'
 const content = {
   title: "2022",
   description: "The 2022 (Edinburgh) Edition of KubeHuddle, October 3rd-4th",
-  date: "October 3rd and 4th, 2022",
-  location: "Edinburgh International Conference Centre, Edinburgh, Scotland",
+  date: "October 3-4",
+  // date: "October 3rd and 4th, 2022",
+  // location: "Edinburgh International Conference Centre, Edinburgh, Scotland",
+  location: "Edinburgh, Scotland",
   sponsors: {
     malt: [
     ],
@@ -180,7 +182,7 @@ const content = {
   <section>
     <div class="container">
       <h2 class="pull-right">
-      Location
+          Location
       </h2>
 
       <div>
@@ -261,3 +263,12 @@ const content = {
     </div>
   </section>
 </MainLayout>
+<style>
+#intro::before {
+  position: absolute;
+  top: 0;
+  height: 20px;
+  width: 100%;
+  background: var(--primary-500);
+}
+</style>

@@ -1,5 +1,15 @@
-
 :root {
+	--primary-50: #ebf5ff;
+	--primary-100: #c2e2ff;
+	--primary-200: #85c6ff;
+	--primary-300: #47a9ff;
+	--primary-400: #0A8DFF;
+	--primary-500: #0078e0;
+	--primary-600: #0065bf;
+	--primary-700: #0057a3;
+	--primary-800: #002C52;
+	--primary-900: #001629;
+
 	--color-bg: #FFF;
 	--color-text-main: #000000;
 	--color-primary: #FFFF00;
@@ -114,13 +124,13 @@ section {
 }
 
 section:nth-of-type(odd) {
-	background: #0065bf;
-	color: #fff;
+	background: var(--primary-600);
+	color: var(--primary-50);
 }
 
 section:nth-of-type(even) {
-	background: #fff;
-	color: #0065bf;
+	background: var(--primary-50);
+	color: var(--primary-600);
 }
 
 
@@ -132,8 +142,8 @@ section::after {
 	margin: 0 auto;
 	width: 60px;
 	height: 60px;
-	background: #fff;
-	color: #0065bf;
+	background: var(--primary-50);
+	color: var(--primary-600);
 	font-size: 3em;
 	text-align: center;
 	z-index: 9;
@@ -179,7 +189,7 @@ section:last-of-type::after {
 	display: inline-block;
 	font-size: 2em;
 	background: #fff;
-	color: #0065bf;
+	color: var(--primary-600);
 	padding: 6px 8px;
 	margin: 4px;
 	border-radius: 4px;
@@ -187,4 +197,9 @@ section:last-of-type::after {
 	font-weight: bold;
 	box-shadow: 2px 2px 2px #dfdfdf;
 	border: 1px solid #11111155;
+}
+
+h1 {
+	margin-block-start: 0.25rem;
+	margin-block-end: 0.25rem;
 }
