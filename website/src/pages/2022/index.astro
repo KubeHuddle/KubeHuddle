@@ -453,7 +453,6 @@ const content = {
     }
   },
 };
-
 ---
 <MainLayout {content}>
   <section id="intro">
@@ -495,10 +494,6 @@ const content = {
         Programme
       </h2>
 
-      <p>
-        We'll have two main tracks, as well as a collaboration space that will feature some interactive sessions also.
-      </p>
-
       <div>
         <strong>Track 1 - Introductions & Intermediate Presentations</strong><br/>
         <p>
@@ -509,22 +504,22 @@ const content = {
         <p>
           This track will feature advanced Kubernetes topics revolving around scale, multi-tenancy, and operations - you know, all that “fun” stuff.
         </p>
+
+        <strong>Collaboration Space</strong>
+        <p>
+          There will be tables provided for people that want to sit with their laptops and collaborate with others, perhaps hacking on a cool new operator? <br/>
+          A small selection of workshops and tutorials will also be available throughout the two days, at no extra cost.
+        </p>
+
+        <strong>Socials</strong>
+        <p>
+          There will be a small social on <strong>Sunday, October 2nd</strong>, and the main social on <strong>Monday October 3rd</strong>.<br/>
+          <em>More details coming soon...</em>
+        </p>
       </div>
 
       { content.programme.day1.track1.length > 0 && <Agenda agenda={content.programme.day1} /> }
       { content.programme.day2.track1.length > 0 && <Agenda agenda={content.programme.day2} /> }
-
-      <h3>Collaboration Space</h3>
-      <p>
-        There will be tables provided for people that want to sit with their laptops and collaborate with others, perhaps hacking on a cool new operator? <br/>
-        A small selection of workshops and tutorials will also be available throughout the two days, at no extra cost.
-      </p>
-
-      <h3>Socials</h3>
-      <p>
-        There will be a small social on <strong>Sunday, October 2nd</strong>, and the main social on <strong>Monday October 3rd</strong>.<br/>
-        More details coming soon...
-      </p>
     </div>
   </section>
 
