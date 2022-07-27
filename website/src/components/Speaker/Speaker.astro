@@ -75,6 +75,7 @@ const { speaker } = Astro.props;
   .fig-wrapper {
     display: inline-flex;
     flex-direction: column;
+    max-width: 48%;
   }
 
 	@media (min-width: 50em) {
@@ -97,6 +98,7 @@ const { speaker } = Astro.props;
     cursor: pointer;
     flex-shrink: 0;
     position: relative;
+    margin: 0.5em;
   }
 
   figcaption {
@@ -104,7 +106,8 @@ const { speaker } = Astro.props;
   }
 
   img {
-    max-width: 300px;
+    width: 300px;
+    max-width: 100%;
     margin-top: 20px;
   }
 
@@ -120,12 +123,14 @@ const { speaker } = Astro.props;
   }
 
   .speaker-details {
+    text-align: left;
     display: none;
     padding: 6px;
   }
 
   .selected.fig-wrapper {
     width: 100%;
+    max-width: 100%;
     border: 1px solid #0065bf;
     border-radius: 5px;
   }
