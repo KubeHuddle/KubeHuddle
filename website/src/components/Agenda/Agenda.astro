@@ -9,6 +9,14 @@ const { agenda } = Astro.props;
   <Timeline title="Track 1" timeline={agenda.track1} />
   <Timeline title="Track 2" timeline={agenda.track2} />
 </div>
+<h4>Hands-on Sessions</h4>
+<ul>
+	{agenda.workshops.map(item => (
+		<li>
+			<time>{item.start}</time> - <strong>{item.title}</strong> with {item.speaker}
+		</li>
+	))}
+</ul>
 
 <style>
 .programme-day {
