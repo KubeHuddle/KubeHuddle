@@ -3,7 +3,7 @@ const { title, timeline } = Astro.props;
 ---
 
 <div class="programme-track">
-  <h4>{title}</h4>
+  <summary><h4>{title}</h4></summary>
   <ul class="agenda">
   {timeline.map(item => (
     <li>
