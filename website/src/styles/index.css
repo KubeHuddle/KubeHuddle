@@ -13,6 +13,8 @@
 	display: none !important;
 }
 
+summary::-webkit-details-marker {display: none; }
+
 /* Screenreader Only Text */
 .sr-only {
 	position: absolute;
