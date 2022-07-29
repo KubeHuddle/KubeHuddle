@@ -170,6 +170,10 @@ section:last-of-type::after {
 	height: 50px;
 }
 
+#sponsors-speaker img {
+	height: 30px;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
