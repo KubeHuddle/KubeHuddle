@@ -4,7 +4,7 @@ const { speaker } = Astro.props;
 
 <script>
   [...document.querySelectorAll('.fig-wrapper figure')].forEach(fig => {
-    fig.addEventListener('click', function() {
+    fig.addEventListener('click', function () {
       let el = fig.parentElement;
       [...document.querySelectorAll('.fig-wrapper')].forEach(other => {
         if (other.id != el.id) {
@@ -32,15 +32,12 @@ const { speaker } = Astro.props;
 
 </script>
 
-<div class="fig-wrapper" id={"speaker-" + speaker.name.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}>
+<div class="fig-wrapper" id={"speaker-" + speaker.fullName.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}>
   <figure class="speaker">
     <a href="#speakers" class="close-button">🅧 Close</a>
-    <img src={speaker.image} />
+    <img src={speaker.profilePicture} />
     <figcaption>
-      {speaker.name}
-      <div>
-        <a href={speaker.href} target="_blank" onclick="event.stopPropagation();">🌐</a>
-      </div>
+      {speaker.fullName}
     </figcaption>
   </figure>
   <div class="speaker-details">
@@ -49,25 +46,6 @@ const { speaker } = Astro.props;
     <p>
       {speaker.bio}
     </p>
-
-    <h3>Talks</h3>
-
-    <div class="speaker-talks">
-      {speaker.talks.map((talk) => (
-        <strong class="talk-title">{talk.title}</strong>
-        <div>
-          <strong>Format:</strong> {talk.format}
-        </div>
-        <div>
-          <strong>Level:</strong> {talk.level}
-        </div>
-        <div>
-          <strong>Abstract:</strong>
-          <blockquote set:html={talk.abstract}></blockquote>
-        </div>
-        <br />
-      ))}
-    </div>
   </div>
 </div>
 
@@ -78,11 +56,11 @@ const { speaker } = Astro.props;
     max-width: 48%;
   }
 
-	@media (min-width: 50em) {
-		.fig-wrapper  {
-			flex-direction: row;
-		}
-	}
+  @media (min-width: 50em) {
+    .fig-wrapper {
+      flex-direction: row;
+    }
+  }
 
   h3 {
     margin-bottom: 6px;
@@ -139,7 +117,7 @@ const { speaker } = Astro.props;
     display: block;
   }
 
-  .speaker-talks > div {
+  .speaker-talks>div {
     margin-top: 4px;
   }
 

@@ -1,54 +1,54 @@
 ---
 import Timeline from './Timeline.astro'
+import data from "../../../data/schedule.json";
 
-const { agenda } = Astro.props;
+const { day } = Astro.props;
+
+const isoDate = new Date(data[day - 1].date);
+
 ---
 
-<div id={"agenda-" + agenda.isoDate}>
-	<h3>{agenda.date}</h3>
-	<details>
-		<summary>Programme</summary>
-		<div class="programme-day">
-			<Timeline title="Track 1" timeline={agenda.track1} />
-			<Timeline title="Track 2" timeline={agenda.track2} />
-		</div>
-		<h4>Collaboration Space</h4>
-		<ul>
-			{agenda.workshops.map(item => (
-				<li>
-					<time>{item.start}</time> - <strong>{item.title}</strong> with {item.speaker}
-				</li>
-			))}
-		</ul>
-	</details>
+<div id={"agenda-" + isoDate.toDateString()}>
+  <h3>{isoDate.toDateString()}</h3>
+  <details>
+    <summary>Programme</summary>
+    <div class="programme-day">
+      <Timeline title="Track 1" day track="1" />
+      <Timeline title="Track 1" day track="2" />
+    </div>
+    <h4>Collaboration Space</h4>
+    <ul>
+      <Timeline title="Workshops" day track="3" />
+    </ul>
+  </details>
 </div>
 
 
 <style>
-summary {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-}
+  summary {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
 
-summary::before {
-	content: '►  Show';
-	margin-right: 5px;
-}
+  summary::before {
+    content: '►  Show';
+    margin-right: 5px;
+  }
 
-details[open] summary::before {
-	content: '▼  Hide';
-}
+  details[open] summary::before {
+    content: '▼  Hide';
+  }
 
-.programme-day {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
+  .programme-day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-@media (min-width: 50em) {
-	.programme-day {
-		flex-direction: row;
-	}
-}
+  @media (min-width: 50em) {
+    .programme-day {
+      flex-direction: row;
+    }
+  }
 </style>

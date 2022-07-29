@@ -1,87 +1,90 @@
 ---
-const { title, timeline } = Astro.props;
+import data from "../../../data/schedule.json";
+const { day, title, track } = Astro.props;
+
+const timeline = data[day - 1].rooms[track - 1].sessions;
 ---
 
 <div class="programme-track">
-  <summary><h4>{title}</h4></summary>
+  <summary>
+    <h4>{title}</h4>
+  </summary>
   <ul class="agenda">
-  {timeline.map(item => (
+    {timeline.map(item => (
     <li>
-      <time>{item.start}</time>
+      <time>{new Date(item.startsAt).toTimeString()}</time>
       <div>
         <div class="agenda-title">
           <div>{item.title} </div>
-					<div>{item.speaker}</div>
+          <div>{item.speakers.map(s => s.name).join(", ")}</div>
         </div>
-        <div class="agenda-content" set:html={item.description}></div>
       </div>
     </li>
-  ))}
+    ))}
   </ul>
 </div>
 
 <style>
-.programme-track {
-	width: 100%;
-}
+  .programme-track {
+    width: 100%;
+  }
 
-.programme-track h4 {
-	text-decoration: underline;
-}
+  .programme-track h4 {
+    text-decoration: underline;
+  }
 
-@media (min-width: 50em) {
-	.programme-track {
-		width: 50%;
-	}
-	.agenda li>div {
-		height: 100px;
-	}
-}
+  @media (min-width: 50em) {
+    .programme-track {
+      width: 50%;
+    }
 
-.agenda {
-	list-style: none;
-	padding: 0
-}
+    .agenda li>div {
+      height: 100px;
+    }
+  }
 
-.agenda time {
-	font-weight: bold
-}
+  .agenda {
+    list-style: none;
+    padding: 0
+  }
 
-.agenda p {
-	margin-top: .2em;
-	margin-bottom: .5em
-}
+  .agenda time {
+    font-weight: bold
+  }
 
-.agenda li {
-}
+  .agenda p {
+    margin-top: .2em;
+    margin-bottom: .5em
+  }
 
-.agenda li>div {
-	border-left: 1px dashed #ccc;
-	margin: 0 20px 0;
-	padding: 2px 20px 20px
-}
+  .agenda li {}
 
-.agenda li>div::before {
-	content: attr(data-time);
-	position: relative;
-	top: 50%
-}
+  .agenda li>div {
+    border-left: 1px dashed #ccc;
+    margin: 0 20px 0;
+    padding: 2px 20px 20px
+  }
 
-.agenda .agenda-title {
-	font-size: 1em;
-	font-weight: bold;
-	line-height: 1.3em;
-	margin: 5px 0
-}
+  .agenda li>div::before {
+    content: attr(data-time);
+    position: relative;
+    top: 50%
+  }
 
-.agenda-content {
-	font-size: 0.9em;
-}
+  .agenda .agenda-title {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin: 5px 0
+  }
 
-.agenda::after {
-	content: '👋';
-	position: relative;
-	left: 0.5em
-}
+  .agenda-content {
+    font-size: 0.9em;
+  }
 
+  .agenda::after {
+    content: '👋';
+    position: relative;
+    left: 0.5em
+  }
 </style>
