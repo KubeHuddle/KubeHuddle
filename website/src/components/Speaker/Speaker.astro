@@ -39,6 +39,11 @@ const { speaker } = Astro.props;
     <figcaption>
       {speaker.fullName}
     </figcaption>
+    <div>
+      { speaker.links[0] &&
+        <a href={speaker.links[0].url} target="_blank" onclick="event.stopPropagation();">🌐</a>
+      }
+    </div>
   </figure>
   <div class="speaker-details">
     <h3>Speaker Bio</h3>
@@ -46,6 +51,27 @@ const { speaker } = Astro.props;
     <p>
       {speaker.bio}
     </p>
+
+    <h3>Talks</h3>
+
+    <div class="speaker-talks">
+      {speaker.sessions.map((talk) => (
+        <strong class="talk-title">{talk.title}</strong>
+
+        <div>
+          { talk.categories.map((c) => (
+            <div><strong>{c.name}:</strong> {c.categoryItems[0].name}</div>
+          ))}
+        </div>
+
+
+        <div>
+          <strong>Abstract:</strong>
+          <blockquote set:html={talk.description}></blockquote>
+        </div>
+        <br />
+      ))}
+    </div>
   </div>
 </div>
 
@@ -84,7 +110,7 @@ const { speaker } = Astro.props;
   }
 
   img {
-    width: 300px;
+    width: 250px;
     max-width: 100%;
     margin-top: 20px;
   }
@@ -104,12 +130,13 @@ const { speaker } = Astro.props;
     text-align: left;
     display: none;
     padding: 6px;
+    line-height: 1.3em;
   }
 
   .selected.fig-wrapper {
     width: 100%;
     max-width: 100%;
-    border: 1px solid #0065bf;
+    border: 1px solid #fff;
     border-radius: 5px;
   }
 

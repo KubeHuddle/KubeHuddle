@@ -3,7 +3,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Speaker from '../../components/Speaker/Speaker.astro'
 import Agenda from '../../components/Agenda/Agenda.astro'
 
-import speakers from "../../../data/speakers.json";
+import {agenda, speakers} from "../../../data/combined.json";
 
 const content = {
   title: "2022",
@@ -105,8 +105,10 @@ const content = {
         </p>
       </div>
 
-      <Agenda day="1" />
-      <Agenda day="2" />
+      { agenda[0] &&
+      <Agenda agenda={agenda[0]} /> }
+      { agenda[1] &&
+      <Agenda agenda={agenda[1]} /> }
     </div>
   </section>
 

@@ -1,28 +1,31 @@
 ---
-import data from "../../../data/schedule.json";
-const { day, title, track } = Astro.props;
+import dateformat from 'dateformat'
+const { title, timeline } = Astro.props;
 
-const timeline = data[day - 1].rooms[track - 1].sessions;
 ---
 
 <div class="programme-track">
-  <summary>
-    <h4>{title}</h4>
-  </summary>
+  <summary><h4>{title}</h4></summary>
   <ul class="agenda">
-    {timeline.map(item => (
-    <li>
-      <time>{new Date(item.startsAt).toTimeString()}</time>
+  {timeline.map(item => (
+    <li class={
+        dateformat(new Date(), "yyyymmddhhMM") >= dateformat(new Date(item.startsAt), "yyyymmddhhMM")
+        && dateformat(new Date(), "yyyymmddhhMM") < dateformat(new Date(item.endsAt), "yyyymmddhhMM")
+        ? "current"
+        : ""
+      }>
+      <time>{dateformat(new Date(item.startsAt), "h:MM TT")}</time>
       <div>
         <div class="agenda-title">
           <div>{item.title} </div>
-          <div>{item.speakers.map(s => s.name).join(", ")}</div>
+					<div class="speaker">{item.speakers.map(s => s.name).join(", ")}</div>
         </div>
       </div>
     </li>
-    ))}
+  ))}
   </ul>
 </div>
+
 
 <style>
   .programme-track {
@@ -45,11 +48,7 @@ const timeline = data[day - 1].rooms[track - 1].sessions;
 
   .agenda {
     list-style: none;
-    padding: 0
-  }
-
-  .agenda time {
-    font-weight: bold
+    padding: 0;
   }
 
   .agenda p {
@@ -57,7 +56,24 @@ const timeline = data[day - 1].rooms[track - 1].sessions;
     margin-bottom: .5em
   }
 
-  .agenda li {}
+  .agenda li {
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  .agenda li.current {
+    background: #e2e2e23b;
+  }
+  .agenda li.current>div {
+    border-left: 1px dashed #0065bf;
+  }
+  .agenda li.current time {
+    font-weight: bold;
+  }
+  .agenda li.current time::after {
+    content: " (now)";
+    font-weight: normal;
+  }
 
   .agenda li>div {
     border-left: 1px dashed #ccc;
@@ -76,6 +92,10 @@ const timeline = data[day - 1].rooms[track - 1].sessions;
     font-weight: bold;
     line-height: 1.3em;
     margin: 5px 0
+  }
+
+  .agenda .speaker {
+    font-weight: normal;
   }
 
   .agenda-content {
