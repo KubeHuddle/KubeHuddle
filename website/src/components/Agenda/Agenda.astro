@@ -25,30 +25,36 @@ const isoDate = new Date(data[day - 1].date);
 
 
 <style>
-  summary {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
 
-  summary::before {
-    content: '►  Show';
-    margin-right: 5px;
-  }
+summary {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
 
-  details[open] summary::before {
-    content: '▼  Hide';
-  }
+summary::-webkit-details-marker {
+  display: none; 
+}
 
-  .programme-day {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+summary::before {
+	content: '►  Show';
+	margin-right: 5px;
+}
 
-  @media (min-width: 50em) {
-    .programme-day {
-      flex-direction: row;
-    }
-  }
+details[open] summary::before {
+	content: '▼  Hide';
+}
+
+.programme-day {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (min-width: 50em) {
+	.programme-day {
+		flex-direction: row;
+	}
+}
+
 </style>
