@@ -1,87 +1,110 @@
 ---
+import dateformat from 'dateformat'
 const { title, timeline } = Astro.props;
+
 ---
 
 <div class="programme-track">
   <summary><h4>{title}</h4></summary>
   <ul class="agenda">
   {timeline.map(item => (
-    <li>
-      <time>{item.start}</time>
+    <li class={
+        dateformat(new Date(), "yyyymmddhhMM") >= dateformat(new Date(item.startsAt), "yyyymmddhhMM")
+        && dateformat(new Date(), "yyyymmddhhMM") < dateformat(new Date(item.endsAt), "yyyymmddhhMM")
+        ? "current"
+        : ""
+      }>
+      <time>{dateformat(new Date(item.startsAt), "h:MM TT")}</time>
       <div>
         <div class="agenda-title">
           <div>{item.title} </div>
-					<div>{item.speaker}</div>
+					<div class="speaker">{item.speakers.map(s => s.name).join(", ")}</div>
         </div>
-        <div class="agenda-content" set:html={item.description}></div>
       </div>
     </li>
   ))}
   </ul>
 </div>
 
+
 <style>
-.programme-track {
-	width: 100%;
-}
+  .programme-track {
+    width: 100%;
+  }
 
-.programme-track h4 {
-	text-decoration: underline;
-}
+  .programme-track h4 {
+    text-decoration: underline;
+  }
 
-@media (min-width: 50em) {
-	.programme-track {
-		width: 50%;
-	}
-	.agenda li>div {
-		height: 100px;
-	}
-}
+  @media (min-width: 50em) {
+    .programme-track {
+      width: 50%;
+    }
 
-.agenda {
-	list-style: none;
-	padding: 0
-}
+    .agenda li>div {
+      height: 100px;
+    }
+  }
 
-.agenda time {
-	font-weight: bold
-}
+  .agenda {
+    list-style: none;
+    padding: 0;
+  }
 
-.agenda p {
-	margin-top: .2em;
-	margin-bottom: .5em
-}
+  .agenda p {
+    margin-top: .2em;
+    margin-bottom: .5em
+  }
 
-.agenda li {
-}
+  .agenda li {
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
 
-.agenda li>div {
-	border-left: 1px dashed #ccc;
-	margin: 0 20px 0;
-	padding: 2px 20px 20px
-}
+  .agenda li.current {
+    background: #e2e2e23b;
+  }
+  .agenda li.current>div {
+    border-left: 1px dashed #0065bf;
+  }
+  .agenda li.current time {
+    font-weight: bold;
+  }
+  .agenda li.current time::after {
+    content: " (now)";
+    font-weight: normal;
+  }
 
-.agenda li>div::before {
-	content: attr(data-time);
-	position: relative;
-	top: 50%
-}
+  .agenda li>div {
+    border-left: 1px dashed #ccc;
+    margin: 0 20px 0;
+    padding: 2px 20px 20px
+  }
 
-.agenda .agenda-title {
-	font-size: 1em;
-	font-weight: bold;
-	line-height: 1.3em;
-	margin: 5px 0
-}
+  .agenda li>div::before {
+    content: attr(data-time);
+    position: relative;
+    top: 50%
+  }
 
-.agenda-content {
-	font-size: 0.9em;
-}
+  .agenda .agenda-title {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin: 5px 0
+  }
 
-.agenda::after {
-	content: '👋';
-	position: relative;
-	left: 0.5em
-}
+  .agenda .speaker {
+    font-weight: normal;
+  }
 
+  .agenda-content {
+    font-size: 0.9em;
+  }
+
+  .agenda::after {
+    content: '👋';
+    position: relative;
+    left: 0.5em
+  }
 </style>

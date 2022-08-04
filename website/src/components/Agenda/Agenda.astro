@@ -1,22 +1,29 @@
 ---
+import dateformat from 'dateformat'
 import Timeline from './Timeline.astro'
 
 const { agenda } = Astro.props;
+
+const isoDate = new Date(agenda.date);
+
+const track1 = agenda.rooms[0].sessions;
+const track2 = [...agenda.rooms[0].sessions.filter(s=>s.isServiceSession), ...agenda.rooms[1].sessions].sort((a, b) => new Date(a.startsAt) - new Date(b.startsAt));
+
 ---
 
-<div id={"agenda-" + agenda.isoDate}>
-	<h3>{agenda.date}</h3>
-	<details>
+<div id={"agenda-" + isoDate.toDateString()}>
+  <h3>{dateformat(isoDate, "dddd, mmmm dS")}</h3>
+	<details open={dateformat(isoDate, "yyyymmdd") == dateformat(new Date(), "yyyymmdd")}>
 		<summary>Programme</summary>
 		<div class="programme-day">
-			<Timeline title="Track 1" timeline={agenda.track1} />
-			<Timeline title="Track 2" timeline={agenda.track2} />
+			<Timeline title="Track 1" timeline={track1} />
+			<Timeline title="Track 2" timeline={track2}  />
 		</div>
 		<h4>Collaboration Space</h4>
 		<ul>
-			{agenda.workshops.map(item => (
+			{agenda.rooms[2] && agenda.rooms[2].sessions.map(item => (
 				<li>
-					<time>{item.start}</time> - <strong>{item.title}</strong> with {item.speaker}
+					<time>{item.startsAt}</time> - <strong>{item.title}</strong> with {item.speakers[0].name}
 				</li>
 			))}
 		</ul>
@@ -25,6 +32,7 @@ const { agenda } = Astro.props;
 
 
 <style>
+
 summary {
 	display: flex;
 	align-items: center;
@@ -32,7 +40,7 @@ summary {
 }
 
 summary::-webkit-details-marker {
-  display: none; 
+  display: none;
 }
 
 summary::before {
@@ -55,4 +63,5 @@ details[open] summary::before {
 		flex-direction: row;
 	}
 }
+
 </style>

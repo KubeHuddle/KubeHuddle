@@ -7,10 +7,11 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "predeploy": "if [ ! $(which doppler) ]; then echo 'Doppler required'; else astro build; fi",
+    "predeploy": "make download-schedule; if [ ! $(which doppler) ]; then echo 'Doppler required'; else astro build; fi",
     "deploy": "doppler run -- npx wrangler pages publish ./dist --project-name kubehuddle"
   },
   "dependencies": {
+    "dateformat": "^5.0.3",
     "wrangler": "^2.0.7"
   },
   "devDependencies": {
