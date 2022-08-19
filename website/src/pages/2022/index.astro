@@ -16,13 +16,15 @@ const content = {
     grain: [
       { name: "Solo.io", logo: "solo-io.png", href: "https://solo.io" },
       { name: "ControlPlane", logo: "control-plane.png", href: "https://controlplane.io" },
-      { name: "Teleport", logo: "teleport.png", href: "https://goteleport.com/" }
+      { name: "Teleport", logo: "teleport.png", href: "https://goteleport.com/" },
+      { name: "Loft", logo: "loft.png", href: "https://loft.sh/" }
     ],
     blend: [
       { name: "Giant Swarm", logo: "giant-swarm.png", href: "https://giantswarm.io" },
       { name: "Civo", logo: "civo.png", href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage" },
       { name: "Pulumi", logo: "pulumi.png", href: "https://pulumi.com" },
-      { name: "Jetstack", logo: "jetstack.png", href: "https://jetstack.io" }
+      { name: "Jetstack", logo: "jetstack.png", href: "https://jetstack.io" },
+      { name: "Isovalent", logo: "isovalent.png", href: "https://isovalent.com" }
     ],
     speaker: [
       { name: "Civo", logo: "civo.png", href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage" },
@@ -33,6 +35,12 @@ const content = {
       { name: "Kasten by VEAM", logo: "kasten.png", href: "https://kasten.io/" },
       { name: "CrowdSec", logo: "crowdsec.png", href: "https://crowdsec.net/" },
       { name: "Upbound", logo: "upbound.png", href: "https://upbound.io/" },
+    ],
+    community: [
+      { name: "Community Classroom", logo: "commclassroom.webp", href: "https://www.commclassroom.org/" },
+      { name: "EddieHub", logo: "eddiehub.webp", href: "https://www.eddiehub.org/" },
+      { name: "KubeSimplify", logo: "kubesimplify.jpeg", href: "https://www.kubesimplify.com/" },
+      { name: "Rawkode Academy", logo: "rawkodeacademy.png", href: "https://rawkode.live/" },
     ]
   },
   organizers: [
@@ -184,8 +192,20 @@ const content = {
         </div>
 
         <div id="sponsors-speaker">
-          <h3 set:text={ content.sponsors.speaker.length> 0 && `Speaker Sponsor` }></h3>
+          <h3 set:text={ content.sponsors.speaker.length> 0 && `Speaker Sponsors` }></h3>
           {content.sponsors.speaker.map((item) => (
+          <a href={item.href} target="_blank">
+            <figure>
+              <img src={"/sponsors/2022/" + item.logo} />
+              <figcaption>{item.name}</figcaption>
+            </figure>
+          </a>
+          ))}
+        </div>
+
+        <div id="sponsors-community">
+          <h3 set:text={ content.sponsors.community.length> 0 && `Community Sponsors` }></h3>
+          {content.sponsors.community.map((item) => (
           <a href={item.href} target="_blank">
             <figure>
               <img src={"/sponsors/2022/" + item.logo} />

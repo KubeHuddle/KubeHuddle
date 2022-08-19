@@ -159,7 +159,7 @@ section:last-of-type::after {
 
 #sponsors div[id^="sponsors-"] {
 	text-align: center;
-	margin-bottom: 25px;
+	margin-bottom: 50px;
 }
 
 #sponsors-malt img {
@@ -173,7 +173,11 @@ section:last-of-type::after {
 }
 
 #sponsors-speaker img {
-	height: 30px;
+	height: 40px;
+}
+
+#sponsors-community img {
+	height: 40px;
 }
 
 .container {
