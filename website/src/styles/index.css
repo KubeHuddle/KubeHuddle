@@ -160,6 +160,7 @@ section:last-of-type::after {
 #sponsors div[id^="sponsors-"] {
 	text-align: center;
 	margin-bottom: 50px;
+	border-bottom: 1px dotted;
 }
 
 #sponsors-malt img {
@@ -179,6 +180,8 @@ section:last-of-type::after {
 #sponsors-community img {
 	height: 40px;
 }
+
+
 
 .container {
 	max-width: 1200px;
