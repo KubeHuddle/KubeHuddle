@@ -225,20 +225,23 @@ const content = {
       </p>
 
       <div class="fig-holder">
-        <div id="sponsors-malt">
-          <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`}></h3>
-          {
-            content.sponsors.malt.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img src={"/sponsors/2022/" + item.logo} />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
+        {content.sponsors.malt.length > 0 && (
+          <div id="sponsors-malt">
+            <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`}></h3>
+            {
+              content.sponsors.malt.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2022/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))
+            }
+          </div>
+        )}
 
+        {content.sponsors.grain.length > 0 && (
         <div id="sponsors-grain">
           <h3 set:text={content.sponsors.grain.length > 0 && `Grain Level`}>
           </h3>
@@ -253,7 +256,9 @@ const content = {
             ))
           }
         </div>
+        )}
 
+        {content.sponsors.blend.length > 0 && (
         <div id="sponsors-blend">
           <h3 set:text={content.sponsors.blend.length > 0 && `Blend Level`}>
           </h3>
@@ -268,7 +273,9 @@ const content = {
             ))
           }
         </div>
+        )}
 
+        {content.sponsors.speaker.length > 0 && (
         <div id="sponsors-speaker">
           <h3
             set:text={content.sponsors.speaker.length > 0 && `Speaker Sponsors`}
@@ -285,7 +292,9 @@ const content = {
             ))
           }
         </div>
+        )}
 
+        {content.sponsors.community.length > 0 && (
         <div id="sponsors-community">
           <h3
             set:text={content.sponsors.community.length > 0 &&
@@ -303,14 +312,111 @@ const content = {
             ))
           }
         </div>
+        )}
+      </div>
+    </div>
+  </section>
 
-        <h3 set:text={content.sponsors.speaker.length > 0 && `Speaker Sponsor`}>
-        </h3>
+  <section>
+    <div class="container">
+      <h2 class="pull-right">Location</h2>
+
+      <div>
+        <img
+          src="/venue/eicc.jpg"
+          style="float: right; max-width: 100%; margin: 4px;"
+        />
+        <h3>Conference Venue</h3>
+        <p>
+          <strong>Edinburgh International Conference Centre,</strong><br />
+          The Exchange, <br />
+          150 Morrison St, <br />
+          Edinburgh,<br />
+          EH3 8EE, <br />
+          Scotland
+        </p>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.2547738596946!2d-3.2103337929643794!3d55.94596388784876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a3b36f1d59%3A0x8e1efde2c5173ff1!2sEdinburgh%20International%20Conference%20Centre!5e0!3m2!1sen!2suk!4v1658471625780!5m2!1sen!2suk"
+      width="100%"
+      height="600"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="container">
+      <div class="pull-right">
+        <img
+          src="/venue/hilton.jpg"
+          style="float: left; max-width: 100%; margin: 4px;"
+        />
+        <h3 class="pull-right">Hotel</h3>
+        <p>
+          We have secured some reduced rate at the Hampton by Hilton for
+          KubeHuddle attendees.
+        </p>
+        <p>
+          When selecting your room, use the group code: <a
+            href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=EDIFBHX&arrivalDate=2022-10-02&departureDate=2022-10-04&groupCode=CHHGKH&room1NumAdults=1&cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink"
+            >CHHGKH</a
+          >.
+        </p>
+        <p>
+          <strong>Hampton by Hilton Edinburgh West End</strong><br />
+          166 Fountainbridge,<br />
+          Edinburgh,<br />
+          EH3 9RX<br />
+          Scotland
+        </p>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.390582441899!2d-3.214435283423262!3d55.94260198060458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a13f156add%3A0x9227896966e2f4f6!2sHampton%20by%20Hilton%20Edinburgh%20West%20End!5e0!3m2!1sen!2suk!4v1658748794028!5m2!1sen!2suk"
+      width="100%"
+      height="600"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>About</h2>
+
+      <h3>Our Values</h3>
+
+      <p>
+        KubeHuddle is a community run conference and we want to ensure that
+        everything we do and say is transparent and made publicly available.
+      </p>
+
+      <ul>
+        <li>Our task list and what we’re planning is all public on GitHub</li>
+        <li>Our sponsorship details are all public</li>
+        <li>
+          All titles submitted as potential sessions at KubeHuddle are public on
+          Sessionize
+        </li>
+        <li>This website is open source</li>
+        <li>
+          Currently KubeHuddle is being run through my (@rawkode) company, but
+          after the first event we’ll migrate this to a non-profit. All financial
+          transactions for KubeHuddle will be made public as soon as I find a nice
+          way to handle that.
+        </li>
+      </ul>
+
+      <h3>Organizers</h3>
+
+      <div id="organizers" class="center fig-holder">
         {
-          content.sponsors.speaker.map((item) => (
+          content.organizers.map((item) => (
             <a href={item.href} target="_blank">
               <figure>
-                <img src={"/sponsors/2022/" + item.logo} />
+                <img src={"/organizers/2022/" + item.image} />
                 <figcaption>{item.name}</figcaption>
               </figure>
             </a>
@@ -320,112 +426,3 @@ const content = {
     </div>
   </section>
 </MainLayout>
-
-<section>
-  <div class="container">
-    <h2 class="pull-right">Location</h2>
-
-    <div>
-      <img
-        src="/venue/eicc.jpg"
-        style="float: right; max-width: 100%; margin: 4px;"
-      />
-      <h3>Conference Venue</h3>
-      <p>
-        <strong>Edinburgh International Conference Centre,</strong><br />
-        The Exchange, <br />
-        150 Morrison St, <br />
-        Edinburgh,<br />
-        EH3 8EE, <br />
-        Scotland
-      </p>
-    </div>
-  </div>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.2547738596946!2d-3.2103337929643794!3d55.94596388784876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a3b36f1d59%3A0x8e1efde2c5173ff1!2sEdinburgh%20International%20Conference%20Centre!5e0!3m2!1sen!2suk!4v1658471625780!5m2!1sen!2suk"
-    width="100%"
-    height="600"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-  <div class="container">
-    <div class="pull-right">
-      <img
-        src="/venue/hilton.jpg"
-        style="float: left; max-width: 100%; margin: 4px;"
-      />
-      <h3 class="pull-right">Hotel</h3>
-      <p>
-        We have secured some reduced rate at the Hampton by Hilton for
-        KubeHuddle attendees.
-      </p>
-      <p>
-        When selecting your room, use the group code: <a
-          href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=EDIFBHX&arrivalDate=2022-10-02&departureDate=2022-10-04&groupCode=CHHGKH&room1NumAdults=1&cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink"
-          >CHHGKH</a
-        >.
-      </p>
-      <p>
-        <strong>Hampton by Hilton Edinburgh West End</strong><br />
-        166 Fountainbridge,<br />
-        Edinburgh,<br />
-        EH3 9RX<br />
-        Scotland
-      </p>
-    </div>
-  </div>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.390582441899!2d-3.214435283423262!3d55.94260198060458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a13f156add%3A0x9227896966e2f4f6!2sHampton%20by%20Hilton%20Edinburgh%20West%20End!5e0!3m2!1sen!2suk!4v1658748794028!5m2!1sen!2suk"
-    width="100%"
-    height="600"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
-
-<section>
-  <div class="container">
-    <h2>About</h2>
-
-    <h3>Our Values</h3>
-
-    <p>
-      KubeHuddle is a community run conference and we want to ensure that
-      everything we do and say is transparent and made publicly available.
-    </p>
-
-    <ul>
-      <li>Our task list and what we’re planning is all public on GitHub</li>
-      <li>Our sponsorship details are all public</li>
-      <li>
-        All titles submitted as potential sessions at KubeHuddle are public on
-        Sessionize
-      </li>
-      <li>This website is open source</li>
-      <li>
-        Currently KubeHuddle is being run through my (@rawkode) company, but
-        after the first event we’ll migrate this to a non-profit. All financial
-        transactions for KubeHuddle will be made public as soon as I find a nice
-        way to handle that.
-      </li>
-    </ul>
-
-    <h3>Organizers</h3>
-
-    <div id="organizers" class="center fig-holder">
-      {
-        content.organizers.map((item) => (
-          <a href={item.href} target="_blank">
-            <figure>
-              <img src={"/organizers/2022/" + item.image} />
-              <figcaption>{item.name}</figcaption>
-            </figure>
-          </a>
-        ))
-      }
-    </div>
-  </div>
-</section>
