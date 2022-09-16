@@ -44,6 +44,11 @@ const content = {
         logo: "isovalent.png",
         href: "https://isovalent.com",
       },
+      {
+        name: "Skyscanner",
+        logo: "skyscanner.png",
+        href: "https://skyscannerscotland.net",
+      },
     ],
     speaker: [
       {
@@ -225,94 +230,97 @@ const content = {
       </p>
 
       <div class="fig-holder">
-        {content.sponsors.malt.length > 0 && (
-          <div id="sponsors-malt">
-            <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`}></h3>
-            {
-              content.sponsors.malt.map((item) => (
+        {
+          content.sponsors.malt.length > 0 && (
+            <div id="sponsors-malt">
+              <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`} />
+              {content.sponsors.malt.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
                     <img src={"/sponsors/2022/" + item.logo} />
                     <figcaption>{item.name}</figcaption>
                   </figure>
                 </a>
-              ))
-            }
-          </div>
-        )}
+              ))}
+            </div>
+          )
+        }
 
-        {content.sponsors.grain.length > 0 && (
-        <div id="sponsors-grain">
-          <h3 set:text={content.sponsors.grain.length > 0 && `Grain Level`}>
-          </h3>
-          {
-            content.sponsors.grain.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img src={"/sponsors/2022/" + item.logo} />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
-        )}
+        {
+          content.sponsors.grain.length > 0 && (
+            <div id="sponsors-grain">
+              <h3
+                set:text={content.sponsors.grain.length > 0 && `Grain Level`}
+              ></h3>
+              {content.sponsors.grain.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2022/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
 
-        {content.sponsors.blend.length > 0 && (
-        <div id="sponsors-blend">
-          <h3 set:text={content.sponsors.blend.length > 0 && `Blend Level`}>
-          </h3>
-          {
-            content.sponsors.blend.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img src={"/sponsors/2022/" + item.logo} />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
-        )}
+        {
+          content.sponsors.blend.length > 0 && (
+            <div id="sponsors-blend">
+              <h3
+                set:text={content.sponsors.blend.length > 0 && `Blend Level`}
+              ></h3>
+              {content.sponsors.blend.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2022/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
 
-        {content.sponsors.speaker.length > 0 && (
-        <div id="sponsors-speaker">
-          <h3
-            set:text={content.sponsors.speaker.length > 0 && `Speaker Sponsors`}
-          >
-          </h3>
-          {
-            content.sponsors.speaker.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img src={"/sponsors/2022/" + item.logo} />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
-        )}
+        {
+          content.sponsors.speaker.length > 0 && (
+            <div id="sponsors-speaker">
+              <h3
+                set:text={
+                  content.sponsors.speaker.length > 0 && `Speaker Sponsors`
+                }
+              ></h3>
+              {content.sponsors.speaker.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2022/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
 
-        {content.sponsors.community.length > 0 && (
-        <div id="sponsors-community">
-          <h3
-            set:text={content.sponsors.community.length > 0 &&
-              `Community Sponsors`}
-          >
-          </h3>
-          {
-            content.sponsors.community.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img src={"/sponsors/2022/" + item.logo} />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
-        )}
+        {
+          content.sponsors.community.length > 0 && (
+            <div id="sponsors-community">
+              <h3
+                set:text={
+                  content.sponsors.community.length > 0 && `Community Sponsors`
+                }
+              ></h3>
+              {content.sponsors.community.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2022/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
       </div>
     </div>
   </section>
@@ -403,9 +411,12 @@ const content = {
         <li>This website is open source</li>
         <li>
           Currently KubeHuddle is being run through my (@rawkode) company, but
-          after the first event we’ll migrate this to a non-profit. All financial
-          transactions for KubeHuddle will be made public as soon as I find a nice
-          way to handle that.
+          <<<<<<< HEAD after the first event we’ll migrate this to a non-profit.
+          All financial transactions for KubeHuddle will be made public as soon
+          as I find a nice way to handle that. ======= after the first event
+          we’ll migrate this to a non-profit. All financial transactions for
+          KubeHuddle will be made public as soon as I find a nice way to handle
+          that. >>>>>>> 21ad116 (feat: skyscanner sponsor)
         </li>
       </ul>
 
