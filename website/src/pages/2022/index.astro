@@ -11,14 +11,20 @@ const content = {
   date: "October 3rd and 4th, 2022",
   location: "Edinburgh International Conference Centre, Edinburgh, Scotland",
   sponsors: {
-    malt: [],
-    grain: [
-      { name: "Solo.io", logo: "solo-io.png", href: "https://solo.io" },
+    malt: [
+      {
+        name: "Lloyds Banking Group",
+        logo: "lbg.png",
+        href: "https://www.lloydsbankinggroup.com/",
+      },
       {
         name: "ControlPlane",
         logo: "control-plane.png",
         href: "https://controlplane.io",
       },
+    ],
+    grain: [
+      { name: "Solo.io", logo: "solo-io.png", href: "https://solo.io" },
       {
         name: "Teleport",
         logo: "teleport.png",
@@ -251,7 +257,7 @@ const content = {
             <div id="sponsors-grain">
               <h3
                 set:text={content.sponsors.grain.length > 0 && `Grain Level`}
-              ></h3>
+              />
               {content.sponsors.grain.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
@@ -269,7 +275,7 @@ const content = {
             <div id="sponsors-blend">
               <h3
                 set:text={content.sponsors.blend.length > 0 && `Blend Level`}
-              ></h3>
+              />
               {content.sponsors.blend.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
@@ -289,7 +295,7 @@ const content = {
                 set:text={
                   content.sponsors.speaker.length > 0 && `Speaker Sponsors`
                 }
-              ></h3>
+              />
               {content.sponsors.speaker.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
@@ -309,7 +315,7 @@ const content = {
                 set:text={
                   content.sponsors.community.length > 0 && `Community Sponsors`
                 }
-              ></h3>
+              />
               {content.sponsors.community.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
@@ -411,9 +417,9 @@ const content = {
         <li>This website is open source</li>
         <li>
           Currently KubeHuddle is being run through my (@rawkode) company, but
-          after the first event we’ll migrate this to a non-profit.
-          All financial transactions for KubeHuddle will be made public as soon
-          as I find a nice way to handle that.
+          after the first event we’ll migrate this to a non-profit. All
+          financial transactions for KubeHuddle will be made public as soon as I
+          find a nice way to handle that.
         </li>
       </ul>
 
