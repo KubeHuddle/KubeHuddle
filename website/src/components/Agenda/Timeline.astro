@@ -4,6 +4,36 @@ const { title, timeline } = Astro.props;
 
 ---
 
+
+<script>
+  [...document.querySelectorAll('.agenda-title')].forEach(talk => {
+    talk.addEventListener('click', function () {
+      let el = talk.parentElement.parentElement.querySelector('.talk-details');
+      [...document.querySelectorAll('.talk-details')].forEach(other => {
+        if (other.id != el.id) {
+          other.classList.remove('selected');
+        }
+      });
+      if (el.classList.contains('selected')) {
+        el.classList.remove('selected');
+      } else {
+        el.classList.add('selected');
+      }
+    });
+  });
+
+  function showSpeaker() {
+    if (window.location.hash.startsWith('#speaker-')) {
+      document.getElementById(window.location.hash.substring(1)).classList.add('selected');
+      window.scrollBy(0, -20)
+    }
+  }
+
+  window.addEventListener('hashchange', showSpeaker);
+  document.addEventListener('DOMContentLoaded', showSpeaker);
+
+</script>
+
 <div class="programme-track">
   <summary><h4>{title}</h4></summary>
   <ul class="agenda">
@@ -20,6 +50,11 @@ const { title, timeline } = Astro.props;
           <div>{item.title} </div>
 					<div class="speaker">{item.speakers.map(s => s.name).join(", ")}</div>
         </div>
+      </div>
+      <div class={ item.description && item.description.length > 0 ? "talk-details" : "talk-details empty"}>
+        <p>
+          {item.description}
+        </p>
       </div>
     </li>
   ))}
@@ -106,5 +141,25 @@ const { title, timeline } = Astro.props;
     content: '👋';
     position: relative;
     left: 0.5em
+  }
+
+
+  .talk-details {
+    text-align: left;
+    display: none;
+    padding: 6px;
+    line-height: 1.4em;
+    border-left: 1px dashed #ccc;
+  }
+  .talk-details.selected {
+    display: inline-block;
+    height: auto !important;
+  }
+  .talk-details h3 {
+    margin: 0;
+    line-height: 1.2em;
+  }
+  .talk-details.empty {
+    display: none !important;
   }
 </style>
