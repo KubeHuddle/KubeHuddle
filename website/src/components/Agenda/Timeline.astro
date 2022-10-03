@@ -8,12 +8,25 @@ const { title, timeline } = Astro.props;
   <summary><h4>{title}</h4></summary>
   <ul class="agenda">
   {timeline.map(item => (
-    <li class={
-        dateformat(new Date(), "yyyymmddhhMM") >= dateformat(new Date(item.startsAt), "yyyymmddhhMM")
-        && dateformat(new Date(), "yyyymmddhhMM") < dateformat(new Date(item.endsAt), "yyyymmddhhMM")
-        ? "current"
-        : ""
-      }>
+    <li data-start={item.startsAt} data-end={item.endsAt}>
+      <script is:inline>
+        ( () => {
+          let parent = document.currentScript.parentElement;
+          let start = new Date(parent.dataset['start']);
+          let end = new Date(parent.dataset['end']);
+
+          let update = () => {
+            let now = new Date();
+            if (now >= start && now <= end) {
+              parent.classList.add("current");
+            } else {
+              parent.classList.remove("current");
+            }
+            setTimeout(update, 60 * 1000);
+          };
+          update();
+        } )();
+      </script>
       <time>{dateformat(new Date(item.startsAt), "h:MM TT")}</time>
       <div>
         <div class="agenda-title">
