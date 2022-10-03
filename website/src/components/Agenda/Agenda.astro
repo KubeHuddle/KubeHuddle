@@ -16,8 +16,8 @@ const track2 = [...agenda.rooms[0].sessions.filter(s=>s.isServiceSession), ...ag
 	<details open={dateformat(isoDate, "yyyymmdd") == dateformat(new Date(), "yyyymmdd")}>
 		<summary>Programme</summary>
 		<div class="programme-day">
-			<Timeline title="Track 1" timeline={track1} />
-			<Timeline title="Track 2" timeline={track2}  />
+			<Timeline title="Lloyds Banking Group Room" timeline={track1} />
+			<Timeline title="Controlplane Room" timeline={track2}  />
 		</div>
 		<h4>Collaboration Space</h4>
 		<ul>
