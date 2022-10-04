@@ -13,7 +13,17 @@ const track2 = [...agenda.rooms[0].sessions.filter(s=>s.isServiceSession), ...ag
 
 <div id={"agenda-" + isoDate.toDateString()}>
   <h3>{dateformat(isoDate, "dddd, mmmm dS")}</h3>
-	<details open={dateformat(isoDate, "yyyymmdd") == dateformat(new Date(), "yyyymmdd")}>
+	<details data-date={isoDate} >
+		<script is:inline>
+			( () => {
+				let parent = document.currentScript.parentElement;
+				let now = new Date();
+				let isoDate = new Date(parent.dataset['date']);
+				if (now.getFullYear() == isoDate.getFullYear() && now.getMonth() == isoDate.getMonth() && now.getDate() == isoDate.getDate()) {
+					parent.open = true;
+				}
+			} )();
+		</script>
 		<summary>Programme</summary>
 		<div class="programme-day">
 			<Timeline title="Lloyds Banking Group Room" timeline={track1} />
