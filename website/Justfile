@@ -1,7 +1,7 @@
 @default:
 	just --choose
 
-build: edinburgh2022
+build: edinburgh2022 toronto2023
 	#!/usr/bin/env bash
 	set -euxo pipefail
 	cp _redirects dist/
@@ -18,3 +18,13 @@ edinburgh2022:
 	pnpm install
 	ASTRO_BASE_PATH="/2022/edinburgh" pnpm build
 	cp -r dist/* ../../dist/2022/edinburgh
+
+toronto2023:
+	#!/usr/bin/env bash
+	set -euxo pipefail
+	mkdir -p dist/2023/toronto
+	cd 2023/toronto
+	just download-schedule
+	pnpm install
+	ASTRO_BASE_PATH="/2023/toronto" pnpm build
+	cp -r dist/* ../../dist/2023/toronto
