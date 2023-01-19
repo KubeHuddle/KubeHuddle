@@ -1,0 +1,12 @@
+{
+  "language": "typescript",
+  "app": "pnpm exec ts-node src/index.ts",
+  "sendCrashReports": "false",
+  "terraformProviders": [],
+  "terraformModules": [],
+  "context": {
+    "excludeStackIdFromLogicalIds": "true",
+    "allowSepCharsInLogicalIds": "true"
+  },
+  "projectId": "2d0d0510-babe-454b-966c-93a006f9f6af"
+}
