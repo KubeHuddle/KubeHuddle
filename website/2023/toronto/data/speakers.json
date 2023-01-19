@@ -1,0 +1,1239 @@
+[
+  {
+    "id": "ecc60188-8a62-49f1-832a-f981c34ba991",
+    "firstName": "Ádám",
+    "lastName": "Szücs-Mátyás",
+    "fullName": "Ádám Szücs-Mátyás",
+    "bio": "Adam is leading to currently leading cloud transformation and redesigned Kubernetes deployment across the organisation. Security is crucial in what we deliver to our customers, therefore everything we do has to meet the highest standards. He has 5 years experience with Kubernetes and over 2 years with GitOps, and use this knowledge to deliver impactful changes across engineering and how they work and deliver software.",
+    "tagLine": "Architect @ LastPass",
+    "profilePicture": "https://sessionize.com/image/a440-400o400o2-ssCRdFnvfhkNcEiENcFaVT.jpg",
+    "sessions": [
+      {
+        "id": 360104,
+        "name": "The Dark Side of GitOps: Unanswered Real-life Challenges"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "http://twitter.com/szucsitg",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://lastpass.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "79e19ee7-0d57-46d0-81af-af5433fbf7a7",
+    "firstName": "Alex",
+    "lastName": "Jones",
+    "fullName": "Alex Jones",
+    "bio": "Alex works as both a contributor and end-user of cloud-native technology. He spends his work-time translating tooling, practices and behaviours into generators of strategic value and positive cultural change.\r\n\r\nHis passion is to create positive engineering cultures that enable inclusivity and diversity as a core attribute rather than a vague goal. Enabling engineers to build more reliable services through shared accountability, observability and automation of toil.\r\n\r\nHe has worked at companies such as JPMorgan, American Express, Microsoft, British Sky Broadcasting.",
+    "tagLine": "Director of Kubernetes, Canonical",
+    "profilePicture": "https://sessionize.com/image/9b23-400o400o2-92VnVcwwfnUv84qQmbbN17.jpg",
+    "sessions": [
+      {
+        "id": 390595,
+        "name": "Introduction to OpenFeature"
+      },
+      {
+        "id": 342918,
+        "name": "Crowdsourcing a Kubernetes distribution: What we learnt with MicroK8s"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://www.twitter.com/alexjonesax",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://canonical.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "ab148857-33e8-41d3-8e22-d28dd309069f",
+    "firstName": "Alex",
+    "lastName": "Williams",
+    "fullName": "Alex Williams",
+    "bio": ".",
+    "tagLine": "Principal Software Engineer at Skyscanner",
+    "profilePicture": "https://sessionize.com/image/7cfb-400o400o2-Br783tKYUBxJz6jGWyh7BZ.jpg",
+    "sessions": [
+      {
+        "id": 375231,
+        "name": "Using Kubernetes and A Service Mesh to Build a Resilient Platform"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "e2d76afe-e65c-4c59-9ba6-c5e4d59bc7de",
+    "firstName": "Alexander",
+    "lastName": "Trelore",
+    "fullName": "Alexander Trelore",
+    "bio": "Alexander is a senior software engineer at Replicated, where he is responsible for a collection of backend Go micro-services. In his spare time he streams various software projects on twitch, ranging from making video games, to toying with CNCF projects.",
+    "tagLine": "Replicated, Senior Software Engineer",
+    "profilePicture": "https://sessionize.com/image/5d34-400o400o2-Rd5GaGeVj9NErqUyaH79s.png",
+    "sessions": [
+      {
+        "id": 359079,
+        "name": "How to automate troubleshooting a k8s cluster environment"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/alexanderjophus",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://trelore.github.io/",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://www.replicated.com/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "00aff0f5-9601-472b-8160-4514502e7e6a",
+    "firstName": "Amanda",
+    "lastName": "Brock",
+    "fullName": "Amanda Brock",
+    "bio": "Amanda Brock is CEO of OpenUK, the UK organisation for the business of Open Technology in the UK – being open source software, open hardware and open data -with a purpose of UK Leadership and International Collaboration in Open Technology.\r\nShe is a Board Member of the Open Source Initiative; UK Cabinet Office Open Standards Board Member; British Computer Society Inaugural Influence Board Member; Advisory Board Member: KDE, Planet Crust, and Mimoto; Charity Trustee, Creative Crieff and GeekZone; and European Representative of the Open Invention Network.   \r\n\r\nA lawyer of 25 years’ experience, she previously chaired the Open Source and IP Advisory Group of the United Nations Technology Innovation Labs, sat on the OASIS Open Projects and UK Government Energy Sector Digitalisation Task Force. Advisory Boards. She was General Counsel of Canonical for 5 years and set up their legal function.\r\n\r\nAmanda was awarded the 2022 UK Lifetime Achievement Award in the Women, Influence & Power Awards, and included in Computer Weekly’s Most influential Women in Tech Long list in 2021 and in their UK Tech50 longlist for 2022. \r\n\r\nShe is the editor of Open Source, Law, Policy and Practise,  second edition being published by Oxford University Press in September 2022 and with open access thanks to the Vietsch Foundation.  \r\n\r\nlinkedin.com/in/amandabrocktech/\r\n@openuk_uk @amandabrockUK\r\n",
+    "tagLine": "CEO, OpenUK",
+    "profilePicture": "https://sessionize.com/image/f6c0-400o400o2-nLW7FT9pK3WdKGuJ6cjdMn.jpg",
+    "sessions": [
+      {
+        "id": 390593,
+        "name": "Fireside Chat: Open Source and the Global Security Response"
+      },
+      {
+        "id": 364441,
+        "name": "State of Open - what is open source and why it matters in Scotland today"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/AmandaBrockUK",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/amandabrocktech/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://openuk.uk/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "30968699-c1ac-4eb9-8866-71cefe09a983",
+    "firstName": "Andrew",
+    "lastName": "Martin",
+    "fullName": "Andrew Martin",
+    "bio": "Andrew has an incisive security engineering ethos gained building and destroying high-traffic web applications. Proficient in systems development, testing, and operations, he is at his happiest profiling and securing every tier of a cloud native system, and has battle-hardened experience delivering containerised solutions to enterprise and government. He is CEO at https://control-plane.io ",
+    "tagLine": "Kubernetes & container security engineer @ Control Plane",
+    "profilePicture": "https://sessionize.com/image/658b-400o400o2-nAcLLmXGZbur9tHHDZeZgf.jpg",
+    "sessions": [
+      {
+        "id": 359969,
+        "name": "Hacking Kubernetes: Live Demo Marathon"
+      },
+      {
+        "id": 359966,
+        "name": "Capture the Flag - Kubernetes Edition"
+      },
+      {
+        "id": 390593,
+        "name": "Fireside Chat: Open Source and the Global Security Response"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/sublimino",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://control-plane.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "2c654d6b-a5fb-46f2-800a-022d222e87d0",
+    "firstName": "Anton",
+    "lastName": "Sankov",
+    "fullName": "Anton Sankov",
+    "bio": "Anton is a software engineer at VMware Carbon Black. He has a strong engineering background, having previously worked at market leaders in multiple industries - from payments, to cloud and infrastructure provisioning. At VMware, he is helping define the future of container and cloud security. The Kubernetes ecosystem is interesting to him because of its elegant solutions to real-world problems and constant drive for innovation.",
+    "tagLine": "Senior Member of Technical Staff at VMware Carbon Black",
+    "profilePicture": "https://sessionize.com/image/1422-400o400o2-Xnscsrh36NdKfqcuZX1S1f.jpeg",
+    "sessions": [
+      {
+        "id": 343521,
+        "name": "Securing Kubernetes with Open Policy Agent"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/a_sankov",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/asankov/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://asankov.dev/",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "3b0cdb4d-7f3b-458f-be81-5e916b4756e2",
+    "firstName": "Baptiste",
+    "lastName": "Collard",
+    "fullName": "Baptiste Collard",
+    "bio": "Baptiste Collard is a Field Engineer at Solo.io. Baptiste worked as a middleware expert and also as an IT Architect over the last decade. He likes plumbing pieces of software together and even more when it's running on Kubernetes!",
+    "tagLine": "Solo.io is a leader in the application networking space. Baptiste works a a Field Engineer and helps customers to get up to speed with Envoy and Istio technologies.",
+    "profilePicture": "https://sessionize.com/image/6dac-400o400o2-QyBr1gnrhMixctMmqMT37K.jpg",
+    "sessions": [
+      {
+        "id": 356678,
+        "name": "Get to know Envoy - the modern proxy for cloud-native infrastructure"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/baptistecollard/",
+        "linkType": "LinkedIn"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "ede643a2-ed47-4c2d-8a85-16a2e3bc1d73",
+    "firstName": "Dan",
+    "lastName": "Finneran",
+    "fullName": "Dan Finneran",
+    "bio": "Dan Finneran is the VP of Marketing for Loft Labs Inc. His journey to today has included bare-metal, jails, zones, vms and containers where he is currently enjoying the fast paced ride in the cloud native space. He also created & maintains a popular Open-Source load-balancer for Kubernetes and contributes to upstream Kubernetes. He’s also been fortunate to present at events ranging from the British computing society, HPE Technical solutions summit to DockerCon and KubeCon amongst others.",
+    "tagLine": "VP of Marketing at Loft Labs",
+    "profilePicture": "https://sessionize.com/image/fddc-400o400o2-LfArWiscrVVeLx8csdhYmV.jpg",
+    "sessions": [
+      {
+        "id": 359748,
+        "name": "tall oaks from little acorns grow - an Open Source journey"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/thebsdbox",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://thebsdbox.co.uk",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://isovalent.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "8a229569-5156-4e17-a427-a180d065e79f",
+    "firstName": "Denis",
+    "lastName": "Jannot",
+    "fullName": "Denis Jannot",
+    "bio": "Denis is the Director of Field Engineering at Solo.io, a company building application networking solutions for the edge and service mesh. Denis is a passionate engineer who has spent his career in technical roles working directly with customers and users in architecting and adopting technologies like Object Storage, Big Data, Containerization, Service Mesh into their infrastructure. He enjoys sharing what he learns with the community and can be found creating demos, writing blogs, and speaking at events. ",
+    "tagLine": "Director of Field Engineering - EMEA",
+    "profilePicture": "https://sessionize.com/image/d479-400o400o2-JHQxPvTVZvWBXDB88EFD9B.jpg",
+    "sessions": [
+      {
+        "id": 358931,
+        "name": "Step by step Kubernetes observability with eBPF"
+      },
+      {
+        "id": 358932,
+        "name": "eBPF workshop"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/djannot",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/denisjannot/",
+        "linkType": "LinkedIn"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "693b0707-903e-4d37-817f-9547a7fc6e0b",
+    "firstName": "Engin",
+    "lastName": "Diri",
+    "fullName": "Engin Diri",
+    "bio": "My name is Engin Diri and I work for more than 15 years in the IT industry. Started as a Java developer and went there from fronted to backend development until I found my sweet spot in all things related to CI/CD and cloud topics.\r\n\r\nCurrently, I am working in the Schwarz Group, the people behind the big retail brands Lidl and Kaufland. Here I help different projects and teams on their journey to the cloud.\r\n\r\nI love everything about Cloud, Cloud Transformation and Enablement. I am a multi-cloud person with a strong passion for Kubernetes. Furthermore, I am very curious and love to try out new technologies.",
+    "tagLine": "Schwarz IT",
+    "profilePicture": "https://sessionize.com/image/f662-400o400o2-CFsh8UmnLukfYrV51VFPk.jpg",
+    "sessions": [
+      {
+        "id": 347140,
+        "name": "K8s & meat: How we got Kubernetes into the Kaufland meat processing factories"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/_ediri",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://blog.ediri.io",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://pulumi.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "cd78eda7-1dc4-4d9c-900c-8f590b811b81",
+    "firstName": "Gerhard",
+    "lastName": "Lazu",
+    "fullName": "Gerhard Lazu",
+    "bio": "Gerhard enjoys infrastructure, good conversations and improving.\r\n\r\nHe is improving CI/CD through his role at Dagger.io, runs changelog.com infra for the fun of it and helps others level up via changelog.com/shipit",
+    "tagLine": "Keep improving",
+    "profilePicture": "https://sessionize.com/image/ab78-400o400o2-Hcd8Kef7SKP6Cd6pyAErhW.jpg",
+    "sessions": [
+      {
+        "id": 343449,
+        "name": "You've been holding it wrong"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/gerhardlazu",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://gerhard.io",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://dagger.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "12fbb300-3cdf-41b2-9372-cff28721b607",
+    "firstName": "Guy",
+    "lastName": "Templeton",
+    "fullName": "Guy Templeton",
+    "bio": "Guy is a principal software engineer at Skyscanner, working in the Production Platform tribe where he’s focused on providing the best possible platform for Skyscanner’s travelers and engineers. Within Skyscanner, he’s the SME on scaling Kubernetes and containerised workloads. He’s also a co-chair of Kubernetes’ SIG Autoscaling. \r\n\r\nWhen he's not knees-deep in YAML he can usually be found having type 2 fun on a bike.\r\n",
+    "tagLine": "Principal Software Engineer - Skyscanner",
+    "profilePicture": "https://sessionize.com/image/7989-400o400o2-NcdHQAi3jtR36SfbAXPgXZ.jpg",
+    "sessions": [
+      {
+        "id": 375231,
+        "name": "Using Kubernetes and A Service Mesh to Build a Resilient Platform"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/gjtempleton",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "0cbcbc69-645a-44e6-b8ba-c81d3a0f4a59",
+    "firstName": "Hamza",
+    "lastName": "Essahely",
+    "fullName": "Hamza Essahely",
+    "bio": "Coming from a sys admin then pentester/secops background, I'm now core developer at Crowdsec.",
+    "tagLine": "Crowdsec, core developer",
+    "profilePicture": "https://sessionize.com/image/236f-400o400o2-LuAsCkcuWPrc4TTcz2a393.jpg",
+    "sessions": [
+      {
+        "id": 345842,
+        "name": "How to protect your Kubernetes cluster using Crowdsec"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/h3ss_",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://crowdsec.net/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "8ca8e2c4-b696-43eb-bce9-423c06472c07",
+    "firstName": "Henry",
+    "lastName": "Mortimer",
+    "fullName": "Henry Mortimer",
+    "bio": "Henry is a security engineer at ControlPlane. He has subject matter expertise in using custom policy agents to automate plicy enforcment within k8s and combines experience across engineering and security to improve the security landscape through better tooling, automation and documentation.",
+    "tagLine": "Security Engineer @ ControlPlane",
+    "profilePicture": "https://sessionize.com/image/f8e0-400o400o2-8f68b3eb-38d9-4166-b0be-4a564ca22ec1.jpg",
+    "sessions": [
+      {
+        "id": 360162,
+        "name": "Policy + Cloud Controllers = Secure Scalable Dev-Centric Infrastructure."
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Company Website",
+        "url": "https://control-plane.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "dc6b649b-15d2-4ede-a156-b1250ab5dd8c",
+    "firstName": "James",
+    "lastName": "Laverack",
+    "fullName": "James Laverack",
+    "bio": "James is a engineer specialising in cloud native software and distributed systems. He’s an active contributor to the Kubernetes project and has been on the release team for Kubernetes v1.18 through v1.24, culminating in being the Release Team Lead for Kubernetes 1.24 Stargazer. ✨\r\n\r\nBefore Jetstack, James worked as an application developer in fintech.",
+    "tagLine": "Staff Solutions Engineer @ Jetstack",
+    "profilePicture": "https://sessionize.com/image/f827-400o400o2-QGoqS8nmKW1Md53pw6NHuk.jpg",
+    "sessions": [
+      {
+        "id": 344082,
+        "name": "Building Operators for Legacy Software or: Running Minecraft on Kubernetes"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/jameslaverack",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://jameslaverack.com",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "1de5e334-6895-4c02-8b48-75ee6c1b46ca",
+    "firstName": "JJ",
+    "lastName": "Asghar",
+    "fullName": "JJ Asghar",
+    "bio": "JJ works as a Developer Advocate representing the IBM Cloud all over the world. He mainly focuses on the IBM Kubernetes Service and OpenShift trying to make companies and users have a successful onboarding to the Cloud Native ecosystem. He’s also been known in the DevOps tooling ecosystem and generalized Linux communities. If he isn’t building automation to make his work streamlined he’s building the groundwork to do just that.\r\n\r\nHe lives and grew up in Austin, Texas. A father and husband, trying to learn to balance his natural nerdiness with family life. He enjoys a good strong dark ale, hoppy IPA, some team building Artemis, and epic Gloomhaven campaigning.\r\n\r\nHe has recently dove headfirst into Fedora since IBM buying Redhat, but still secretly wants FreeBSD everywhere. He’s always trying to become a better web technology developer, though normally just uses bash to get the job done.",
+    "tagLine": "Developer Advocate for the IBM cloud",
+    "profilePicture": "https://sessionize.com/image/fa12-400o400o2-QwH3rsHgoWHfUcWzTaYnF4.jpg",
+    "sessions": [
+      {
+        "id": 342887,
+        "name": "Deploying a simple (Python) app to Kubernetes/OpenShift"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "http://twitter.com/jjasghar",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "97c43b1b-2ca7-48de-b328-ff93409d99b4",
+    "firstName": "Krisztian",
+    "lastName": "Fekete",
+    "fullName": "Krisztian Fekete",
+    "bio": "Krisztian is enthusiastic about observability and cloud infrastructures. He's now working at Solo.io as a Field engineer. Previously, he was working at LastPass as senior DevOps/SRE engineer. Krisztian is building a self hosted blog on top of Istio in his spare time. The main topics of the blog are aligned with his interests while he is also using the platform to share operational anecdotes on running one of the most \"over-engineered\" blog out there.",
+    "tagLine": "engineer @ solo.io",
+    "profilePicture": "https://sessionize.com/image/ccbd-400o400o2-BtuJCUAixu91e3queLtJGw.jpg",
+    "sessions": [
+      {
+        "id": 359831,
+        "name": "BumbleBee: Or How I Learned To Stop Worrying And Love eBPF"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/kfekete",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://krisztianfekete.org",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://solo.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "8b4fad4b-e6a6-4574-adfa-5a0666393e9a",
+    "firstName": "Kunal",
+    "lastName": "Kushwaha",
+    "fullName": "Kunal Kushwaha",
+    "bio": "Kunal is working towards empowering communities via Open Source and Education. He finds passion in teaching and has taught thousands of folks online and in person. He is currently a Developer Advocate at Civo, CNCF Ambassador, track chair of the KubeCon + CloudNativeCon student track, Major League Hacking Coach. In the past, he has been a Google Summer of Code Mentor at Red Hat Middleware, Student Program Manager at Data on Kubernetes Community, part of the Kubernetes release team, and a TEDx speaker. He is the founder of Kubeworld, Community Classroom, and also started the official Cloud Native Student Community group joined by thousands of students, focussed on getting more young people involved in the ecosystem.",
+    "tagLine": "Developer Advocate at Civo",
+    "profilePicture": "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
+    "sessions": [
+      {
+        "id": 349810,
+        "name": "Kubernetes cost monitoring best practices"
+      },
+      {
+        "id": 349812,
+        "name": "Scaling Communities to be more Inclusive"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/kunalstwt",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/kunal-kushwaha/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://blog.wemakedevs.org",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://www.civo.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "dd757d5f-ce93-41b2-9e1e-e4cf894b3edf",
+    "firstName": "Laszlo",
+    "lastName": "Fogas",
+    "fullName": "Laszlo Fogas",
+    "bio": "Laszlo is the founder of https://gimlet.io, a 100% open-source gitops based developer platform.\r\n\r\n\r\nPrior to that, Laszlo spent 5 years consulting, and building dev platforms on Kubernetes for mid-sized SaaS businesses of the Nordics region.",
+    "tagLine": "Laszlo Fogas, Founder & CEO @ Gimlet.io",
+    "profilePicture": "https://sessionize.com/image/3b06-400o400o2-75xj9MJJsfNUSFrtHr11eL.jpg",
+    "sessions": [
+      {
+        "id": 352663,
+        "name": "ClickOps over GitOps"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/laszlocph",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "1559cccc-ed7c-4296-973d-3b05f3c3d25e",
+    "firstName": "Lian",
+    "lastName": "Li",
+    "fullName": "Lian Li",
+    "bio": "Lian always wanted to save the world\r\n\r\nAfter a failed attempt at becoming a lawyer, she decided to do something with computers instead. Working as a Fullstack Software Engineer, she got into attending tech events and giving talks on Machine Learning. During this time, she fell in love with the tech community and discovered her passion for building community and providing a safe and productive environment for all, which led to her co-organising the community conference ServerlessDays Amsterdam.\r\n\r\nCurrently, Lian lives in Amsterdam and works as Developer Advocate at Loft Labs, trying to make developing on Kubernetes easy and fun.",
+    "tagLine": "Developer Advocate",
+    "profilePicture": "https://sessionize.com/image/ad80-400o400o2-TarEMJZv6oVwnGpkDs7bUW.png",
+    "sessions": [
+      {
+        "id": 352614,
+        "name": "Secret Management: The Soft Way"
+      },
+      {
+        "id": 352613,
+        "name": "GitOps for the people"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/lianmakesthings",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://lianmakesthings.dev/",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://loft.sh/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "e48a182b-1cac-4e51-93b5-5e82408a6116",
+    "firstName": "Liz",
+    "lastName": "Rice",
+    "fullName": "Liz Rice",
+    "bio": "Liz Rice is Chief Open Source Officer with eBPF specialists Isovalent, creators of the Cilium project. She was chair of the CNCF's Technical Oversight Committee 2019-2022, and Co-Chair of KubeCon + CloudNativeCon in 2018. She is also the author of Container Security, published by O'Reilly.\r\n\r\nShe has a wealth of software development, team, and product management experience from working on network protocols and distributed systems, and in digital technology sectors such as VOD, music, and VoIP. When not writing code, or talking about it, Liz loves riding bikes in places with better weather than her native London, competing in virtual races on Zwift, and making music under the pseudonym Insider Nine.",
+    "tagLine": "Chief Open Source Officer, Isovalent",
+    "profilePicture": "https://sessionize.com/image/b2f4-400o400o2-wPVBRaxLWgANituUTQQB8F.jpg",
+    "sessions": [
+      {
+        "id": 378009,
+        "name": "eBPF or sidecars?"
+      },
+      {
+        "id": 390593,
+        "name": "Fireside Chat: Open Source and the Global Security Response"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/lizrice",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://lizrice.com",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://isovalent.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "e0bdd89a-ee3d-4083-b933-2e1db6f4ce94",
+    "firstName": "Mahé",
+    "lastName": "Tardy",
+    "fullName": "Mahé Tardy",
+    "bio": "Mahé Tardy is a Security R&D Engineer at Quarkslab specializing in Kubernetes and container security. More generally he’s enjoying Linux, programming languages, security and might be a beer geek. He’s contributing to Kubernetes, especially in the security sub-group.",
+    "tagLine": "Security R&D Engineer at Quarkslab",
+    "profilePicture": "https://sessionize.com/image/71ac-400o400o2-D5Jm7TSXE7ZbjeDhfh5qQo.jpg",
+    "sessions": [
+      {
+        "id": 358854,
+        "name": "Hacking Kubernetes Like a Beginner with kdigger"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/mtardy_",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "http://mahe.pizza/",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://blog.quarkslab.com/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "b44f65fd-6449-47e4-a00f-2b308ec3e8bf",
+    "firstName": "Marcus",
+    "lastName": "Noble",
+    "fullName": "Marcus Noble",
+    "bio": "Marcus is a platform engineer at Giant Swarm, a company dedicated to offering managed Kubernetes solutions. His main area of focus in recent years has been around Go, Kubernetes, containers and DevOps but originally started out as a web developer and JavaScript enthusiast. A self-described “tinkerer”, when not building Kubernetes solutions, Marcus likes to dabble with 3D printing and experimenting with smart home tech.",
+    "tagLine": "Platform Engineer @ Giant Swarm",
+    "profilePicture": "https://sessionize.com/image/4980-400o400o2-7Ymm3HykcuY5YNwLCeehXy.jpg",
+    "sessions": [
+      {
+        "id": 348135,
+        "name": "The Wonders and Woes of Webhooks"
+      },
+      {
+        "id": 343391,
+        "name": "What DragonBall can teach us about being engineers"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/Marcus_Noble_",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "d7100338-7ea1-4f10-84fe-758b7ecbe1e7",
+    "firstName": "Marino",
+    "lastName": "Wijay",
+    "fullName": "Marino Wijay",
+    "bio": "Marino leads the Developer Relations and Advocacy team at Solo.io. He is passionate about technology and modern distributed systems. He will always fall back to the patterns of Networking and the ways of the OSI. Community building is his driving force; A modern Jedi Academy.",
+    "tagLine": "Developer Advocate - DevRel @ Solo.io",
+    "profilePicture": "https://sessionize.com/image/cb55-400o400o2-W6u9dKTP22LweVpiqHCaTD.png",
+    "sessions": [
+      {
+        "id": 355107,
+        "name": "Network Engineering Goes DevOoopsie"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/virtualized6ix",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/mwijay/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://hashnode.com/@virtualized6ix",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "2b2add40-e4d0-4686-b135-a90532540cb7",
+    "firstName": "Martin",
+    "lastName": "Hickey",
+    "fullName": "Martin Hickey",
+    "bio": "Martin works on the Open Technology team at IBM focusing on open source software. He is a regular contributor to open source and a core maintainer for Helm. He has also contributed previously to the OpenStack and Elastic communities. Martin enjoys speaking at conferences and meet-ups. He has many years’ experience in the creation of enterprise software for different industries, from Telcos to Cloud.",
+    "tagLine": "Senior Software Engineer, IBM",
+    "profilePicture": "https://sessionize.com/image/f4de-400o400o2-QKQ9kxzNuZhuVYKAkHJYGS.jpg",
+    "sessions": [
+      {
+        "id": 359754,
+        "name": "Clear Your Own Path to Open Source Maintainer"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/mhickeybot",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/martin-hickey-b64a374/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://hickeyma.github.io",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "90531675-78bd-4c6d-af22-8c2bb0f4bb09",
+    "firstName": "Matei",
+    "lastName": "David",
+    "fullName": "Matei David",
+    "bio": "Matei is a London based software engineer at Buoyant and an avid open source contributor. One of the maintainers of the Linkerd project, CNCF's graduated service mesh, Matei is passionate about networking (not just the social type!) and systems engineering. He got involved in the cloud native space early on in his career through CNCF's Community Bridge program by contributing topology-aware service routing for Linkerd. Since then, Matei joined the Buoyant team permanently and now works on all things service mesh related.  Outside of work, Matei likes to unwind with a good book, a board game session or an evening stroll on his longboard. You can often find him helping out community members on the Linkerd Slack.\r\n",
+    "tagLine": "Linkerd maintainer",
+    "profilePicture": "https://sessionize.com/image/f013-400o400o2-VGmUGGroJpzAYQ5eAqVzzZ.jpg",
+    "sessions": [
+      {
+        "id": 359381,
+        "name": "Stick a fork in it, it’s done: how to halt your sidecar jobs"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/__mateidavid",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "c8b0a46e-394c-4ec9-998f-12d750bb0d6c",
+    "firstName": "Matt",
+    "lastName": "Turner",
+    "fullName": "Matt Turner",
+    "bio": "Matt is a software engineer at Tetrate, where he loves sharing what he's learning with the whole community. He helps people understand Istio, Envoy, and other open source projects, as well as Tetrate's solutions for enterprise service mesh management. He's been doing Dev, sometimes with added Ops, for nearly two decades; his idea of \"full-stack\" is Linux, Kubernetes, and now Istio too. He likes Rust, hot dogs, and terraforming unexpected things. He tweets @mt165 and blogs at https://mt165.co.uk",
+    "tagLine": "Software Engineer at Tetrate",
+    "profilePicture": "https://sessionize.com/image/e037-400o400o2-TCv8nqye3kSbRKM2YC5QFc.jpg",
+    "sessions": [
+      {
+        "id": 379915,
+        "name": "Gateway APIs and API Gateways - modern ingress demystified"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/mt165",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/mt165/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://mt165.co.uk",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://www.tetrate.io/",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "4392fedb-5d24-4c36-9db8-6f37d78e033a",
+    "firstName": "Michael",
+    "lastName": "Cade",
+    "fullName": "Michael Cade",
+    "bio": "A community first technologist for Kasten by Veeam Software. Based in the UK with over 16 years of industry experience with a key focus on technologies such as cloud-native, automation & data management.\r\n\r\nHis role at Kasten is to act as a technical thought leader, community champion and project owner to engage with the community to enable influencers and customers to overcome the challenges of Cloud-Native Data Management and be successful, speaking at events sharing the technical vision and corporate strategy whilst providing ongoing feedback from the field into product management to shape the future success.\r\n",
+    "tagLine": "Kasten by Veeam, Senior Technologist",
+    "profilePicture": "https://sessionize.com/image/af6a-400o400o2-95k5oRwqHjTbk7U35xV4yq.png",
+    "sessions": [
+      {
+        "id": 343039,
+        "name": "Integrating Backup Into Your GitOps CI/CD Pipeline"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/MichaelCade1",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "5019a8c2-7d5a-455f-bb92-a961426ceb5d",
+    "firstName": "Miles",
+    "lastName": "Bryant",
+    "fullName": "Miles Bryant",
+    "bio": "Miles is an engineer at Monzo, where he has spent the last four years working on a super-powered Kubernetes-based internal developer platform that allows engineers to deploy over 100 times a day without worrying about where their code runs or how it communicates. He's keen to chat about Kubernetes, Envoy or Prometheus, and to see photos of your dog.",
+    "tagLine": "Senior YAML wrangler @monzo",
+    "profilePicture": "https://sessionize.com/image/2493-400o400o2-KXfz3ekPPevZooMWbhsNKd.jpg",
+    "sessions": [
+      {
+        "id": 357410,
+        "name": "Migrating a cluster with 2000+ microservices to managed Kubernetes: lessons and learnings"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/milesbxf",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://monzo.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "61a725a9-cdf5-4935-91c7-e0a88eeb9ae1",
+    "firstName": "Owen",
+    "lastName": "Bowers Adams",
+    "fullName": "Owen Bowers Adams",
+    "bio": "Reformed systems engineer, former ambassador for the CDF and currently head of platform engineering for Intelligent Growth Solutions. Powered by OpenSource",
+    "tagLine": "Head of Platform Engineering - IGS",
+    "profilePicture": "https://sessionize.com/image/0fba-400o400o2-hkFSbaFSnDQkvUkK7cvfzH.jpg",
+    "sessions": [
+      {
+        "id": 346571,
+        "name": "EBPF and Kubernetes - Next level observability"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/ObowersA",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "f10fddcf-5028-4f78-b861-13b2c44fef8e",
+    "firstName": "Paul",
+    "lastName": "Dragoonis",
+    "fullName": "Paul Dragoonis",
+    "bio": "My name is Paul, and I'm from Glasgow, Scotland.\r\n\r\nI'm an open source contributor, public speaker, trainer, and consultant by trade.\r\n\r\nI'm a member of the CD Foundation, PHP, PHP-FIG, and Jenkins projects/teams.\r\n\r\nIn my career, I've held positions such as Director of Engineering, CTO, Principal Engineer/Architect, and so on.\r\n\r\nI've spent many years modernizing CI/CD pipelines and embedding continuous delivery processes and solutions into businesses.\r\n\r\nI enjoy sharing my experience in the space with the wider community by way of private training or conference speaking.\r\n\r\n",
+    "tagLine": "Director of Engineering. Principal Engineer/Architect, Open Source Contributor",
+    "profilePicture": "https://sessionize.com/image/ae7e-400o400o2-nPjh1f8A7vXjpfxpVXJ4eK.jpg",
+    "sessions": [
+      {
+        "id": 390164,
+        "name": "The Future of Continuous Delivery"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "http://twitter.com/dr4goonis",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/pauldragoonis/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Company Website",
+        "url": "http://dragoonis.com",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "5e1c2ff4-bb76-4d1b-a6f3-ba9b764af4b4",
+    "firstName": "Peter",
+    "lastName": "Mbanugo",
+    "fullName": "Peter Mbanugo",
+    "bio": "I'm a software developer interested in building quality and maintainable software solutions. My interest areas are around Software Architecture and Offline First applications.",
+    "tagLine": "Senior Software Developer and Team Manager at Appzone Ltd.",
+    "profilePicture": "https://sessionize.com/image/93de-400o400o2-hC8Mb6gFnpTuacLFYhYdQM.jpg",
+    "sessions": [
+      {
+        "id": 359715,
+        "name": "Building event-driven, serverless functions in Kubernetes"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/p_mbanugo",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/pmbanugo/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://pmbanugo.me",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "f805f38c-c9f6-4496-9e5d-f424be611da3",
+    "firstName": "Ric",
+    "lastName": "Featherstone",
+    "fullName": "Ric Featherstone",
+    "bio": "From Engineer to Architect and back, Ric’s greying hair comes from his years of hard-won experience consulting in the Financial Services and Media sectors. Happy treading the conveyor belt of Cloud-Native technologies, trying to keep up and sharing his thoughts along the way. He is Head of Engineering at https://control-plane.io",
+    "tagLine": "Head of Engineering, ControlPlane",
+    "profilePicture": "https://sessionize.com/image/9914-400o400o2-XSZYze4LcV57b7L3XD2rB8.jpg",
+    "sessions": [
+      {
+        "id": 359981,
+        "name": "Who Can You Really Trust?"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Company Website",
+        "url": "https://control-plane.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "8ff09cbf-da9f-48bc-a236-4bec7d006b36",
+    "firstName": "Rowan",
+    "lastName": "Baker",
+    "fullName": "Rowan Baker",
+    "bio": "Rowan has extensive experience auditing, accrediting, and developing Kubernetes and containerised systems for high compliance commercial and public sector organisations. He is an author of the GKE CIS Benchmark, contributor to the CNCF Financial Services User Group Kubernetes Threat Models, and is Head of Security at ControlPlane. ",
+    "tagLine": "Head of Security @ ControlPlane",
+    "profilePicture": "https://sessionize.com/image/4433-400o400o2-3QQ7KLBsBEmxZUn8t73zp9.jpg",
+    "sessions": [
+      {
+        "id": 360162,
+        "name": "Policy + Cloud Controllers = Secure Scalable Dev-Centric Infrastructure."
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "bbff0ea2-cc32-4655-9be8-2936a4a805ce",
+    "firstName": "Sebastien",
+    "lastName": "Blot",
+    "fullName": "Sebastien Blot",
+    "bio": "After working in penetration testing, high-security hosting, and satellite imagery for the past 10 years, Sebastien Blot joined CrowdSec as a Core Developer to focus on developing their open-source IPS. The tool is leveraging both IP behavior & reputation to build a community-fueled CTI accessible to all to tackle the global hacking issue",
+    "tagLine": "Crowdsec - Core Developper",
+    "profilePicture": "https://sessionize.com/image/5531-400o400o2-29af2f36-11d2-45f3-875e-ed8a4d761a4e.jpg",
+    "sessions": [
+      {
+        "id": 345842,
+        "name": "How to protect your Kubernetes cluster using Crowdsec"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "f57c52cf-a775-446a-84b2-1be2343d3ac5",
+    "firstName": "Simon",
+    "lastName": "Emms",
+    "fullName": "Simon Emms",
+    "bio": "Simon has been working as a software engineer since 2006, in which time he's done work for the likes of Gitpod, DPD, Specsavers, British Pathé, the NHS, the Red Cross and others. He's used pretty much all of the major languages over the years and since 2017 has been focused on building DevOps solutions and Cloud-native applications that help engineers to work faster and more productively. Since 2021, he has been working with Gitpod to improve the self-hosted experience, which is relied upon by companies with specific security and compliance requirements.\r\n\r\nWhen not behind a computer he's a keen gardener, beekeeper and makes his own sausages.",
+    "tagLine": "Senior Engineer, Self-Hosted - Gitpod",
+    "profilePicture": "https://sessionize.com/image/93e9-400o400o2-77VPXZ3ktZcBAYNzJLDfDU.jpg",
+    "sessions": [
+      {
+        "id": 344433,
+        "name": "Why We Chose To Ditch Helm To Gain Open Source Sanity"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/TheShroppieBeek",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "Blog",
+        "url": "https://simonemms.com",
+        "linkType": "Blog"
+      },
+      {
+        "title": "Company Website",
+        "url": "https://www.gitpod.io",
+        "linkType": "Company_Website"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "57870761-7278-4d97-9395-1f1a87ccc39d",
+    "firstName": "Suhail",
+    "lastName": "Patel",
+    "fullName": "Suhail Patel",
+    "bio": "Suhail is a Staff Engineer at Monzo focused on building the Core Platform. His role involves building and maintaining Monzo's infrastructure which spans over two thousand microservices and leverages key infrastructure components like Kubernetes, Cassandra, Etcd and more. He focuses specifically in investigating deviant behaviour and ensuring services continue to work reliably in the face of a constantly shifting environment in the cloud.",
+    "tagLine": "Staff Engineer at Monzo",
+    "profilePicture": "https://sessionize.com/image/0034-400o400o2-RAb8KAvf4hJSZMPweNNjnP.jpg",
+    "sessions": [
+      {
+        "id": 357410,
+        "name": "Migrating a cluster with 2000+ microservices to managed Kubernetes: lessons and learnings"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/suhailpatel",
+        "linkType": "Twitter"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "3205a45b-0c6c-46ac-a3e1-3600f17f940d",
+    "firstName": "Thomas",
+    "lastName": "Meadows",
+    "fullName": "Thomas Meadows",
+    "bio": null,
+    "tagLine": null,
+    "profilePicture": "https://sessionize.com/image/e6de-400o400o2-BxHCAZWuQRqbf131k2F7ry.jpg",
+    "sessions": [
+      {
+        "id": 390593,
+        "name": "Fireside Chat: Open Source and the Global Security Response"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "97fd9697-d280-4391-8e99-0e4698bc76db",
+    "firstName": "Viktor",
+    "lastName": "Farcic",
+    "fullName": "Viktor Farcic",
+    "bio": "Viktor Farcic is a Developer Advocate at Upbound, a member of the Google Developer Experts and Docker Captains groups, and a published author.\r\n\r\nHis big passions are DevOps, Containers, Kubernetes, Microservices, Continuous Integration, Delivery and Deployment (CI/CD) and Test-Driven Development (TDD).\r\n\r\nHe often speaks at community gatherings and conferences.\r\n\r\nHe published The DevOps Toolkit Series (https://www.devopstoolkitseries.com/), DevOps Paradox (https://amzn.to/2myrYYA) and Test-Driven Java Development (http://www.amazon.com/Test-Driven-Java-Development-Viktor-Farcic-ebook/dp/B00YSIM3SC), as well as courses in Udemy (https://www.udemy.com/user/viktor-farcic/).\r\n\r\nHis random thoughts and tutorials can be found in his blog TechnologyConversations.com.\r\n\r\nHe is the host of the DevOps Toolkit (https://youtube.com/c/devopstoolkit) YouTube channel and a co-host of DevOps Paradox (https://www.devopsparadox.com/) podcast.",
+    "tagLine": "Developer Advocate",
+    "profilePicture": "https://sessionize.com/image/3119-400o400o2-KwmEomPTBJ9PckZkggq9ih.jpg",
+    "sessions": [
+      {
+        "id": 355030,
+        "name": "Applying GitOps To Everything"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/vfarcic",
+        "linkType": "Twitter"
+      },
+      {
+        "title": "LinkedIn",
+        "url": "https://www.linkedin.com/in/viktorfarcic/",
+        "linkType": "LinkedIn"
+      },
+      {
+        "title": "Blog",
+        "url": "https://youtube.com/@DevOpsToolkit",
+        "linkType": "Blog"
+      }
+    ],
+    "questionAnswers": [],
+    "categories": []
+  }
+]

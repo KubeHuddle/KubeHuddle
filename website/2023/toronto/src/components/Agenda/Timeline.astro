@@ -1,0 +1,178 @@
+---
+import dateformat from 'dateformat'
+const { title, timeline } = Astro.props;
+
+---
+
+
+<script>
+  [...document.querySelectorAll('.agenda-title')].forEach(talk => {
+    talk.addEventListener('click', function () {
+      let el = talk.parentElement.parentElement.querySelector('.talk-details');
+      [...document.querySelectorAll('.talk-details')].forEach(other => {
+        if (other.id != el.id) {
+          other.classList.remove('selected');
+        }
+      });
+      if (el.classList.contains('selected')) {
+        el.classList.remove('selected');
+      } else {
+        el.classList.add('selected');
+      }
+    });
+  });
+
+  function showSpeaker() {
+    if (window.location.hash.startsWith('#speaker-')) {
+      document.getElementById(window.location.hash.substring(1)).classList.add('selected');
+      window.scrollBy(0, -20)
+    }
+  }
+
+  window.addEventListener('hashchange', showSpeaker);
+  document.addEventListener('DOMContentLoaded', showSpeaker);
+
+</script>
+
+<div class="Program-track">
+  <summary><h4>{title}</h4></summary>
+  <ul class="agenda">
+  {timeline.map(item => (
+    <li data-start={item.startsAt} data-end={item.endsAt}>
+      <script is:inline>
+        ( () => {
+          let parent = document.currentScript.parentElement;
+          let start = new Date(parent.dataset['start']);
+          let end = new Date(parent.dataset['end']);
+
+          let update = () => {
+            let now = new Date();
+            if (now >= start && now <= end) {
+              parent.classList.add("current");
+            } else {
+              parent.classList.remove("current");
+            }
+            setTimeout(update, 60 * 1000);
+          };
+          update();
+        } )();
+      </script>
+      <time>{dateformat(new Date(item.startsAt), "h:MM TT")}</time>
+      <div>
+        <div class="agenda-title">
+          <div>{item.title} </div>
+					<div class="speaker">{item.speakers.map(s => s.name).join(", ")}</div>
+        </div>
+      </div>
+      <div class={ item.description && item.description.length > 0 ? "talk-details" : "talk-details empty"}>
+        <p>
+          {item.description}
+        </p>
+      </div>
+    </li>
+  ))}
+  </ul>
+</div>
+
+
+<style>
+  .programme-track {
+    width: 100%;
+  }
+
+  .programme-track h4 {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 50em) {
+    .programme-track {
+      width: 50%;
+    }
+
+    .agenda li>div {
+      height: 100px;
+    }
+  }
+
+  .agenda {
+    list-style: none;
+    padding: 0;
+  }
+
+  .agenda p {
+    margin-top: .2em;
+    margin-bottom: .5em
+  }
+
+  .agenda li {
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+
+  .agenda li.current {
+    background: #e2e2e23b;
+  }
+  .agenda li.current>div {
+    border-left: 1px dashed #0065bf;
+  }
+  .agenda li.current time {
+    font-weight: bold;
+  }
+  .agenda li.current time::after {
+    content: " (now)";
+    font-weight: normal;
+  }
+
+  .agenda li>div {
+    border-left: 1px dashed #ccc;
+    margin: 0 20px 0;
+    padding: 2px 20px 20px
+  }
+
+  .agenda li>div::before {
+    content: attr(data-time);
+    position: relative;
+    top: 50%
+  }
+
+  .agenda .agenda-title {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin: 5px 0
+  }
+
+  .agenda .speaker {
+    font-weight: normal;
+  }
+
+  .agenda-content {
+    font-size: 0.9em;
+  }
+
+  .agenda::after {
+    content: '👋';
+    position: relative;
+    left: 0.5em
+  }
+
+
+  .talk-details {
+    text-align: left;
+    display: none;
+    padding: 6px;
+    line-height: 1.4em;
+    border-left: 1px dashed #ccc;
+  }
+  .talk-details.selected {
+    display: inline-block;
+    height: auto !important;
+  }
+  .talk-details h3 {
+    margin: 0;
+    line-height: 1.2em;
+  }
+  .talk-details.empty {
+    display: none !important;
+  }
+</style>

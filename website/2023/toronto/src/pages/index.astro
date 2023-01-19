@@ -1,0 +1,605 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Speaker from "../components/Speaker/Speaker.astro";
+import Agenda from "../components/Agenda/Agenda.astro";
+const response = await fetch(
+  "https://sessionize.com/api/v2/n45zlj71/view/SpeakerWall"
+);
+let data = await response.json();
+// let Newresult = data.filter((el,index)=>{
+//   return index == 3 || index == 10
+// });
+console.log("the new data is", data);
+
+const Speakers = data.results;
+// console.log("Speakers issssssssssss",data);
+// import { agenda, speakers } from "../../../data/combined.json";
+
+const speakers = [
+  {
+    fullName: "Kunal Kushwaha",
+    profilePicture:
+      "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
+    links: [],
+    sessions: [
+      {
+        title: "",
+        categories: [],
+      },
+    ],
+  },
+];
+
+const content = {
+  title: "2023",
+  description: "The 3 (Torronto) Edition of KubeHuddle, May 17th-18th",
+  date: "May 17th and 18th, 2023",
+  location: "Metro Toronto Convention Centre, Toronto, Ontario, Canada.",
+  sponsors: {
+    malt: [
+      {
+        name: "Lloyds Banking Group",
+        logo: "lbg.png",
+        href: "https://www.lloydsbankinggroup.com/",
+      },
+      {
+        name: "ControlPlane",
+        logo: "control-plane.png",
+        href: "https://controlplane.io",
+      },
+    ],
+    grain: [
+      { name: "Solo.io", logo: "solo-io.png", href: "https://solo.io" },
+      {
+        name: "Teleport",
+        logo: "teleport.png",
+        href: "https://goteleport.com/",
+      },
+      { name: "Loft", logo: "loft.png", href: "https://loft.sh/" },
+    ],
+    blend: [
+      {
+        name: "Giant Swarm",
+        logo: "giant-swarm.png",
+        href: "https://giantswarm.io",
+      },
+      {
+        name: "Civo",
+        logo: "civo.png",
+        href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage",
+      },
+      { name: "Pulumi", logo: "pulumi.png", href: "https://pulumi.com" },
+      { name: "Jetstack", logo: "jetstack.png", href: "https://jetstack.io" },
+      {
+        name: "Isovalent",
+        logo: "isovalent.png",
+        href: "https://isovalent.com",
+      },
+      {
+        name: "Skyscanner",
+        logo: "skyscanner.png",
+        href: "https://skyscannerscotland.net",
+      },
+    ],
+    speaker: [
+      {
+        name: "Civo",
+        logo: "civo.png",
+        href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage",
+      },
+      {
+        name: "Giant Swarm",
+        logo: "giant-swarm.png",
+        href: "https://giantswarm.io",
+      },
+      {
+        name: "Quarkslab",
+        logo: "quarkslab.png",
+        href: "https://www.quarkslab.com/",
+      },
+      {
+        name: "Replicated",
+        logo: "replicated.png",
+        href: "https://www.replicated.com/",
+      },
+      { name: "Gimlet", logo: "gimlet.png", href: "https://gimlet.io/" },
+      {
+        name: "Kasten by VEAM",
+        logo: "kasten.png",
+        href: "https://kasten.io/",
+      },
+      { name: "CrowdSec", logo: "crowdsec.png", href: "https://crowdsec.net/" },
+      { name: "Upbound", logo: "upbound.png", href: "https://upbound.io/" },
+    ],
+    community: [
+      {
+        name: "Community Classroom",
+        logo: "commclassroom.webp",
+        href: "https://www.commclassroom.org/",
+      },
+      {
+        name: "EddieHub",
+        logo: "eddiehub.webp",
+        href: "https://www.eddiehub.org/",
+      },
+      {
+        name: "KubeSimplify",
+        logo: "kubesimplify.jpeg",
+        href: "https://www.kubesimplify.com/",
+      },
+      {
+        name: "Rawkode Academy",
+        logo: "rawkodeacademy.png",
+        href: "https://rawkode.live/",
+      },
+    ],
+  },
+  organizers: [
+    {
+      name: "Marino Wijay",
+      image: "Marino.jpg",
+      href: "https://twitter.com/virtualized6ix",
+    },
+    {
+      name: "Barsha Das",
+      image: "Barsha.jpg",
+      href: "https://twitter.com/thebarshablog",
+    },
+    {
+      name: "Kunal Kushwaha",
+      image: "Kunal.jpg",
+      href: "https://twitter.com/kunalstwt",
+    },
+    {
+      name: "Hakeem S",
+      image: "Hakeem.jpg",
+      href: "https://twitter.com/whereisCODE",
+    },
+    {
+      name: "Diana Pham ",
+      image: "Diana.jpg",
+      href: "https://twitter.com/dianasoyster",
+    },
+    {
+      name: "Julia Furst Morgado ",
+      image: "Julia.jpg",
+      href: "https://twitter.com/juliafmorgado",
+    },
+    {
+      name: "Rishit Dagli",
+      image: "Rishit.jpg",
+      href: "https://twitter.com/rishit_dagli",
+    },
+    {
+      name: "Lewis Meyers",
+      image: "lewis.jpeg",
+      href: "https://twitter.com/DevRelLewis",
+    },
+    {
+      name: "Rishab Kumar",
+      image: "Rishab.jpg",
+      href: "https://twitter.com/rishabk7",
+    },
+    {
+      name: "Tim Davis",
+      image: "vtimd.jpeg",
+      href: "https://twitter.com/vtimd",
+    },
+    {
+      name: "David Flanagan",
+      image: "rawkode.jpeg",
+      href: "https://twitter.com/rawkode",
+    },
+    {
+      name: "Safia Omar",
+      image: "Safia.jpeg",
+      href: "https://mobile.twitter.com/CulturedCoder",
+    },
+    // {
+    //   name: "Adrian Mouat",
+    //   image: "adrianmouat.jpg",
+    //   href: "https://twitter.com/adrianmouat",
+    // },
+  ],
+};
+---
+
+<MainLayout {content}>
+  <section id="intro" class="introdiv">
+    <!-- <div class="blue-leaf-container2">
+      <img src={"/mapleaf.png"} class="maple-leaf-blue" />
+    </div> -->
+    <div class="container">
+      <!-- <h3 class="center">
+        The inaugural KubeHuddle conference, hosted in the beautiful Scottish
+        capital, Edinburgh.
+      </h3>
+
+      <p>
+        KubeHuddle is Scotland’s first Kubernetes conference, hosted and
+        organized by the Scottish community.
+      </p>
+
+      <p>
+        You can buy tickets <em>now</em>. We have limited tickets available at
+        each price point:
+      </p> -->
+
+      <!-- <ul>
+        <li>
+          <strike>Believer - £100 GBP</strike>
+          <strong>[SOLD OUT]</strong>
+        </li>
+        <li>
+          <strike>Early Bird - £150 GBP</strike>
+          <strong>[SOLD OUT]</strong>
+        </li>
+        <li><strike>Standard - £200 GBP</strike><strong>[SOLD OUT]</strong></li>
+      </ul> -->
+      <!--  -->
+      <div>
+        <h3 class="kube_h3">
+          KubeHuddle is a community conference where Developers, Platform
+          Engineers, DevOps, SRE, Cloud Enthusiasts, Technical and Business
+          Strategists come together to learn from each other, collaborate and,
+          innovate.
+        </h3>
+        <p></p>
+        <p>This conference will cover topics on:</p>
+        <ul>
+          <li>Cloud technologies</li>
+          <li>Cloud Native and Kubernetes</li>
+          <li>Edge Computing</li>
+          <li>Platform Engineering</li>
+          <li>Technical Strategy</li>
+          <li>Real life production stories</li>
+          <li>Learning Cloud</li>
+          <li>The humanity and empathy side of tech</li>
+        </ul>
+      </div>
+      <div class="center">
+        <p>
+          <strong
+            >KubeHuddle will happen in Toronto, Ontario, Canada in May 2023 🇨🇦
+          </strong>
+        </p>
+        <a
+          disabled
+          class="big-button"
+          href="https://www.tickettailor.com/events/kubehuddletoronto2023/"
+          >Buy Tickets</a
+        >
+      </div>
+      <!-- <h4 class="tickets_soon">( Tickets Coming Soon )</h4> -->
+      <div class="center">
+        <p class="ticket_size">
+          Early Bird - $200 CAD (until Feb 15th or sold out)
+        </p>
+        <p class="ticket_size stnd_mr">
+          Standard - $250 CAD (Feb 15th until April 30th) &nbsp;
+        </p>
+        <p class="ticket_size">
+          Late - $300 CAD (May 1st up until the event start)
+        </p>
+      </div>
+      <p>
+        If you’re unable to afford a ticket, we may be able to help with our
+        diversity and inclusion tickets, kindly sponsored by members and
+        organizations within our community.<a
+          href="mailto:organizers@kubehuddle.com">✉️ Speak to us</a
+        >
+      </p>
+    </div>
+    <div class="blue-leaf-container3">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+  </section>
+
+  <section id="Program">
+    <div class="container">
+      <h2 style="margin-top: 0px;" class="pull-right">Program</h2>
+      <div class="Schedule-to abcd">
+        <p>Schedule to be announced when speakers are finalized</p>
+      </div>
+
+      <!-- <div>
+        <strong>Track 1 - Introductions & Intermediate Presentations</strong><br
+        />
+        <p>
+          This track will feature beginner friendly and intermediate content to
+          cater for a wide variety of experiences, including beginers to
+          Kubernetes.
+        </p>
+
+        <strong>Track 2 - Advanced Presentations</strong>
+        <p>
+          This track will feature advanced Kubernetes topics revolving around
+          scale, multi-tenancy, and operations - you know, all that “fun” stuff.
+        </p>
+
+        <strong>Collaboration Space</strong>
+        <p>
+          There will be tables provided for people that want to sit with their
+          laptops and collaborate with others, perhaps hacking on a cool new
+          operator? <br />
+          A small selection of workshops and tutorials will also be available throughout
+          the two days, at no extra cost.
+        </p>
+
+        <strong>Socials</strong>
+        <p>
+          There will be a small social on <strong>Sunday, October 2nd</strong>,
+          and the main social on <strong>Monday October 3rd</strong>.<br />
+          <em>More details coming soon...</em>
+        </p>
+      </div> -->
+
+      <!-- {agenda[0] && <Agenda agenda={agenda[0]} />}
+      {agenda[1] && <Agenda agenda={agenda[1]} />} -->
+    </div>
+  </section>
+
+  <section id="speakers" class="introdiv">
+    <div class="blue-leaf-container2">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+    <div class="container">
+      <h2>Speakers</h2>
+      <div class="speaker-to abcd">
+        <p>CFP now open! Speakers will be announced after CFP closes.</p>
+      </div>
+      <!-- <p>
+        schedule to be announced when speakers are finalized
+      </p> -->
+
+      <div class="fig-holder center">
+        <a
+          class="big-button"
+          href="https://sessionize.com/kubehuddle-Toronto-2023/"
+          >Call for Speakers</a
+        >
+        <p class="keynote">Keynote Speakers</p>
+        {data.map((speakers) => <Speaker {speakers} />)}
+      </div>
+    </div>
+    <div class="blue-leaf-container3">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <div class="container">
+      <h2>Sponsors</h2>
+
+      <p>
+        If you’d like to support this conference, you can find details on our <a
+          href="/sponsorship">sponsorship opportunities page</a
+        >.
+      </p>
+
+      <!-- <div class="fig-holder">
+        {
+          content.sponsors.malt.length > 0 && (
+            <div id="sponsors-malt">
+              <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`} />
+              {content.sponsors.malt.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.grain.length > 0 && (
+            <div id="sponsors-grain">
+              <h3
+                set:text={content.sponsors.grain.length > 0 && `Grain Level`}
+              />
+              {content.sponsors.grain.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.blend.length > 0 && (
+            <div id="sponsors-blend">
+              <h3
+                set:text={content.sponsors.blend.length > 0 && `Blend Level`}
+              />
+              {content.sponsors.blend.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.speaker.length > 0 && (
+            <div id="sponsors-speaker">
+              <h3
+                set:text={
+                  content.sponsors.speaker.length > 0 && `Speaker Sponsors`
+                }
+              />
+              {content.sponsors.speaker.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.community.length > 0 && (
+            <div id="sponsors-community">
+              <h3
+                set:text={
+                  content.sponsors.community.length > 0 && `Community Sponsors`
+                }
+              />
+              {content.sponsors.community.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div> -->
+    </div>
+  </section>
+
+  <section class="introdiv">
+    <div class="blue-leaf-container2">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+    <div class="container">
+      <h2 class="pull-right">Location</h2>
+
+      <div>
+        <!-- src="/venue/eicc.jpg" -->
+        <img
+          src="/2023/toronto/venue/toronto.jpg"
+          style="float: right; max-width: 100%; margin: 4px; height:260px"
+        />
+        <h3>Conference Venue</h3>
+        <p>
+          <strong>Toronto Convention center,</strong><br />
+          <!-- The Exchange, <br /> -->
+          255 Front St W, <br />
+          Toronto,<br />
+          ON M5V 2W6, <br />
+          Canada
+        </p>
+      </div>
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.210243379726!2d-79.38886168454019!3d43.643793961057014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d6785ffb55%3A0x4209e1f8fd986202!2sMetro%20Toronto%20Convention%20Centre!5e0!3m2!1sen!2s!4v1670663942650!5m2!1sen!2s"
+      width="100%"
+      height="600"
+      style="border:0;"
+      <!--
+      allowfullscreen=""
+      --
+    >
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe
+    >
+
+    <!-- <div class="container">
+      <div class="pull-right">
+        <img
+          src="/venue/hilton.jpg"
+          style="float: left; max-width: 100%; margin: 4px;"
+        />
+        <h3 class="pull-right">Hotel</h3>
+        <p>
+          We have secured some reduced rate at the Hampton by Hilton for
+          KubeHuddle attendees.
+        </p>
+        <p>
+          When selecting your room, use the group code: <a
+            href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=EDIFBHX&arrivalDate=2022-10-02&departureDate=2022-10-04&groupCode=CHHGKH&room1NumAdults=1&cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink"
+            >CHHGKH</a
+          >.
+        </p>
+        <p>
+          <strong>Toronto Convention center,</strong><br />
+          255 Front St W, <br />
+          Toronto,<br />
+          ON M5V 2W6, <br />
+          Canada
+        </p>
+      </div>
+    </div> -->
+    <!-- <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.390582441899!2d-3.214435283423262!3d55.94260198060458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a13f156add%3A0x9227896966e2f4f6!2sHampton%20by%20Hilton%20Edinburgh%20West%20End!5e0!3m2!1sen!2suk!4v1658748794028!5m2!1sen!2suk"
+      width="100%"
+      height="600"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    >
+    </iframe> -->
+    <!-- allowfullscreen="" -->
+    <div class="blue-leaf-container3">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h2>About</h2>
+
+      <h3>Our Values</h3>
+
+      <p>
+        KubeHuddle is a community run conference and we want to ensure that
+        everything we do and say is transparent and made publicly available.
+      </p>
+
+      <ul>
+        <li>Our task list and what we’re planning is all public on GitHub</li>
+        <li>Our sponsorship details are all public</li>
+        <li>
+          All titles submitted as potential sessions at KubeHuddle are public on
+          Sessionize
+        </li>
+        <li>This website is open source</li>
+        <li>
+          Currently KubeHuddle Toronto is being run through my company
+          (@virtualized6ix). The long term plan is to migrate this to a
+          non-profit setting however this requires proper accounting and
+          approval from the Canadian Government and Revenue Agency. As such, all
+          financial transactions of funds coming in and going out will be made
+          publicly available.
+        </li>
+      </ul>
+
+      <h3>Organizers</h3>
+
+      <div id="organizers" class="center fig-holder">
+        {
+          content.organizers.map((item) => (
+            <a href={item.href} target="_blank">
+              <figure>
+                <img
+                  class="width_organiser"
+                  src={"/2023/toronto/organizers/" + item.image}
+                />
+                <figcaption>{item.name}</figcaption>
+              </figure>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <div class="lineleaf"></div>
+  <div class="blue-leaf-container4">
+    <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+  </div>
+</MainLayout>
