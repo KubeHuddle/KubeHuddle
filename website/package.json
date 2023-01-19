@@ -1,22 +1,5 @@
 {
-  "name": "kubehuddle",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "predeploy": "make download-schedule; if [ ! $(which doppler) ]; then echo 'Doppler required'; else astro build; fi",
-    "deploy": "doppler run -- npx wrangler pages publish ./dist --project-name kubehuddle"
-  },
-  "dependencies": {
-    "dateformat": "^5.0.3",
-    "wrangler": "^2.0.7"
-  },
-  "devDependencies": {
-    "@astrojs/preact": "^0.1.3",
-    "astro": "^1.0.0-beta.38",
-    "preact": "^10.6.5"
-  }
+	"dependencies": {
+		"wrangler": "^2.8.0"
+	}
 }
