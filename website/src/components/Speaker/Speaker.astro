@@ -1,8 +1,10 @@
 ---
-const { speaker } = Astro.props;
+const { speakers } = Astro.props;
+
 ---
 
 <script>
+ 
   [...document.querySelectorAll('.fig-wrapper figure')].forEach(fig => {
     fig.addEventListener('click', function () {
       let el = fig.parentElement;
@@ -31,30 +33,31 @@ const { speaker } = Astro.props;
   document.addEventListener('DOMContentLoaded', showSpeaker);
 
 </script>
-
-<div class="fig-wrapper" id={"speaker-" + speaker.fullName.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}>
+<!-- <div id={"speaker-" + speakers.fullName.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}></div> -->
+<div class="fig-wrapper" >
   <figure class="speaker">
+
     <a href="#speakers" class="close-button">🅧 Close</a>
-    <img src={speaker.profilePicture} />
+    <img src={speakers.profilePicture} />
     <figcaption>
-      {speaker.fullName}
+      {speakers.fullName} &nbsp; {speakers.isTopSpeaker && <a>🌐</a>}  
     </figcaption>
-    <div>
-      { speaker.links[0] &&
-        <a href={speaker.links[0].url} target="_blank" onclick="event.stopPropagation();">🌐</a>
+    <!-- <div>
+      { speakers.links[0] &&
+        <a href={speakers.links[0].url} target="_blank" onclick="event.stopPropagation();">🌐</a>
       }
-    </div>
+    </div> -->
   </figure>
-  <div class="speaker-details">
+  <!-- <div class="speaker-details">
     <h3>Speaker Bio</h3>
 
     <p>
-      {speaker.bio}
-    </p>
+      {speakers.bio}
+    </p> -->
 
-    <h3>Talks</h3>
+    <!-- <h3>Talks</h3> -->
 
-    <div class="speaker-talks">
+    <!-- <div class="speaker-talks">
       {speaker.sessions.map((talk) => (
         <strong class="talk-title">{talk.title}</strong>
 
@@ -71,8 +74,8 @@ const { speaker } = Astro.props;
         </div>
         <br />
       ))}
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </div>
 
 <style>
