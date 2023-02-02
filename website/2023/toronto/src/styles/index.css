@@ -363,7 +363,7 @@ section:last-of-type::after {
 		display: flex;
 		justify-content: end;
 		line-height: 1;
-	
+
 	}
 	.ticket_size{
 		font-size: 13px;
