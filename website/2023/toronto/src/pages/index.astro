@@ -2,33 +2,29 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Speaker from "../components/Speaker/Speaker.astro";
 import Agenda from "../components/Agenda/Agenda.astro";
-const response = await fetch(
-  "https://sessionize.com/api/v2/n45zlj71/view/SpeakerWall"
-);
+const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/SpeakerWall');
 let data = await response.json();
-// let Newresult = data.filter((el,index)=>{
-//   return index == 3 || index == 10
-// });
-console.log("the new data is", data);
+let Newresult = data.filter((el,index)=>{
+  return el.firstName == "Kunal" ||  el.firstName == "Rizèl"
+});
+console.log("new result", Newresult);
 
-const Speakers = data.results;
-// console.log("Speakers issssssssssss",data);
-// import { agenda, speakers } from "../../../data/combined.json";
+const Speakers = Newresult.results;
 
-const speakers = [
-  {
-    fullName: "Kunal Kushwaha",
-    profilePicture:
-      "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
-    links: [],
-    sessions: [
-      {
-        title: "",
-        categories: [],
-      },
-    ],
-  },
-];
+// const speakers = [
+//   {
+//     fullName: "Kunal Kushwaha",
+//     profilePicture:
+//       "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
+//     links: [],
+//     sessions: [
+//       {
+//         title: "",
+//         categories: [],
+//       },
+//     ],
+//   },
+// ];
 
 const content = {
   title: "2023",
@@ -205,6 +201,7 @@ const content = {
 ---
 
 <MainLayout {content}>
+
   <section id="intro" class="introdiv">
     <!-- <div class="blue-leaf-container2">
       <img src={"/mapleaf.png"} class="maple-leaf-blue" />
@@ -238,56 +235,43 @@ const content = {
       </ul> -->
       <!--  -->
       <div>
-        <h3 class="kube_h3">
-          KubeHuddle is a community conference where Developers, Platform
-          Engineers, DevOps, SRE, Cloud Enthusiasts, Technical and Business
-          Strategists come together to learn from each other, collaborate and,
-          innovate.
-        </h3>
-        <p></p>
-        <p>This conference will cover topics on:</p>
-        <ul>
-          <li>Cloud technologies</li>
-          <li>Cloud Native and Kubernetes</li>
-          <li>Edge Computing</li>
-          <li>Platform Engineering</li>
-          <li>Technical Strategy</li>
-          <li>Real life production stories</li>
-          <li>Learning Cloud</li>
-          <li>The humanity and empathy side of tech</li>
+        <h3 class="kube_h3">KubeHuddle is a community conference where Developers, Platform Engineers, DevOps, SRE, Cloud Enthusiasts, Technical and Business Strategists come together to learn from each other, collaborate and, innovate around areas of  :</h3>
+        <!-- <p></p>
+        <p>This conference will cover topics on:</p> -->
+        <ul class="h3_marg">
+          <h3><li>Cloud technologies</li></h3>
+          <h3><li>Cloud Native and Kubernetes</li></h3>
+          <h3><li>Edge Computing</li></h3>
+          <h3><li>Platform Engineering</li></h3>
+          <h3><li>Technical Strategy</li></h3>
+          <h3><li>Architecture and design consideration</li></h3>
+          <h3><li>Developer Platforms and Portals</li></h3>
+          <h3><li>Developer tooling</li></h3>
+          <h3><li>App Development challenges</li></h3>
+          <h3><li>Real life production stories</li></h3>
+          <h3><li>Learning Cloud</li></h3>
+          <h3><li>Application and Infra Security</li></h3>
+          <h3><li>The humanity and empathy side of tech</li></h3>
         </ul>
       </div>
       <div class="center">
         <p>
-          <strong
-            >KubeHuddle will happen in Toronto, Ontario, Canada in May 2023 🇨🇦
-          </strong>
+          <strong>KubeHuddle will happen in Toronto, Ontario, Canada in May 2023 🇨🇦 </strong>
+
         </p>
-        <a
-          disabled
-          class="big-button"
-          href="https://www.tickettailor.com/events/kubehuddletoronto2023/"
-          >Buy Tickets</a
-        >
+        <a disabled  class="big-button " href="https://www.tickettailor.com/events/kubehuddletoronto2023/"
+          >Buy Tickets</a>
       </div>
       <!-- <h4 class="tickets_soon">( Tickets Coming Soon )</h4> -->
-      <div class="center">
-        <p class="ticket_size">
-          Early Bird - $200 CAD (until Feb 15th or sold out)
-        </p>
-        <p class="ticket_size stnd_mr">
-          Standard - $250 CAD (Feb 15th until April 30th) &nbsp;
-        </p>
-        <p class="ticket_size">
-          Late - $300 CAD (May 1st up until the event start)
-        </p>
-      </div>
+     <div class="center">
+      <p class="ticket_size"> Early Bird - $200 CAD (until Feb 15th or sold out)</p>
+      <p class="ticket_size stnd_mr"> Standard - $250 CAD (Feb 15th until April 30th) &nbsp;</p>
+      <p class="ticket_size"> Late - $300 CAD (May 1st up until the event start)</p>
+     </div>
       <p>
         If you’re unable to afford a ticket, we may be able to help with our
         diversity and inclusion tickets, kindly sponsored by members and
-        organizations within our community.<a
-          href="mailto:organizers@kubehuddle.com">✉️ Speak to us</a
-        >
+        organizations within our community.<a href="mailto:organizers@kubehuddle.com">✉️ Speak to us</a>
       </p>
     </div>
     <div class="blue-leaf-container3">
@@ -297,9 +281,12 @@ const content = {
 
   <section id="Program">
     <div class="container">
+
       <h2 style="margin-top: 0px;" class="pull-right">Program</h2>
       <div class="Schedule-to abcd">
-        <p>Schedule to be announced when speakers are finalized</p>
+        <p>
+          Schedule to be announced when speakers are finalized
+        </p>
       </div>
 
       <!-- <div>
@@ -339,33 +326,38 @@ const content = {
     </div>
   </section>
 
+
+
   <section id="speakers" class="introdiv">
     <div class="blue-leaf-container2">
       <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
     </div>
+
     <div class="container">
       <h2>Speakers</h2>
       <div class="speaker-to abcd">
-        <p>CFP now open! Speakers will be announced after CFP closes.</p>
+        <p>
+         CFP now open! Speakers will be announced after CFP closes.
+        </p>
+
       </div>
       <!-- <p>
         schedule to be announced when speakers are finalized
       </p> -->
 
       <div class="fig-holder center">
-        <a
-          class="big-button"
-          href="https://sessionize.com/kubehuddle-Toronto-2023/"
-          >Call for Speakers</a
-        >
+        <a   class="big-button " href="https://sessionize.com/kubehuddle-Toronto-2023/"
+        >Call for Speakers</a>
         <p class="keynote">Keynote Speakers</p>
-        {data.map((speakers) => <Speaker {speakers} />)}
+        {Newresult.map((speakers) => <Speaker {speakers} />)}
       </div>
     </div>
     <div class="blue-leaf-container3">
       <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
     </div>
   </section>
+
+
 
   <section id="sponsors">
     <div class="container">
@@ -570,12 +562,7 @@ const content = {
         </li>
         <li>This website is open source</li>
         <li>
-          Currently KubeHuddle Toronto is being run through my company
-          (@virtualized6ix). The long term plan is to migrate this to a
-          non-profit setting however this requires proper accounting and
-          approval from the Canadian Government and Revenue Agency. As such, all
-          financial transactions of funds coming in and going out will be made
-          publicly available.
+          Currently KubeHuddle Toronto is being run through my company (@virtualized6ix). The long term plan is to migrate this to a non-profit setting however this requires proper accounting and approval from the Canadian Government and Revenue Agency. As such, all financial transactions of funds coming in and going out will be made publicly available.
         </li>
       </ul>
 
@@ -586,10 +573,7 @@ const content = {
           content.organizers.map((item) => (
             <a href={item.href} target="_blank">
               <figure>
-                <img
-                  class="width_organiser"
-                  src={"/2023/toronto/organizers/" + item.image}
-                />
+                <img class="width_organiser" src={"/organizers/2023/" + item.image} />
                 <figcaption>{item.name}</figcaption>
               </figure>
             </a>
