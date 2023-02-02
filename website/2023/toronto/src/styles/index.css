@@ -326,6 +326,10 @@ section:last-of-type::after {
   .stnd_mr{
 	margin-left: -6px;
   }
+
+  .h3_marg h3{
+	margin: 2px 0px 0px 0px !important;
+  }
 @media screen and (min-width: 800px) and (max-width: 1280px) {
 	.blueleaf_img {
 		width: 4% !important;
@@ -346,6 +350,10 @@ section:last-of-type::after {
 	.kube_h3{
 		font-size: 17px!important;
 	}
+	.h3_marg h3{
+		margin: 2px 0px 0px 0px !important;
+		font-size: 17px!important;
+	  }
 }
 
 
@@ -359,11 +367,15 @@ section:last-of-type::after {
 	.kube_h3{
 		font-size: 17px!important;
 	}
+	.h3_marg h3{
+		margin: 2px 0px 0px 0px !important;
+		font-size: 17px!important;
+	  }
 	.abcd {
 		display: flex;
 		justify-content: end;
 		line-height: 1;
-	
+
 	}
 	.ticket_size{
 		font-size: 13px;
