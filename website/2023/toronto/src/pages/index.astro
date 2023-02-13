@@ -352,14 +352,15 @@ const content = {
         schedule to be announced when speakers are finalized
       </p> -->
 
-      <div class="fig-holder center">
+      <div class="center">
         <a
           class="big-button"
           href="https://sessionize.com/kubehuddle-Toronto-2023/"
-          >Call for Speakers</a
-        >
+          >Call for Speakers</a>
         <p class="keynote">Keynote Speakers</p>
-        {data.map((speakers) => <Speaker {speakers} />)}
+        <div class="fig-holder">
+          {data.map((speakers) => <Speaker {speakers} />)}
+        </div>
       </div>
     </div>
     <div class="blue-leaf-container3">
