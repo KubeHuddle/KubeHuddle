@@ -3,11 +3,17 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Speaker from "../components/Speaker/Speaker.astro";
 import Agenda from "../components/Agenda/Agenda.astro";
 
-const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/SpeakerWall');
+// const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/SpeakerWall');
+const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/Speakers');
 let data = await response.json();
+// let Newresult = data.map(item => item.isTopSpeaker);
+// let Newresult = data;
 let Newresult = data.filter((el,index)=>{
-  return el.firstName == "Kunal" ||  el.firstName == "Rizèl"
+  return el.isTopSpeaker == true
 });
+// let Newresult = data.filter((el,index)=>{
+//   return el.firstName == "Kunal" ||  el.firstName == "Rizèl"
+// });
 console.log("new result", Newresult);
 
 const Speakers = Newresult.results;
