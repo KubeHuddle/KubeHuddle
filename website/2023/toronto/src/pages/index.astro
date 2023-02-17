@@ -2,33 +2,38 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Speaker from "../components/Speaker/Speaker.astro";
 import Agenda from "../components/Agenda/Agenda.astro";
+
+// const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/SpeakerWall');
 const response = await fetch(
-  "https://sessionize.com/api/v2/n45zlj71/view/SpeakerWall"
+  "https://sessionize.com/api/v2/u7jwxupv/view/Speakers"
 );
 let data = await response.json();
+// let Newresult = data.map(item => item.isTopSpeaker);
+// let Newresult = data;
+let Newresult = data.filter((el, index) => {
+  return el.isTopSpeaker == true;
+});
 // let Newresult = data.filter((el,index)=>{
-//   return index == 3 || index == 10
+//   return el.firstName == "Kunal" ||  el.firstName == "Rizèl"
 // });
-console.log("the new data is", data);
+console.log("new result", Newresult);
 
-const Speakers = data.results;
-// console.log("Speakers issssssssssss",data);
-// import { agenda, speakers } from "../../../data/combined.json";
+const Speakers = Newresult.results;
 
-const speakers = [
-  {
-    fullName: "Kunal Kushwaha",
-    profilePicture:
-      "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
-    links: [],
-    sessions: [
-      {
-        title: "",
-        categories: [],
-      },
-    ],
-  },
-];
+// const speakers = [
+//   {
+//     fullName: "Kunal Kushwaha",
+//     profilePicture:
+//       "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
+//     links: [],
+//     sessions: [
+//       {
+//         title: "",
+//         categories: [],
+//       },
+//     ],
+//   },
+// ];
 
 const content = {
   title: "2023",
@@ -242,19 +247,24 @@ const content = {
           KubeHuddle is a community conference where Developers, Platform
           Engineers, DevOps, SRE, Cloud Enthusiasts, Technical and Business
           Strategists come together to learn from each other, collaborate and,
-          innovate.
+          innovate around areas of :
         </h3>
-        <p></p>
-        <p>This conference will cover topics on:</p>
-        <ul>
-          <li>Cloud technologies</li>
-          <li>Cloud Native and Kubernetes</li>
-          <li>Edge Computing</li>
-          <li>Platform Engineering</li>
-          <li>Technical Strategy</li>
-          <li>Real life production stories</li>
-          <li>Learning Cloud</li>
-          <li>The humanity and empathy side of tech</li>
+        <!-- <p></p>
+        <p>This conference will cover topics on:</p> -->
+        <ul class="h3_marg">
+          <h3><li>Cloud technologies</li></h3>
+          <h3><li>Cloud Native and Kubernetes</li></h3>
+          <h3><li>Edge Computing</li></h3>
+          <h3><li>Platform Engineering</li></h3>
+          <h3><li>Technical Strategy</li></h3>
+          <h3><li>Architecture and design consideration</li></h3>
+          <h3><li>Developer Platforms and Portals</li></h3>
+          <h3><li>Developer tooling</li></h3>
+          <h3><li>App Development challenges</li></h3>
+          <h3><li>Real life production stories</li></h3>
+          <h3><li>Learning Cloud</li></h3>
+          <h3><li>Application and Infra Security</li></h3>
+          <h3><li>The humanity and empathy side of tech</li></h3>
         </ul>
       </div>
       <div class="center">
@@ -264,7 +274,6 @@ const content = {
           </strong>
         </p>
         <a
-          disabled
           class="big-button"
           href="https://www.tickettailor.com/events/kubehuddletoronto2023/"
           >Buy Tickets</a
@@ -356,29 +365,35 @@ const content = {
         <a
           class="big-button"
           href="https://sessionize.com/kubehuddle-Toronto-2023/"
-          >Call for Speakers</a>
-        <p class="keynote">Keynote Speakers</p>
-        <div class="fig-holder">
-          {data.map((speakers) => <Speaker {speakers} />)}
+          >Call for Speakers</a
+        >
+
+        <div class="fig-holder center">
+          <a
+            class="big-button"
+            href="https://sessionize.com/kubehuddle-Toronto-2023/"
+            >Call for Speakers</a
+          >
+          <p class="keynote">Keynote Speakers</p>
+          {Newresult.map((speakers) => <Speaker {speakers} />)}
         </div>
       </div>
+      <div class="blue-leaf-container3">
+        <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+      </div>
     </div>
-    <div class="blue-leaf-container3">
-      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
-    </div>
-  </section>
 
-  <section id="sponsors">
-    <div class="container">
-      <h2>Sponsors</h2>
+    <section id="sponsors">
+      <div class="container">
+        <h2>Sponsors</h2>
 
-      <p>
-        If you’d like to support this conference, you can find details on our <a
-          href="/2023/toronto/sponsorship">sponsorship opportunities page</a
-        >.
-      </p>
+        <p>
+          If you’d like to support this conference, you can find details on our <a
+            href="/2023/toronto/sponsorship">sponsorship opportunities page</a
+          >.
+        </p>
 
-      <!-- <div class="fig-holder">
+        <!-- <div class="fig-holder">
         {
           content.sponsors.malt.length > 0 && (
             <div id="sponsors-malt">
@@ -471,47 +486,43 @@ const content = {
           )
         }
       </div> -->
-    </div>
-  </section>
-
-  <section class="introdiv">
-    <div class="blue-leaf-container2">
-      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
-    </div>
-    <div class="container">
-      <h2 class="pull-right">Location</h2>
-
-      <div>
-        <!-- src="/venue/eicc.jpg" -->
-        <img
-          src="/2023/toronto/venue/toronto.jpg"
-          style="float: right; max-width: 100%; margin: 4px; height:260px"
-        />
-        <h3>Conference Venue</h3>
-        <p>
-          <strong>Toronto Convention center,</strong><br />
-          <!-- The Exchange, <br /> -->
-          255 Front St W, <br />
-          Toronto,<br />
-          ON M5V 2W6, <br />
-          Canada
-        </p>
       </div>
-    </div>
+    </section>
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.210243379726!2d-79.38886168454019!3d43.643793961057014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d6785ffb55%3A0x4209e1f8fd986202!2sMetro%20Toronto%20Convention%20Centre!5e0!3m2!1sen!2s!4v1670663942650!5m2!1sen!2s"
-      width="100%"
-      height="600"
-      style="border:0;"
-      <!--
-      allowfullscreen=""
-      --
-    >
-      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe
-    >
+    <section class="introdiv">
+      <div class="blue-leaf-container2">
+        <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+      </div>
+      <div class="container">
+        <h2 class="pull-right">Location</h2>
 
-    <!-- <div class="container">
+        <div>
+          <!-- src="/venue/eicc.jpg" -->
+          <img
+            src="/venue/toronto.jpg"
+            style="float: right; max-width: 100%; margin: 4px; height:260px"
+          />
+          <h3>Conference Venue</h3>
+          <p>
+            <strong>Toronto Convention center,</strong><br />
+            <!-- The Exchange, <br /> -->
+            255 Front St W, <br />
+            Toronto,<br />
+            ON M5V 2W6, <br />
+            Canada
+          </p>
+        </div>
+      </div>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.210243379726!2d-79.38886168454019!3d43.643793961057014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d6785ffb55%3A0x4209e1f8fd986202!2sMetro%20Toronto%20Convention%20Centre!5e0!3m2!1sen!2s!4v1670663942650!5m2!1sen!2s"
+        width="100%"
+        height="600"
+        style="border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <!-- <div class="container">
       <div class="pull-right">
         <img
           src="/venue/hilton.jpg"
@@ -537,7 +548,7 @@ const content = {
         </p>
       </div>
     </div> -->
-    <!-- <iframe
+      <!-- <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.390582441899!2d-3.214435283423262!3d55.94260198060458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a13f156add%3A0x9227896966e2f4f6!2sHampton%20by%20Hilton%20Edinburgh%20West%20End!5e0!3m2!1sen!2suk!4v1658748794028!5m2!1sen!2suk"
       width="100%"
       height="600"
@@ -546,61 +557,62 @@ const content = {
       referrerpolicy="no-referrer-when-downgrade"
     >
     </iframe> -->
-    <!-- allowfullscreen="" -->
-    <div class="blue-leaf-container3">
+      <!-- allowfullscreen="" -->
+      <div class="blue-leaf-container3">
+        <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h2>About</h2>
+
+        <h3>Our Values</h3>
+
+        <p>
+          KubeHuddle is a community run conference and we want to ensure that
+          everything we do and say is transparent and made publicly available.
+        </p>
+
+        <ul>
+          <li>Our task list and what we’re planning is all public on GitHub</li>
+          <li>Our sponsorship details are all public</li>
+          <li>
+            All titles submitted as potential sessions at KubeHuddle are public
+            on Sessionize
+          </li>
+          <li>This website is open source</li>
+          <li>
+            Currently KubeHuddle Toronto is being run through my company
+            (@virtualized6ix). The long term plan is to migrate this to a
+            non-profit setting however this requires proper accounting and
+            approval from the Canadian Government and Revenue Agency. As such,
+            all financial transactions of funds coming in and going out will be
+            made publicly available.
+          </li>
+        </ul>
+
+        <h3>Organizers</h3>
+
+        <div id="organizers" class="center fig-holder">
+          {
+            content.organizers.map((item) => (
+              <a href={item.href} target="_blank">
+                <figure>
+                  <img
+                    class="width_organiser"
+                    src={"/organizers/" + item.image}
+                  />
+                  <figcaption>{item.name}</figcaption>
+                </figure>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <div class="lineleaf"></div>
+    <div class="blue-leaf-container4">
       <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
     </div>
   </section>
-  <section>
-    <div class="container">
-      <h2>About</h2>
-
-      <h3>Our Values</h3>
-
-      <p>
-        KubeHuddle is a community run conference and we want to ensure that
-        everything we do and say is transparent and made publicly available.
-      </p>
-
-      <ul>
-        <li>Our task list and what we’re planning is all public on GitHub</li>
-        <li>Our sponsorship details are all public</li>
-        <li>
-          All titles submitted as potential sessions at KubeHuddle are public on
-          Sessionize
-        </li>
-        <li>This website is open source</li>
-        <li>
-          Currently KubeHuddle Toronto is being run through my company
-          (@virtualized6ix). The long term plan is to migrate this to a
-          non-profit setting however this requires proper accounting and
-          approval from the Canadian Government and Revenue Agency. As such, all
-          financial transactions of funds coming in and going out will be made
-          publicly available.
-        </li>
-      </ul>
-
-      <h3>Organizers</h3>
-
-      <div id="organizers" class="center fig-holder">
-        {
-          content.organizers.map((item) => (
-            <a href={item.href} target="_blank">
-              <figure>
-                <img
-                  class="width_organiser"
-                  src={"/2023/toronto/organizers/" + item.image}
-                />
-                <figcaption>{item.name}</figcaption>
-              </figure>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-  <div class="lineleaf"></div>
-  <div class="blue-leaf-container4">
-    <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
-  </div>
 </MainLayout>
