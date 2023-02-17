@@ -4,7 +4,6 @@ const { speakers } = Astro.props;
 ---
 
 <script>
- 
   [...document.querySelectorAll('.fig-wrapper figure')].forEach(fig => {
     fig.addEventListener('click', function () {
       let el = fig.parentElement;
@@ -37,10 +36,10 @@ const { speakers } = Astro.props;
 <div class="fig-wrapper" >
   <figure class="speaker">
 
-    <a href="#speakers" class="close-button">🅧 Close</a>
+    <!-- <a href="#speakers" class="close-button">🅧 Close</a> -->
     <img src={speakers.profilePicture} />
     <figcaption>
-      {speakers.fullName} &nbsp; {speakers.isTopSpeaker && <a>🌐</a>}  
+      {speakers.fullName} &nbsp; {speakers.isTopSpeaker && <a>🌐</a>}
     </figcaption>
     <!-- <div>
       { speakers.links[0] &&
