@@ -387,12 +387,13 @@ const content = {
             href="/2023/toronto/sponsorship">sponsorship opportunities page</a
           >.
         </p>
-
-        <!-- <div class="fig-holder">
+        
+        <!--Sponsers -->
+        <div class="fig-holder">
         {
           content.sponsors.malt.length > 0 && (
             <div id="sponsors-malt">
-              <h3 set:text={content.sponsors.malt.length > 0 && `Malt Level`} />
+              <h3 set:text={content.sponsors.malt.length > 0 && `Diamond Level`} />
               {content.sponsors.malt.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
@@ -409,7 +410,7 @@ const content = {
           content.sponsors.grain.length > 0 && (
             <div id="sponsors-grain">
               <h3
-                set:text={content.sponsors.grain.length > 0 && `Grain Level`}
+                set:text={content.sponsors.grain.length > 0 && `Gold Level`}
               />
               {content.sponsors.grain.map((item) => (
                 <a href={item.href} target="_blank">
@@ -427,7 +428,7 @@ const content = {
           content.sponsors.blend.length > 0 && (
             <div id="sponsors-blend">
               <h3
-                set:text={content.sponsors.blend.length > 0 && `Blend Level`}
+                set:text={content.sponsors.blend.length > 0 && `Silver Level`}
               />
               {content.sponsors.blend.map((item) => (
                 <a href={item.href} target="_blank">
@@ -446,7 +447,7 @@ const content = {
             <div id="sponsors-speaker">
               <h3
                 set:text={
-                  content.sponsors.speaker.length > 0 && `Speaker Sponsors`
+                  content.sponsors.speaker.length > 0 && `Bronze Sponsors`
                 }
               />
               {content.sponsors.speaker.map((item) => (
@@ -480,7 +481,8 @@ const content = {
             </div>
           )
         }
-      </div> -->
+      </div>
+      <!--Sponsers END -->
       </div>
     </section>
 
