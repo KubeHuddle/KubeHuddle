@@ -41,96 +41,32 @@ const content = {
   date: "May 17th and 18th, 2023",
   location: "Metro Toronto Convention Centre, Toronto, Ontario, Canada.",
   sponsors: {
-    malt: [
-      {
-        name: "Lloyds Banking Group",
-        logo: "lbg.png",
-        href: "https://www.lloydsbankinggroup.com/",
-      },
-      {
-        name: "ControlPlane",
-        logo: "control-plane.png",
-        href: "https://controlplane.io",
-      },
+    diamond: [
+
     ],
-    grain: [
-      { name: "Solo.io", logo: "solo-io.png", href: "https://solo.io" },
-      {
-        name: "Teleport",
-        logo: "teleport.png",
-        href: "https://goteleport.com/",
-      },
-      { name: "Loft", logo: "loft.png", href: "https://loft.sh/" },
+    gold: [
+      { name: "Sysdig", logo: "sysdig-logo.svg", href: "https://sysdig.com/" },
     ],
-    blend: [
+    silver: [
       {
-        name: "Giant Swarm",
-        logo: "giant-swarm.png",
-        href: "https://giantswarm.io",
-      },
-      {
-        name: "Civo",
-        logo: "civo.png",
-        href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage",
-      },
-      { name: "Pulumi", logo: "pulumi.png", href: "https://pulumi.com" },
-      { name: "Jetstack", logo: "jetstack.png", href: "https://jetstack.io" },
-      {
-        name: "Isovalent",
-        logo: "isovalent.png",
-        href: "https://isovalent.com",
-      },
-      {
-        name: "Skyscanner",
-        logo: "skyscanner.png",
-        href: "https://skyscannerscotland.net",
+        name: "F5",
+        logo: "f5-logo.svg",
+        href: "https://www.f5.com/",
       },
     ],
     speaker: [
-      {
-        name: "Civo",
-        logo: "civo.png",
-        href: "https://www.civo.com/?utm_source=event&utm_medium=kubehuddle&utm_campaign=kubehuddle-homepage",
-      },
-      {
-        name: "Giant Swarm",
-        logo: "giant-swarm.png",
-        href: "https://giantswarm.io",
-      },
-      {
-        name: "Quarkslab",
-        logo: "quarkslab.png",
-        href: "https://www.quarkslab.com/",
-      },
-      {
-        name: "Replicated",
-        logo: "replicated.png",
-        href: "https://www.replicated.com/",
-      },
-      { name: "Gimlet", logo: "gimlet.png", href: "https://gimlet.io/" },
-      {
-        name: "Kasten by VEAM",
-        logo: "kasten.png",
-        href: "https://kasten.io/",
-      },
-      { name: "CrowdSec", logo: "crowdsec.png", href: "https://crowdsec.net/" },
-      { name: "Upbound", logo: "upbound.png", href: "https://upbound.io/" },
+      
     ],
     community: [
       {
-        name: "Community Classroom",
-        logo: "commclassroom.webp",
-        href: "https://www.commclassroom.org/",
+        name: "ExamPro",
+        logo: "ExamPro-logo-horizontal.svg",
+        href: "https://www.exampro.co/",
       },
       {
-        name: "EddieHub",
-        logo: "eddiehub.webp",
-        href: "https://www.eddiehub.org/",
-      },
-      {
-        name: "KubeSimplify",
-        logo: "kubesimplify.jpeg",
-        href: "https://www.kubesimplify.com/",
+        name: "SuperOrbital",
+        logo: "SuperOrbital-Logo.svg",
+        href: "https://superorbital.io/",
       },
       {
         name: "Rawkode Academy",
@@ -396,10 +332,10 @@ const content = {
         <!--Sponsers -->
         <div class="fig-holder">
         {
-          content.sponsors.malt.length > 0 && (
+          content.sponsors.diamond.length > 0 && (
             <div id="sponsors-malt">
-              <h3 set:text={content.sponsors.malt.length > 0 && `Diamond Level`} />
-              {content.sponsors.malt.map((item) => (
+              <h3 set:text={content.sponsors.diamond.length > 0 && `Diamond Level`} />
+              {content.sponsors.diamond.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
                     <img src={"/sponsors/2023/" + item.logo} />
@@ -412,12 +348,12 @@ const content = {
         }
 
         {
-          content.sponsors.grain.length > 0 && (
+          content.sponsors.gold.length > 0 && (
             <div id="sponsors-grain">
               <h3
-                set:text={content.sponsors.grain.length > 0 && `Gold Level`}
+                set:text={content.sponsors.gold.length > 0 && `Gold Level`}
               />
-              {content.sponsors.grain.map((item) => (
+              {content.sponsors.gold.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
                     <img src={"/sponsors/2023/" + item.logo} />
@@ -430,12 +366,12 @@ const content = {
         }
 
         {
-          content.sponsors.blend.length > 0 && (
+          content.sponsors.silver.length > 0 && (
             <div id="sponsors-blend">
               <h3
-                set:text={content.sponsors.blend.length > 0 && `Silver Level`}
+                set:text={content.sponsors.silver.length > 0 && `Silver Level`}
               />
-              {content.sponsors.blend.map((item) => (
+              {content.sponsors.silver.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
                     <img src={"/sponsors/2023/" + item.logo} />
