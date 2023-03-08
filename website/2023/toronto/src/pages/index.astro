@@ -41,9 +41,7 @@ const content = {
   date: "May 17th and 18th, 2023",
   location: "Metro Toronto Convention Centre, Toronto, Ontario, Canada.",
   sponsors: {
-    diamond: [
-
-    ],
+    diamond: [],
     gold: [
       { name: "Sysdig", logo: "sysdig-logo.svg", href: "https://sysdig.com/" },
     ],
@@ -54,9 +52,7 @@ const content = {
         href: "https://www.f5.com/",
       },
     ],
-    speaker: [
-      
-    ],
+    speaker: [],
     community: [
       {
         name: "ExamPro",
@@ -303,7 +299,6 @@ const content = {
       </p> -->
 
       <div class="center">
-
         <div class="fig-holder center">
           <a
             class="big-button"
@@ -328,102 +323,109 @@ const content = {
             href="/2023/toronto/sponsorship">sponsorship opportunities page</a
           >.
         </p>
-        
+
         <!--Sponsers -->
         <div class="fig-holder">
-        {
-          content.sponsors.diamond.length > 0 && (
-            <div id="sponsors-malt">
-              <h3 set:text={content.sponsors.diamond.length > 0 && `Diamond Level`} />
-              {content.sponsors.diamond.map((item) => (
-                <a href={item.href} target="_blank">
-                  <figure>
-                    <img src={"/sponsors/2023/" + item.logo} />
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </a>
-              ))}
-            </div>
-          )
-        }
+          {
+            content.sponsors.diamond.length > 0 && (
+              <div id="sponsors-malt">
+                <h3
+                  set:text={
+                    content.sponsors.diamond.length > 0 && `Diamond Level`
+                  }
+                />
+                {content.sponsors.diamond.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
 
-        {
-          content.sponsors.gold.length > 0 && (
-            <div id="sponsors-grain">
-              <h3
-                set:text={content.sponsors.gold.length > 0 && `Gold Level`}
-              />
-              {content.sponsors.gold.map((item) => (
-                <a href={item.href} target="_blank">
-                  <figure>
-                    <img src={"/sponsors/2023/" + item.logo} />
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </a>
-              ))}
-            </div>
-          )
-        }
+          {
+            content.sponsors.gold.length > 0 && (
+              <div id="sponsors-grain">
+                <h3
+                  set:text={content.sponsors.gold.length > 0 && `Gold Level`}
+                />
+                {content.sponsors.gold.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
 
-        {
-          content.sponsors.silver.length > 0 && (
-            <div id="sponsors-blend">
-              <h3
-                set:text={content.sponsors.silver.length > 0 && `Silver Level`}
-              />
-              {content.sponsors.silver.map((item) => (
-                <a href={item.href} target="_blank">
-                  <figure>
-                    <img src={"/sponsors/2023/" + item.logo} />
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </a>
-              ))}
-            </div>
-          )
-        }
+          {
+            content.sponsors.silver.length > 0 && (
+              <div id="sponsors-blend">
+                <h3
+                  set:text={
+                    content.sponsors.silver.length > 0 && `Silver Level`
+                  }
+                />
+                {content.sponsors.silver.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
 
-        {
-          content.sponsors.speaker.length > 0 && (
-            <div id="sponsors-speaker">
-              <h3
-                set:text={
-                  content.sponsors.speaker.length > 0 && `Bronze Sponsors`
-                }
-              />
-              {content.sponsors.speaker.map((item) => (
-                <a href={item.href} target="_blank">
-                  <figure>
-                    <img src={"/sponsors/2023/" + item.logo} />
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </a>
-              ))}
-            </div>
-          )
-        }
+          {
+            content.sponsors.speaker.length > 0 && (
+              <div id="sponsors-speaker">
+                <h3
+                  set:text={
+                    content.sponsors.speaker.length > 0 && `Bronze Sponsors`
+                  }
+                />
+                {content.sponsors.speaker.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
 
-        {
-          content.sponsors.community.length > 0 && (
-            <div id="sponsors-community">
-              <h3
-                set:text={
-                  content.sponsors.community.length > 0 && `Community Sponsors`
-                }
-              />
-              {content.sponsors.community.map((item) => (
-                <a href={item.href} target="_blank">
-                  <figure>
-                    <img src={"/sponsors/2023/" + item.logo} />
-                    <figcaption>{item.name}</figcaption>
-                  </figure>
-                </a>
-              ))}
-            </div>
-          )
-        }
-      </div>
-      <!--Sponsers END -->
+          {
+            content.sponsors.community.length > 0 && (
+              <div id="sponsors-community">
+                <h3
+                  set:text={
+                    content.sponsors.community.length > 0 &&
+                    `Community Sponsors`
+                  }
+                />
+                {content.sponsors.community.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
+        </div>
+        <!--Sponsers END -->
       </div>
     </section>
 
@@ -538,7 +540,7 @@ const content = {
                 <figure>
                   <img
                     class="width_organiser"
-                    src={"/organizers/" + item.image}
+                    src={"/2023/toronto/organizers/" + item.image}
                   />
                   <figcaption>{item.name}</figcaption>
                 </figure>

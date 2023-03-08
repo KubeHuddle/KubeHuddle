@@ -2,9 +2,10 @@
 const { content } = Astro.props;
 ---
 
-
 <header>
-  <a href="#intro" class="sr-only focus:not-sr-only"><span>Skip to Content</span></a>
+  <a href="#intro" class="sr-only focus:not-sr-only"
+    ><span>Skip to Content</span></a
+  >
   <!-- <svg viewBox="0 0 2138 2138" version="1.1"
        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;max-width:50%;max-height:200px;"
@@ -21,15 +22,14 @@ const { content } = Astro.props;
     <path d="M1068.75,154.13c-505.129,0 -914.62,409.491 -914.62,914.62c0,227.033 82.72,321.263 219.665,481.158c22.782,-48.125 50.418,-93.508 82.276,-135.512c-55.476,-36.238 -98.418,-65.992 -111.906,-79.479c-50.013,-50.009 -50.013,-131.121 0.013,-181.138c50.006,-50.025 131.126,-50.025 181.139,-0.008c13.487,13.496 43.237,56.425 79.471,111.9c102.537,-77.771 225.195,-130.371 358.8,-148.654c-13.605,-64.838 -22.921,-116.217 -22.921,-135.288c-0,-70.733 57.354,-128.083 128.091,-128.083c70.738,-0 128.088,57.35 128.088,128.083c-0,19.071 -9.317,70.454 -22.921,135.292c133.604,18.292 256.258,70.887 358.8,148.662c36.242,-55.483 65.996,-98.425 79.479,-111.912c50.013,-50.013 131.125,-50.013 181.138,0.012c50.033,50.013 50.033,131.125 0.021,181.15c-13.496,13.484 -56.434,43.234 -111.913,79.467c31.854,42.004 59.488,87.379 82.267,135.496c136.937,-159.892 219.654,-254.121 219.654,-481.146c-0,-505.129 -409.492,-914.62 -914.621,-914.62Zm0,560.628c106.638,0 193.088,-86.446 193.088,-193.087c-0,-106.638 -86.45,-193.086 -193.088,-193.086c-106.637,0 -193.087,86.448 -193.087,193.086c-0,106.641 86.45,193.087 193.087,193.087Zm-477.633,242.204c96.346,0 174.454,-78.104 174.454,-174.454c-0,-96.35 -78.108,-174.454 -174.454,-174.454c-96.35,0 -174.457,78.104 -174.457,174.454c0,96.35 78.107,174.454 174.457,174.454Zm955.266,0c96.35,0 174.459,-78.104 174.459,-174.454c-0,-96.35 -78.109,-174.454 -174.459,-174.454c-96.345,0 -174.454,78.104 -174.454,174.454c0,96.35 78.109,174.454 174.454,174.454Z" style="fill:#fff;"></path>
   </svg> -->
   <div>
-    <a ><img src={"/maple-leaf-blue.svg"} /></a>
-  <a href="https://kubehuddle.com/2022/">  <img src={"/favicon.png"} class="favicon_size" /></a>
+    <a><img src={"/2023/toronto/maple-leaf-blue.svg"} /></a>
+    <a href="https://kubehuddle.com/2022/">
+      <img src={"/2023/toronto/favicon.png"} class="favicon_size" /></a
+    >
   </div>
 
-
   <a href="/">
-    <h1>
-      KubeHuddle 2023
-    </h1>
+    <h1>KubeHuddle 2023</h1>
   </a>
   <div id="event-date">
     🗓 {content.date || ""}
@@ -37,7 +37,7 @@ const { content } = Astro.props;
   <div id="event-location" class="globe_location">
     🌍 {content.location || ""}
   </div>
-  <img class="blueleaf_img" src={"/mapleaf.png"} alt="bluleaf"/>
+  <img class="blueleaf_img" src={"/2023/toronto/mapleaf.png"} alt="bluleaf" />
 </header>
 
 <style>
