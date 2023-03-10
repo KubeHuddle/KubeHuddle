@@ -75,6 +75,13 @@ const content = {
         href: "https://rawkode.live/",
       },
     ],
+    lanyard: [
+    {
+        name: "Civo",
+        logo: "civo.png",
+        href: "https://civo.com/",
+      },
+    ],
   },
   organizers: [
     {
@@ -399,6 +406,26 @@ const content = {
                   }
                 />
                 {content.sponsors.community.map((item) => (
+                  <a href={item.href} target="_blank">
+                    <figure>
+                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                      <figcaption>{item.name}</figcaption>
+                    </figure>
+                  </a>
+                ))}
+              </div>
+            )
+          }
+          {
+            content.sponsors.lanyard.length > 0 && (
+              <div id="sponsors-community">
+                <h3
+                  set:text={
+                    content.sponsors.lanyard.length > 0 &&
+                    `Lanyard Sponsors`
+                  }
+                />
+                {content.sponsors.lanyard.map((item) => (
                   <a href={item.href} target="_blank">
                     <figure>
                       <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
