@@ -2,4 +2,5 @@ check:
 	pnpm exec rome ci .
 
 deploy:
+	eval $(op signin --account rawkodeacademy.1password.eu)
 	op run -- pnpm exec cdktf deploy

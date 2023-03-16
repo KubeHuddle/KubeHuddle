@@ -10,11 +10,9 @@ class MyStack extends TerraformStack {
 	constructor(scope: Construct, id: string) {
 		super(scope, id);
 
-		const accountId = "48cdf6654836e299e22f3448ca02ea21";
+		new CloudflareProvider(this, "cloudflare", {});
 
-		new CloudflareProvider(this, "cloudflare", {
-			accountId,
-		});
+		const accountId = process.env.CLOUDFLARE_ACCOUNT_ID!;
 
 		const zone = new Zone(this, "zone", {
 			zone: "kubehuddle.com",
@@ -77,43 +75,39 @@ class MyStack extends TerraformStack {
 			new Record(this, `dkim${i}`, {
 				zoneId: zone.id,
 				name: `fm${i}._domainkey`,
-				type: "TXT",
+				type: "CNAME",
 				ttl: 3600,
 				value: `fm${i}.${zone.zone}.dkim.fmhosted.com`,
 			});
 		}
 
-		new Record(this, "srv-submission", {
-			zoneId: zone.id,
-			name: "_submission._tcp",
-			type: "SRV",
-			ttl: 3600,
-			value: "0 1 587 smtp.fastmail.com",
-		});
+		// new Record(this, "srv-submission", {
+		// 	zoneId: zone.id,
+		// 	name: "_submission._tcp",
+		// 	type: "SRV",
+		// 	value: "0 1 587 smtp.fastmail.com",
+		// });
 
-		new Record(this, "srv-imap", {
-			zoneId: zone.id,
-			name: "_imap._tcp",
-			type: "SRV",
-			ttl: 3600,
-			value: "0 0 0 .",
-		});
+		// new Record(this, "srv-imap", {
+		// 	zoneId: zone.id,
+		// 	name: "_imap._tcp",
+		// 	type: "SRV",
+		// 	value: "0 0 0 .",
+		// });
 
-		new Record(this, "srv-imaps", {
-			zoneId: zone.id,
-			name: "_imaps._tcp",
-			type: "SRV",
-			ttl: 3600,
-			value: "0 0 0 imap.fastmail.com",
-		});
+		// new Record(this, "srv-imaps", {
+		// 	zoneId: zone.id,
+		// 	name: "_imaps._tcp",
+		// 	type: "SRV",
+		// 	value: "0 0 0 imap.fastmail.com",
+		// });
 
-		new Record(this, "srv-jmap", {
-			zoneId: zone.id,
-			name: "_jmap._tcp",
-			type: "SRV",
-			ttl: 3600,
-			value: "0 1 443 api.fastmail.com",
-		});
+		// new Record(this, "srv-jmap", {
+		// 	zoneId: zone.id,
+		// 	name: "_jmap._tcp",
+		// 	type: "SRV",
+		// 	value: "0 1 443 api.fastmail.com",
+		// });
 
 		new Record(this, "google-site-verification", {
 			zoneId: zone.id,
