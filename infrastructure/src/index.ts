@@ -51,47 +51,68 @@ class MyStack extends TerraformStack {
 			zoneId: zone.id,
 			name: "@",
 			type: "MX",
-			value: "aspmx.l.google.com",
-			priority: 1,
+			ttl: 3600,
+			priority: 10,
+			value: "in1-smtp.messagingengine.com.",
 		});
 
 		new Record(this, "mx2", {
 			zoneId: zone.id,
 			name: "@",
 			type: "MX",
-			value: "alt1.aspmx.l.google.com",
-			priority: 5,
-		});
-
-		new Record(this, "mx3", {
-			zoneId: zone.id,
-			name: "@",
-			type: "MX",
-			value: "alt2.aspmx.l.google.com",
-			priority: 5,
-		});
-
-		new Record(this, "mx4", {
-			zoneId: zone.id,
-			name: "@",
-			type: "MX",
-			value: "alt3.aspmx.l.google.com",
-			priority: 10,
-		});
-
-		new Record(this, "mx5", {
-			zoneId: zone.id,
-			name: "@",
-			type: "MX",
-			value: "alt4.aspmx.l.google.com",
-			priority: 10,
+			ttl: 3600,
+			priority: 20,
+			value: "in2-smtp.messagingengine.com.",
 		});
 
 		new Record(this, "spf", {
 			zoneId: zone.id,
 			name: "@",
 			type: "TXT",
-			value: "v=spf1 include:_spf.google.com -all",
+			ttl: 3600,
+			value: '"v=spf1 include:spf.messagingengine.com ~all"',
+		});
+
+		for (let i = 1; i <= 3; i++) {
+			new Record(this, `dkim${i}`, {
+				zoneId: zone.id,
+				name: `fm${i}._domainkey`,
+				type: "TXT",
+				ttl: 3600,
+				value: `fm${i}.${zone.zone}.dkim.fmhosted.com`,
+			});
+		}
+
+		new Record(this, "srv-submission", {
+			zoneId: zone.id,
+			name: "_submission._tcp",
+			type: "SRV",
+			ttl: 3600,
+			value: "0 1 587 smtp.fastmail.com",
+		});
+
+		new Record(this, "srv-imap", {
+			zoneId: zone.id,
+			name: "_imap._tcp",
+			type: "SRV",
+			ttl: 3600,
+			value: "0 0 0 .",
+		});
+
+		new Record(this, "srv-imaps", {
+			zoneId: zone.id,
+			name: "_imaps._tcp",
+			type: "SRV",
+			ttl: 3600,
+			value: "0 0 0 imap.fastmail.com",
+		});
+
+		new Record(this, "srv-jmap", {
+			zoneId: zone.id,
+			name: "_jmap._tcp",
+			type: "SRV",
+			ttl: 3600,
+			value: "0 1 443 api.fastmail.com",
 		});
 
 		new Record(this, "google-site-verification", {
