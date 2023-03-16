@@ -1,20 +1,19 @@
 ---
-const { speakers } = Astro.props;
-
+const { speaker } = Astro.props;
 ---
 
 <script>
-  [...document.querySelectorAll('.fig-wrapper figure')].forEach(fig => {
-    fig.addEventListener('click', function () {
+  [...document.querySelectorAll(".fig-wrapper figure")].forEach((fig) => {
+    fig.addEventListener("click", function () {
       let el = fig.parentElement;
-      [...document.querySelectorAll('.fig-wrapper')].forEach(other => {
+      [...document.querySelectorAll(".fig-wrapper")].forEach((other) => {
         if (other.id != el.id) {
-          other.classList.remove('selected');
+          other.classList.remove("selected");
         }
       });
-      if (el.classList.contains('selected')) {
+      if (el.classList.contains("selected")) {
         history.replaceState(null, null, document.location.pathname);
-        el.classList.remove('selected');
+        el.classList.remove("selected");
       } else {
         window.location.hash = el.id;
       }
@@ -22,28 +21,28 @@ const { speakers } = Astro.props;
   });
 
   function showSpeaker() {
-    if (window.location.hash.startsWith('#speaker-')) {
-      document.getElementById(window.location.hash.substring(1)).classList.add('selected');
-      window.scrollBy(0, -20)
+    if (window.location.hash.startsWith("#speaker-")) {
+      document
+        .getElementById(window.location.hash.substring(1))
+        .classList.add("selected");
+      window.scrollBy(0, -20);
     }
   }
 
-  window.addEventListener('hashchange', showSpeaker);
-  document.addEventListener('DOMContentLoaded', showSpeaker);
-
+  window.addEventListener("hashchange", showSpeaker);
+  document.addEventListener("DOMContentLoaded", showSpeaker);
 </script>
-<!-- <div id={"speaker-" + speakers.fullName.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}></div> -->
-<div class="fig-wrapper" >
+<!-- <div id={"speaker-" + speaker.fullName.toLowerCase().replace(" ", "-").normalize('NFD').replace(/[\u0300-\u036f]/g, "")}></div> -->
+<div class="fig-wrapper">
   <figure class="speaker">
-
-    <!-- <a href="#speakers" class="close-button">🅧 Close</a> -->
-    <img src={speakers.profilePicture} />
+    <!-- <a href="#speaker" class="close-button">🅧 Close</a> -->
+    <img src={speaker.profilePicture} />
     <figcaption>
-      {speakers.fullName} &nbsp; {speakers.isTopSpeaker && <a>🌐</a>}
+      {speaker.fullName} &nbsp; {speaker.isTopSpeaker && <a>🌐</a>}
     </figcaption>
     <!-- <div>
-      { speakers.links[0] &&
-        <a href={speakers.links[0].url} target="_blank" onclick="event.stopPropagation();">🌐</a>
+      { speaker.links[0] &&
+        <a href={speaker.links[0].url} target="_blank" onclick="event.stopPropagation();">🌐</a>
       }
     </div> -->
   </figure>
@@ -51,12 +50,12 @@ const { speakers } = Astro.props;
     <h3>Speaker Bio</h3>
 
     <p>
-      {speakers.bio}
+      {speaker.bio}
     </p> -->
 
-    <!-- <h3>Talks</h3> -->
+  <!-- <h3>Talks</h3> -->
 
-    <!-- <div class="speaker-talks">
+  <!-- <div class="speaker-talks">
       {speaker.sessions.map((talk) => (
         <strong class="talk-title">{talk.title}</strong>
 
@@ -146,7 +145,7 @@ const { speakers } = Astro.props;
     display: block;
   }
 
-  .speaker-talks>div {
+  .speaker-talks > div {
     margin-top: 4px;
   }
 

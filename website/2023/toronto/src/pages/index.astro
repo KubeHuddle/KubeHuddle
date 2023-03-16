@@ -7,33 +7,12 @@ import Agenda from "../components/Agenda/Agenda.astro";
 const response = await fetch(
   "https://sessionize.com/api/v2/u7jwxupv/view/Speakers"
 );
-let data = await response.json();
-// let Newresult = data.map(item => item.isTopSpeaker);
-// let Newresult = data;
-let Newresult = data.filter((el, index) => {
+
+const speakers = await response.json();
+
+const keynoteSpeakers = speakers.filter((el) => {
   return el.isTopSpeaker == true;
 });
-// let Newresult = data.filter((el,index)=>{
-//   return el.firstName == "Kunal" ||  el.firstName == "Rizèl"
-// });
-console.log("new result", Newresult);
-
-const Speakers = Newresult.results;
-
-// const speakers = [
-//   {
-//     fullName: "Kunal Kushwaha",
-//     profilePicture:
-//       "https://sessionize.com/image/a7b2-400o400o2-h44XEk6whtrCPhskerGNoJ.jpg",
-//     links: [],
-//     sessions: [
-//       {
-//         title: "",
-//         categories: [],
-//       },
-//     ],
-//   },
-// ];
 
 const content = {
   title: "2023",
@@ -76,7 +55,7 @@ const content = {
       },
     ],
     lanyard: [
-    {
+      {
         name: "Civo",
         logo: "civo.png",
         href: "https://civo.com/",
@@ -129,11 +108,6 @@ const content = {
       image: "Safia.jpeg",
       href: "https://mobile.twitter.com/CulturedCoder",
     },
-    // {
-    //   name: "Adrian Mouat",
-    //   image: "adrianmouat.jpg",
-    //   href: "https://twitter.com/adrianmouat",
-    // },
   ],
 };
 ---
@@ -237,7 +211,7 @@ const content = {
     <div class="container">
       <h2 style="margin-top: 0px;" class="pull-right">Program</h2>
       <div class="Schedule-to abcd">
-        <p>Schedule to be announced when speakers are finalized</p>
+        <p>Schedule will be announced very soon! Check back next week</p>
       </div>
 
       <!-- <div>
@@ -283,22 +257,16 @@ const content = {
     </div>
     <div class="container">
       <h2>Speakers</h2>
-      <div class="speaker-to abcd">
-        <p>CFP now open! Speakers will be announced after CFP closes.</p>
-      </div>
-      <!-- <p>
-        schedule to be announced when speakers are finalized
-      </p> -->
 
       <div class="center">
         <div class="fig-holder center">
-          <a
-            class="big-button"
-            href="https://sessionize.com/kubehuddle-Toronto-2023/"
-            >Call for Speakers</a
-          >
           <p class="keynote">Keynote Speakers</p>
-          {Newresult.map((speakers) => <Speaker {speakers} />)}
+          {keynoteSpeakers.map((speaker) => <Speaker {speaker} />)}
+        </div>
+
+        <div class="fig-holder center">
+          <p class="keynote">Speakers</p>
+          {speakers.map((speaker) => <Speaker {speaker} />)}
         </div>
       </div>
       <div class="blue-leaf-container3">
@@ -421,8 +389,7 @@ const content = {
               <div id="sponsors-community">
                 <h3
                   set:text={
-                    content.sponsors.lanyard.length > 0 &&
-                    `Lanyard Sponsors`
+                    content.sponsors.lanyard.length > 0 && `Lanyard Sponsors`
                   }
                 />
                 {content.sponsors.lanyard.map((item) => (
