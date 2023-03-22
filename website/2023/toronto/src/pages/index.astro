@@ -20,7 +20,7 @@ const content = {
   date: "May 17th and 18th, 2023",
   location: "Metro Toronto Convention Centre, Toronto, Ontario, Canada.",
   sponsors: {
-    diamond: [],
+    diamond: [{ name: "Kasten", logo: "Kasten_Logo.svg", href: "https://www.kasten.io/" },],
     gold: [
       { name: "Sysdig", logo: "sysdig-logo.svg", href: "https://sysdig.com/" },
     ],
@@ -29,6 +29,18 @@ const content = {
         name: "F5",
         logo: "f5-logo.svg",
         href: "https://www.f5.com/",
+      },
+      {
+        name: "Solo",
+        logo: "solo-logo.png",
+        href: "https://www.solo.io/",
+      },
+    ],
+    bronze: [
+      {
+        name: "Tremolo Security",
+        logo: "tremolo-security-logo.png",
+        href: "https://www.tremolosecurity.com/",
       },
     ],
     speaker: [],
@@ -345,14 +357,14 @@ const content = {
           }
 
           {
-            content.sponsors.speaker.length > 0 && (
+            content.sponsors.bronze.length > 0 && (
               <div id="sponsors-speaker">
                 <h3
                   set:text={
-                    content.sponsors.speaker.length > 0 && `Bronze Sponsors`
+                    content.sponsors.bronze.length > 0 && `Bronze Level`
                   }
                 />
-                {content.sponsors.speaker.map((item) => (
+                {content.sponsors.bronze.map((item) => (
                   <a href={item.href} target="_blank">
                     <figure>
                       <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
