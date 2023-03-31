@@ -3,12 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Speaker from "../components/Speaker/Speaker.astro";
 import Agenda from "../components/Agenda/Agenda.astro";
 
-// const response = await fetch('https://sessionize.com/api/v2/u7jwxupv/view/SpeakerWall');
-const response = await fetch(
-  "https://sessionize.com/api/v2/u7jwxupv/view/Speakers"
-);
-
-const speakers = await response.json();
+import { agenda, speakers } from "../../data/combined.json";
 
 const keynoteSpeakers = speakers.filter((el) => {
   return el.isTopSpeaker == true;
@@ -20,7 +15,13 @@ const content = {
   date: "May 17th and 18th, 2023",
   location: "Metro Toronto Convention Centre, Toronto, Ontario, Canada.",
   sponsors: {
-    diamond: [{ name: "Kasten", logo: "Kasten_Logo.svg", href: "https://www.kasten.io/" },],
+    diamond: [
+      {
+        name: "Kasten",
+        logo: "Kasten_Logo.svg",
+        href: "https://www.kasten.io/",
+      },
+    ],
     gold: [
       { name: "Sysdig", logo: "sysdig-logo.svg", href: "https://sysdig.com/" },
     ],
@@ -222,11 +223,8 @@ const content = {
   <section id="Program">
     <div class="container">
       <h2 style="margin-top: 0px;" class="pull-right">Program</h2>
-      <div class="Schedule-to abcd">
-        <p>Schedule will be announced very soon! Check back next week</p>
-      </div>
 
-      <!-- <div>
+      <div>
         <strong>Track 1 - Introductions & Intermediate Presentations</strong><br
         />
         <p>
@@ -241,13 +239,10 @@ const content = {
           scale, multi-tenancy, and operations - you know, all that “fun” stuff.
         </p>
 
-        <strong>Collaboration Space</strong>
+        <strong>Workshop Rooms</strong>
         <p>
-          There will be tables provided for people that want to sit with their
-          laptops and collaborate with others, perhaps hacking on a cool new
-          operator? <br />
-          A small selection of workshops and tutorials will also be available throughout
-          the two days, at no extra cost.
+          A small selection of workshops and tutorials will also be available
+          throughout the two days, at no extra cost.
         </p>
 
         <strong>Socials</strong>
@@ -256,10 +251,10 @@ const content = {
           and the main social on <strong>Monday October 3rd</strong>.<br />
           <em>More details coming soon...</em>
         </p>
-      </div> -->
+      </div>
 
-      <!-- {agenda[0] && <Agenda agenda={agenda[0]} />}
-      {agenda[1] && <Agenda agenda={agenda[1]} />} -->
+      {agenda[0] && <Agenda agenda={agenda[0]} />}
+      {agenda[1] && <Agenda agenda={agenda[1]} />}
     </div>
   </section>
 
@@ -287,185 +282,180 @@ const content = {
     </div>
   </section>
 
-    <section id="sponsors">
-      <div class="container">
-        <h2>Sponsors</h2>
+  <section id="sponsors">
+    <div class="container">
+      <h2>Sponsors</h2>
 
+      <p>
+        If you’d like to support this conference, you can find details on our <a
+          href="/2023/toronto/sponsorship">sponsorship opportunities page</a
+        >.
+      </p>
+
+      <!--Sponsers -->
+      <div class="fig-holder">
+        {
+          content.sponsors.diamond.length > 0 && (
+            <div id="sponsors-malt">
+              <h3
+                set:text={
+                  content.sponsors.diamond.length > 0 && `Diamond Level`
+                }
+              />
+              {content.sponsors.diamond.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.gold.length > 0 && (
+            <div id="sponsors-grain">
+              <h3 set:text={content.sponsors.gold.length > 0 && `Gold Level`} />
+              {content.sponsors.gold.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.silver.length > 0 && (
+            <div id="sponsors-blend">
+              <h3
+                set:text={content.sponsors.silver.length > 0 && `Silver Level`}
+              />
+              {content.sponsors.silver.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.speaker.length > 0 && (
+            <div id="sponsors-speaker">
+              <h3
+                set:text={
+                  content.sponsors.speaker.length > 0 && `Bronze Sponsors`
+                }
+              />
+              {content.sponsors.speaker.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          content.sponsors.community.length > 0 && (
+            <div id="sponsors-community">
+              <h3
+                set:text={
+                  content.sponsors.community.length > 0 && `Community Sponsors`
+                }
+              />
+              {content.sponsors.community.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+        {
+          content.sponsors.lanyard.length > 0 && (
+            <div id="sponsors-community">
+              <h3
+                set:text={
+                  content.sponsors.lanyard.length > 0 && `Lanyard Sponsors`
+                }
+              />
+              {content.sponsors.lanyard.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+      <!--Sponsers END -->
+    </div>
+  </section>
+
+  <section class="introdiv">
+    <div class="blue-leaf-container2">
+      <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+    </div>
+    <div class="container">
+      <h2 class="pull-right">Location</h2>
+
+      <div>
+        <!-- src="/venue/eicc.jpg" -->
+        <img
+          src="/2023/toronto/venue/toronto.jpg"
+          style="float: right; max-width: 100%; margin: 4px; height:260px"
+        />
+        <h3>Conference Venue</h3>
         <p>
-          If you’d like to support this conference, you can find details on our <a
-            href="/2023/toronto/sponsorship">sponsorship opportunities page</a
-          >.
+          <strong>Toronto Convention center,</strong><br />
+          <!-- The Exchange, <br /> -->
+          255 Front St W, <br />
+          Toronto,<br />
+          ON M5V 2W6, <br />
+          Canada
         </p>
-
-        <!--Sponsers -->
-        <div class="fig-holder">
-          {
-            content.sponsors.diamond.length > 0 && (
-              <div id="sponsors-malt">
-                <h3
-                  set:text={
-                    content.sponsors.diamond.length > 0 && `Diamond Level`
-                  }
-                />
-                {content.sponsors.diamond.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-
-          {
-            content.sponsors.gold.length > 0 && (
-              <div id="sponsors-grain">
-                <h3
-                  set:text={content.sponsors.gold.length > 0 && `Gold Level`}
-                />
-                {content.sponsors.gold.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-
-          {
-            content.sponsors.silver.length > 0 && (
-              <div id="sponsors-blend">
-                <h3
-                  set:text={
-                    content.sponsors.silver.length > 0 && `Silver Level`
-                  }
-                />
-                {content.sponsors.silver.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-
-          {
-            content.sponsors.bronze.length > 0 && (
-              <div id="sponsors-speaker">
-                <h3
-                  set:text={
-                    content.sponsors.bronze.length > 0 && `Bronze Level`
-                  }
-                />
-                {content.sponsors.bronze.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-
-          {
-            content.sponsors.community.length > 0 && (
-              <div id="sponsors-community">
-                <h3
-                  set:text={
-                    content.sponsors.community.length > 0 &&
-                    `Community Sponsors`
-                  }
-                />
-                {content.sponsors.community.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-          {
-            content.sponsors.lanyard.length > 0 && (
-              <div id="sponsors-community">
-                <h3
-                  set:text={
-                    content.sponsors.lanyard.length > 0 && `Lanyard Sponsors`
-                  }
-                />
-                {content.sponsors.lanyard.map((item) => (
-                  <a href={item.href} target="_blank">
-                    <figure>
-                      <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
-                      <figcaption>{item.name}</figcaption>
-                    </figure>
-                  </a>
-                ))}
-              </div>
-            )
-          }
-        </div>
-        <!--Sponsers END -->
+        <p>
+          We have a negotiated rate with the One King West Hotel at 1 King West,
+          Toronto. It’s approximately a 15-20 minute walk from the MTCC. There
+          is limited availability so please use this link to book your hotel
+          room.
+        </p>
+        <a
+          class="small-button"
+          href="https://bookings.travelclick.com/95964?groupID=3841445#/guestsandrooms"
+          >Book Hotel</a
+        >
       </div>
-    </section>
+    </div>
 
-    <section class="introdiv">
-      <div class="blue-leaf-container2">
-        <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
-      </div>
-      <div class="container">
-        <h2 class="pull-right">Location</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.210243379726!2d-79.38886168454019!3d43.643793961057014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d6785ffb55%3A0x4209e1f8fd986202!2sMetro%20Toronto%20Convention%20Centre!5e0!3m2!1sen!2s!4v1670663942650!5m2!1sen!2s"
+      width="100%"
+      height="600"
+      style="border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-        <div>
-          <!-- src="/venue/eicc.jpg" -->
-          <img
-            src="/2023/toronto/venue/toronto.jpg"
-            style="float: right; max-width: 100%; margin: 4px; height:260px"
-          />
-          <h3>Conference Venue</h3>
-          <p>
-            <strong>Toronto Convention center,</strong><br />
-            <!-- The Exchange, <br /> -->
-            255 Front St W, <br />
-            Toronto,<br />
-            ON M5V 2W6, <br />
-            Canada
-          </p>
-          <p>
-            We have a negotiated rate with the One King West Hotel at 1 King
-            West, Toronto. It’s approximately a 15-20 minute walk from the MTCC.
-            There is limited availability so please use this link to book your
-            hotel room.
-          </p>
-          <a
-            class="small-button"
-            href="https://bookings.travelclick.com/95964?groupID=3841445#/guestsandrooms"
-            >Book Hotel</a
-          >
-        </div>
-      </div>
-
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.210243379726!2d-79.38886168454019!3d43.643793961057014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d6785ffb55%3A0x4209e1f8fd986202!2sMetro%20Toronto%20Convention%20Centre!5e0!3m2!1sen!2s!4v1670663942650!5m2!1sen!2s"
-        width="100%"
-        height="600"
-        style="border:0;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-      <!-- <div class="container">
+    <!-- <div class="container">
       <div class="pull-right">
         <img
           src="/venue/hilton.jpg"
@@ -491,7 +481,7 @@ const content = {
         </p>
       </div>
     </div> -->
-      <!-- <iframe
+    <!-- <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.390582441899!2d-3.214435283423262!3d55.94260198060458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7a13f156add%3A0x9227896966e2f4f6!2sHampton%20by%20Hilton%20Edinburgh%20West%20End!5e0!3m2!1sen!2suk!4v1658748794028!5m2!1sen!2suk"
       width="100%"
       height="600"
@@ -500,62 +490,61 @@ const content = {
       referrerpolicy="no-referrer-when-downgrade"
     >
     </iframe> -->
-      <!-- allowfullscreen="" -->
-      <div class="blue-leaf-container3">
-        <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <h2>About</h2>
-
-        <h3>Our Values</h3>
-
-        <p>
-          KubeHuddle is a community run conference and we want to ensure that
-          everything we do and say is transparent and made publicly available.
-        </p>
-
-        <ul>
-          <li>Our task list and what we’re planning is all public on GitHub</li>
-          <li>Our sponsorship details are all public</li>
-          <li>
-            All titles submitted as potential sessions at KubeHuddle are public
-            on Sessionize
-          </li>
-          <li>This website is open source</li>
-          <li>
-            Currently KubeHuddle Toronto is being run through my company
-            (@virtualized6ix). The long term plan is to migrate this to a
-            non-profit setting however this requires proper accounting and
-            approval from the Canadian Government and Revenue Agency. As such,
-            all financial transactions of funds coming in and going out will be
-            made publicly available.
-          </li>
-        </ul>
-
-        <h3>Organizers</h3>
-
-        <div id="organizers" class="center fig-holder">
-          {
-            content.organizers.map((item) => (
-              <a href={item.href} target="_blank">
-                <figure>
-                  <img
-                    class="width_organiser"
-                    src={"/2023/toronto/organizers/" + item.image}
-                  />
-                  <figcaption>{item.name}</figcaption>
-                </figure>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-    <div class="lineleaf"></div>
-    <div class="blue-leaf-container4">
+    <!-- allowfullscreen="" -->
+    <div class="blue-leaf-container3">
       <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
     </div>
   </section>
+  <section>
+    <div class="container">
+      <h2>About</h2>
+
+      <h3>Our Values</h3>
+
+      <p>
+        KubeHuddle is a community run conference and we want to ensure that
+        everything we do and say is transparent and made publicly available.
+      </p>
+
+      <ul>
+        <li>Our task list and what we’re planning is all public on GitHub</li>
+        <li>Our sponsorship details are all public</li>
+        <li>
+          All titles submitted as potential sessions at KubeHuddle are public on
+          Sessionize
+        </li>
+        <li>This website is open source</li>
+        <li>
+          Currently KubeHuddle Toronto is being run through my company
+          (@virtualized6ix). The long term plan is to migrate this to a
+          non-profit setting however this requires proper accounting and
+          approval from the Canadian Government and Revenue Agency. As such, all
+          financial transactions of funds coming in and going out will be made
+          publicly available.
+        </li>
+      </ul>
+
+      <h3>Organizers</h3>
+
+      <div id="organizers" class="center fig-holder">
+        {
+          content.organizers.map((item) => (
+            <a href={item.href} target="_blank">
+              <figure>
+                <img
+                  class="width_organiser"
+                  src={"/2023/toronto/organizers/" + item.image}
+                />
+                <figcaption>{item.name}</figcaption>
+              </figure>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <div class="lineleaf"></div>
+  <div class="blue-leaf-container4">
+    <img src={"/2023/toronto/mapleaf.png"} class="maple-leaf-blue" />
+  </div>
 </MainLayout>
