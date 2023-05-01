@@ -7,6 +7,7 @@ build: edinburgh2022 toronto2023
 	cp _redirects dist/
 
 deploy: build
+	op signin --account rawkodeacademy
 	op run -- pnpm exec wrangler pages publish ./dist --project-name kubehuddle
 
 edinburgh2022:
