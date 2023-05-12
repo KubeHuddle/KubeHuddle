@@ -59,7 +59,28 @@ const content = {
         href: "https://rootly.com/",
       },
     ],
-    speaker: [],
+    speaker: [
+      {
+        name: "Dell",
+        logo: "dell_logo.png",
+        href: "https://dell.com/",
+      },
+      {
+        name: "Google",
+        logo: "google-logo.webp.png",
+        href: "https://google.com/",
+      },
+      {
+        name: "AWS",
+        logo: "aws-logo.png",
+        href: "https://aws.amazon.com/",
+      },
+      {
+        name: "Aiven",
+        logo: "aiven-logo.png",
+        href: "https://aiven.io/",
+      },
+    ],
     community: [
       {
         name: "ExamPro",
@@ -407,6 +428,25 @@ const content = {
                 }
               />
               {content.sponsors.lanyard.map((item) => (
+                <a href={item.href} target="_blank">
+                  <figure>
+                    <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
+                    <figcaption>{item.name}</figcaption>
+                  </figure>
+                </a>
+              ))}
+            </div>
+          )
+        }
+        {
+          content.sponsors.speaker.length > 0 && (
+            <div id="sponsors-lanyard">
+              <h3
+                set:text={
+                  content.sponsors.speaker.length > 0 && `Speaker Sponsors`
+                }
+              />
+              {content.sponsors.speaker.map((item) => (
                 <a href={item.href} target="_blank">
                   <figure>
                     <img src={"/2023/toronto/sponsors/2023/" + item.logo} />
