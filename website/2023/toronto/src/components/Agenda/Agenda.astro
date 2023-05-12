@@ -11,6 +11,9 @@ const track2 = [
   ...agenda.rooms[0].sessions.filter((s) => s.isServiceSession),
   ...agenda.rooms[1].sessions,
 ].sort((a, b) => new Date(a.startsAt) - new Date(b.startsAt));
+
+const track3 = agenda.rooms[2].sessions;
+const track4 = agenda.rooms[3].sessions;
 ---
 
 <div id={"agenda-" + isoDate.toDateString()}>
@@ -32,21 +35,11 @@ const track2 = [
     </script>
     <summary>Program</summary>
     <div class="Program-day">
-      <Timeline title="Room 1" timeline={track1} />
-      <Timeline title="Room 2" timeline={track2} />
+      <Timeline title="Room 1 (716)" timeline={track1} />
+      <Timeline title="Room 2 (714)" timeline={track2} />
+      <Timeline title="Workshop Room (717A)" timeline={track3} />
+      <Timeline title="Kasten 2-Day Room (717B)" timeline={track4} />
     </div>
-    <h4>Workshop Rooms</h4>
-    <ul>
-      {
-        agenda.rooms[2] &&
-          agenda.rooms[2].sessions.map((item) => (
-            <li>
-              <time>{item.startsAt}</time> - <strong>{item.title}</strong> with{" "}
-              {item.speakers.length > 0 ? item.speakers[0].name : ""}
-            </li>
-          ))
-      }
-    </ul>
   </details>
 </div>
 
