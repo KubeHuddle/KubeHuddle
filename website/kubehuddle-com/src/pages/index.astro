@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
+import MainSection from "../components/sections/MainSection.astro";
+import ComingSoonSection from "../components/sections/ComingSoonSection.astro";
+import ConferencesSection from "../components/sections/ConferencesSection.astro";
+import ContactSection from "../components/sections/ContactSection.astro";
+import ScrollToTopButton from "../components/ScrollToTopButton.astro";
+---
+
+<Layout title="KubeHuddle">
+  <main>
+    <Menu />
+		<ScrollToTopButton />
+
+    <MainSection />
+    <ComingSoonSection />
+    <ConferencesSection />
+    <ContactSection />
+  </main>
+</Layout>
