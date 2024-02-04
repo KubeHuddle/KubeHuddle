@@ -10,26 +10,26 @@ type Conference = {
   date: [dayjs.Dayjs, string];
 };
 
+const formatDate = (date: [dayjs.Dayjs, string]) => date[0].format(date[1]);
+
 const conferences: Conference[] = [
   {
-    location: "Toronto",
+    location: "Toronto - Canada",
     cover: "toronto.jpeg",
     href: "https://ca.kubehuddle.com",
     date: [dayjs().year(2024).month(4).date(7), "YYYY-MM-DD"],
   },
   {
-    location: "Edinburgh",
+    location: "Edinburgh - Scotland",
     cover: "edinburgh.jpeg",
     date: [dayjs().year(2024), "YYYY"],
   },
   {
-    location: "Karlsruhe",
+    location: "Karlsruhe - Germany",
     cover: "karlsruhe.jpeg",
     date: [dayjs().year(2025), "YYYY"],
   },
 ];
-
-const formatDate = (date: [dayjs.Dayjs, string]) => date[0].format(date[1]);
 ---
 
 <Section id="conferences">
