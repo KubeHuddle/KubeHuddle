@@ -1,6 +1,4 @@
 ---
-import { fade } from "astro:transitions";
-
 type MenuLink = {
   name: string;
   href: string;
@@ -21,7 +19,9 @@ const menuItems: MenuLink[] = [
 ];
 ---
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0">
+<nav
+  class="bg-white/80 border-gray-200 dark:bg-gray-900 fixed top-0 left-0 right-0"
+>
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
@@ -35,7 +35,7 @@ const menuItems: MenuLink[] = [
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100/80 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700/80 dark:focus:ring-gray-600"
       aria-controls="navbar-default"
       aria-expanded="false"
     >
@@ -57,7 +57,7 @@ const menuItems: MenuLink[] = [
     </button>
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul
-        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50/80 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white/80 dark:bg-gray-800/80 md:dark:bg-gray-900/80 dark:border-gray-700"
       >
         {
           menuItems.map((item) => (
@@ -65,7 +65,7 @@ const menuItems: MenuLink[] = [
               <a
                 target={item.isExternal ? "_blank" : "_self"}
                 href={item.href}
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100/80 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700/80 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
               >
                 {item.name}
