@@ -1,10 +1,11 @@
 ---
 interface Props {
-	id: string
+  id: string;
 }
 
 const { id } = Astro.props;
 ---
-<section id={id} class="flex flex-col justify-center items-center min-h-svh mt-[64px]">
-	<slot />
+
+<section id={id} class="flex flex-col justify-center items-center min-h-svh">
+  <slot />
 </section>
