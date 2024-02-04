@@ -1,11 +1,23 @@
 ---
 interface Props {
   id: string;
+  center?: boolean;
 }
 
-const { id } = Astro.props;
+const { id, center: isCenter } = Astro.props;
 ---
 
-<section id={id} class="flex flex-col justify-center items-center min-h-svh">
-  <slot />
-</section>
+{
+  isCenter ? (
+    <section
+      id={id}
+      class="flex flex-col justify-center items-center min-h-svh"
+    >
+      <slot />
+    </section>
+  ) : (
+    <section id={id} class="flex flex-col pt-[128px] min-h-svh">
+      <slot />
+    </section>
+  )
+}

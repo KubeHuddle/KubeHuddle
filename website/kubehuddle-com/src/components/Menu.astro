@@ -2,14 +2,14 @@
 type MenuLink = {
   name: string;
   href: string;
-  isExternal: boolean;
+  isExternal?: boolean;
 };
 
 const menuItems: MenuLink[] = [
-  { name: "Home", href: "#", isExternal: false },
-  { name: "Coming Soon", href: "#coming-soon", isExternal: false },
-  { name: "Conferences", href: "#conferences", isExternal: false },
-  { name: "Contact", href: "#contact", isExternal: false },
+  { name: "Home", href: "#" },
+  { name: "Coming Soon", href: "#coming-soon" },
+  { name: "Conferences", href: "#conferences" },
+  { name: "Contact", href: "#contact" },
   { name: "Code of Conduct", href: "/code-of-conduct", isExternal: true },
   {
     name: "GitHub",
