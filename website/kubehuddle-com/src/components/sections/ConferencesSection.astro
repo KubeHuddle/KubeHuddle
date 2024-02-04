@@ -37,33 +37,32 @@ const formatDate = (date: [dayjs.Dayjs, string]) => date[0].format(date[1]);
     <h2 class="text-4xl font-bold dark:text-white">Conferences</h2>
 
     <div
-      class="grid grid-cols-1 p-12 lg:mt-16 lg:grid-cols-1 gap-y-12 gap-x-16 w-full"
+      class="grid grid-cols-1 lg:pl-12 lg:pr-12 lg:mt-16 lg:grid-cols-1 gap-y-12 gap-x-16 w-full"
     >
-      <div class="space-y-8">
-        {
-          conferences.map((conference) => (
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-stretch">
-              <p class="w-auto text-sm font-medium text-gray-500 sm:text-right sm:w-32 dark:text-gray-400 shrink-0">
-                {formatDate(conference.date)}
-              </p>
-              <div class="hidden w-px bg-gray-200 sm:shrink-0 dark:bg-gray-700 sm:block" />
-              <div class="flex-1 pb-8 space-y-4 sm:pb-12">
-                <h4 class="text-xl font-bold text-gray-900 dark:text-white">
-                  <a href={conference.href} class="hover:underline">
-                    {conference.location}
-                  </a>
-                </h4>
-                <div class="flex items-center gap-3">
-                  <img
-                    src={conference.cover}
-                    class="w-full h-48 object-cover object-center"
-                  />
-                </div>
-              </div>
+      {
+        conferences.map((conference) => (
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-stretch">
+            <p class="w-auto text-sm font-medium text-gray-500 sm:text-right sm:w-32 dark:text-gray-400 shrink-0">
+              {formatDate(conference.date)}
+            </p>
+
+            <div class="hidden w-px bg-gray-200 sm:shrink-0 dark:bg-gray-700 sm:block" />
+
+            <div class="flex-1 space-y-4">
+              <h4 class="text-xl font-bold text-gray-900 dark:text-white">
+                <a href={conference.href} class="hover:underline">
+                  {conference.location}
+                </a>
+              </h4>
+
+              <img
+                src={conference.cover}
+                class="w-full h-48 object-cover object-center"
+              />
             </div>
-          ))
-        }
-      </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </Section>
