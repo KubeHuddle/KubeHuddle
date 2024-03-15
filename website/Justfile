@@ -8,7 +8,7 @@ build: edinburgh2022 toronto2023
 
 deploy: build
 	op signin --account rawkodeacademy
-	op run -- pnpm exec wrangler pages publish ./dist --project-name kubehuddle
+	op run -- bun run wrangler pages publish ./dist --project-name kubehuddle
 
 edinburgh2022:
 	#!/usr/bin/env bash
@@ -16,8 +16,8 @@ edinburgh2022:
 	mkdir -p dist/2022/edinburgh
 	cd 2022/edinburgh
 	just download-schedule
-	pnpm install
-	ASTRO_BASE_PATH="/2022/edinburgh" pnpm build
+	bun install
+	ASTRO_BASE_PATH="/2022/edinburgh" bun run build
 	cp -r dist/* ../../dist/2022/edinburgh
 
 toronto2023:
@@ -26,6 +26,6 @@ toronto2023:
 	mkdir -p dist/2023/toronto
 	cd 2023/toronto
 	just download-schedule
-	pnpm install
-	ASTRO_BASE_PATH="/2023/toronto" pnpm build
+	bun install
+	ASTRO_BASE_PATH="/2023/toronto" bun run build
 	cp -r dist/* ../../dist/2023/toronto

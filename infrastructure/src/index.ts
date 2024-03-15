@@ -2,6 +2,7 @@ import { PagesDomain } from "@cdktf/provider-cloudflare/lib/pages-domain";
 import { PagesProject } from "@cdktf/provider-cloudflare/lib/pages-project";
 import { CloudflareProvider } from "@cdktf/provider-cloudflare/lib/provider";
 import { Record } from "@cdktf/provider-cloudflare/lib/record";
+import { Ruleset } from "@cdktf/provider-cloudflare/lib/ruleset";
 import { Zone } from "@cdktf/provider-cloudflare/lib/zone";
 import { App, CloudBackend, NamedCloudWorkspace, TerraformStack } from "cdktf";
 import { Construct } from "constructs";
@@ -45,13 +46,56 @@ class MyStack extends TerraformStack {
 			accountId,
 		});
 
+		const www = new Record(this, "www", {
+			zoneId: zone.id,
+			name: "www",
+			type: "A",
+			proxied: true,
+			ttl: 1,
+			value: "192.0.2.1",
+			comment: "Managed by Terraform",
+		});
+
+		new Ruleset(this, "www-ruleset", {
+			zoneId: zone.id,
+			name: "www-to-apex",
+			phase: "http_request_dynamic_redirect",
+			kind: "zone",
+
+			dependsOn: [www],
+
+			rules: [
+				{
+					action: "redirect",
+					expression: 'http.host eq "www.kubehuddle.com"',
+					enabled: true,
+					actionParameters: [
+						{
+							fromValue: [
+								{
+									targetUrl: [
+										{
+											value: "https://kubehuddle.com",
+										},
+									],
+									preserveQueryString: true,
+									statusCode: 301,
+								},
+							],
+						},
+					],
+				},
+			],
+		});
+
 		new Record(this, "mx1", {
 			zoneId: zone.id,
 			name: "@",
 			type: "MX",
 			ttl: 3600,
-			priority: 10,
-			value: "in1-smtp.messagingengine.com.",
+			priority: 1,
+			value: "aspmx.l.google.com.",
+			comment: "Managed by Terraform",
 		});
 
 		new Record(this, "mx2", {
@@ -59,55 +103,57 @@ class MyStack extends TerraformStack {
 			name: "@",
 			type: "MX",
 			ttl: 3600,
-			priority: 20,
-			value: "in2-smtp.messagingengine.com.",
+			priority: 5,
+			value: "alt1.aspmx.l.google.com.",
+			comment: "Managed by Terraform",
+		});
+
+		new Record(this, "mx3", {
+			zoneId: zone.id,
+			name: "@",
+			type: "MX",
+			ttl: 3600,
+			priority: 5,
+			value: "alt2.aspmx.l.google.com.",
+			comment: "Managed by Terraform",
+		});
+
+		new Record(this, "mx4", {
+			zoneId: zone.id,
+			name: "@",
+			type: "MX",
+			ttl: 3600,
+			priority: 10,
+			value: "alt3.aspmx.l.google.com.",
+			comment: "Managed by Terraform",
+		});
+
+		new Record(this, "mx5", {
+			zoneId: zone.id,
+			name: "@",
+			type: "MX",
+			ttl: 3600,
+			priority: 10,
+			value: "alt4.aspmx.l.google.com.",
+			comment: "Managed by Terraform",
+		});
+
+		const domainKey =
+			"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuG5rTFh6X3Yu08pueSQUc8G3NCno7I4DnLH4QiKx2yMj3+7+F+qTpsyKPpn7IjxQfRDO5zHvr29LuMMcpO4rNACOUQ1zGOfMwTq1F9Shs8A291H1RWEAKT2D6FAaT2dJmEIal7R+0yWNKSZJj7HktNQaoTqKPMVgowwVzQnZgklMtZYiCGoaCRRFCWTiPiW6861hdBNCQv445WhwkNc7A5G4bDn9w5NkH1R2VDQ4pnTc9l+ogqR+Dp/s78C/r2bstFBOd9eyRng1SYYWlkH8Kt2MxAXG/o2GiZOj2KZow79IvjzhJU4sfp3tUnj36gnK99vX3EH5K5fmvzQV9/PNpwIDAQAB";
+
+		new Record(this, "dkim", {
+			zoneId: zone.id,
+			name: "google._domainkey",
+			type: "TXT",
+			value: `v=DKIM1; k=rsa; p=${domainKey}`,
 		});
 
 		new Record(this, "spf", {
 			zoneId: zone.id,
 			name: "@",
 			type: "TXT",
-			ttl: 3600,
-			value: '"v=spf1 include:spf.messagingengine.com ~all"',
+			value: "v=spf1 include:_spf.google.com",
 		});
-
-		for (let i = 1; i <= 3; i++) {
-			new Record(this, `dkim${i}`, {
-				zoneId: zone.id,
-				name: `fm${i}._domainkey`,
-				type: "CNAME",
-				ttl: 3600,
-				value: `fm${i}.${zone.zone}.dkim.fmhosted.com`,
-			});
-		}
-
-		// new Record(this, "srv-submission", {
-		// 	zoneId: zone.id,
-		// 	name: "_submission._tcp",
-		// 	type: "SRV",
-		// 	value: "0 1 587 smtp.fastmail.com",
-		// });
-
-		// new Record(this, "srv-imap", {
-		// 	zoneId: zone.id,
-		// 	name: "_imap._tcp",
-		// 	type: "SRV",
-		// 	value: "0 0 0 .",
-		// });
-
-		// new Record(this, "srv-imaps", {
-		// 	zoneId: zone.id,
-		// 	name: "_imaps._tcp",
-		// 	type: "SRV",
-		// 	value: "0 0 0 imap.fastmail.com",
-		// });
-
-		// new Record(this, "srv-jmap", {
-		// 	zoneId: zone.id,
-		// 	name: "_jmap._tcp",
-		// 	type: "SRV",
-		// 	value: "0 1 443 api.fastmail.com",
-		// });
 
 		new Record(this, "google-site-verification", {
 			zoneId: zone.id,
